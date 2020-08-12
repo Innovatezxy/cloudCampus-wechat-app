@@ -1,0 +1,231 @@
+<!-- 导航栏 -->
+<view class='navbar-bg' style='height: {{navH + 46}}px'></view>
+<picker class='navbar-title' style='top: {{navH}}px' value="{{dateIndex}}" range="{{datepick}}" bindchange="datePicker">{{datepick[dateIndex]}} ▼</picker>
+<view class="navbar" style='top: {{navH + 4}}px'>
+  <image class="back" src="/images/barback.png" style="margin: auto 20rpx;" bindtap="navBack"></image>
+  <button class="sharebtn" style="position: fixed; top:{{navH + 4}}px; left: 60rpx;" open-type="share">
+    <image class="share" src="/images/share_black.png"></image>
+  </button>
+</view>
+
+<view class="page">
+  <!-- 总分 -->
+  <view class="info-score" style='margin-top: {{navH + 56}}px'>
+    <view class="body">
+      <text class="score">{{result['zongfen']}}</text>
+      <image src="/images/tuosai.gif"></image>
+    </view>
+    <navigator class="details" url='../sports/info?date={{datepick[dateIndex]}}'>查看详情>></navigator>
+  </view>
+
+  <!-- 身高体重情况 -->
+  <view class="info-detail">
+    <image src="/images/xingfen.gif"></image>
+    <view class="body">
+      <image class="eyes" src="/images/eyes.png" bindtap="view"></image>
+      <block wx:if="{{view == true}}">
+        <text class="title">{{result['tizhong']}}KG</text>
+        <text class="title-tips">体重在本班{{result['sex']}}生中排名第{{result['tizhongpaiming']}}名哦</text>
+        <text class="title">{{result['shenggao']}}CM</text>
+        <text class="title-tips">身高击败了本班{{result['shengaobilv']}}的{{result['sex']}}生哦</text>
+      </block>
+      <block wx:else>
+        <text class="title">**.*KG</text>
+        <text class="title-tips">体重在本班{{result['sex']}}生中排名第*名哦</text>
+        <text class="title">***.*CM</text>
+        <text class="title-tips">身高击败了本班**.*%的{{result['sex']}}生哦</text>
+      </block>
+    </view>
+  </view>
+
+  <!-- BMI信息 -->
+  <view class="info-bmi">
+    <view class="body">
+      <text class="bmi">BMI指数：{{bmi}}</text>
+      <text class="bmi-stand" wx:if="{{bmi < 18.5}}">BMI标准：偏瘦</text>
+      <text class="bmi-stand" wx:if="{{bmi >= 18.5 && bmi < 24}}">BMI标准：正常</text>
+      <text class="bmi-stand" wx:if="{{bmi >= 24 && bmi < 28}}">BMI标准：偏胖</text>
+      <text class="bmi-stand" wx:if="{{bmi >= 28}}">BMI标准：肥胖</text>
+      <text class="bmi-adv" wx:if="{{bmi < 18.5}}">BMI建议：体重偏低，注意加强营养哦</text>
+      <text class="bmi-adv" wx:if="{{bmi >= 18.5 && bmi < 24}}">BMI建议：目前保持的很好，继续加油哦</text>
+      <text class="bmi-adv" wx:if="{{bmi >= 24 && bmi < 28}}">BMI建议：体重偏高，注意加强运动哦</text>
+      <text class="bmi-adv" wx:if="{{bmi >= 28}}">BMI建议：体重过于偏胖，注意加强运动哦</text>
+    </view>
+    <image src="/images/hulaquan.gif"></image>
+  </view>
+
+  <!-- 班内排名情况 -->
+  <view class="info-rank">
+    <image src="/images/suiyuan.gif"></image>
+    <view class="body">
+      <text class="title">班级前三名：</text>
+      <block wx:for="{{result['qiansanming']}}" wx:key="list">
+        <view data-index="{{index}}" bindtap="pk">
+          <view class="list">
+            <text class="pk-name">第{{index+1}}名：{{item['姓名']}}</text>
+            <image class="pk" src="/images/pk.png"></image>
+          </view>
+        </view>
+      </block>
+    </view>
+  </view>
+
+  <!-- 好友PK功能 -->
+  <view class="info-frdpk">
+    <view class="body">
+      <view class="frdpk-tips">
+        <text class="tips-1">朋友PK</text>
+        <text class="tips-2">(输入信息以验证身份)</text>
+      </view>
+      <input class="infoinput" type="text" maxlength="15" placeholder="姓名" bindinput="nameInput" />
+      <input class="infoinput" type="number" maxlength="15" placeholder="学号" bindinput="accountInput" />
+      <view class="pkconfirm" bindtap="pkconfirm">确认PK</view>
+    </view>
+    <image src="/images/buxie.gif"></image>
+  </view>
+
+  <!-- PK详情 -->
+  <cover-view class="pkinfo" hidden="{{pkdisplay}}" bindtap="hidepk">
+    <cover-view class="pk-body">
+      <cover-view class="pk-title">
+        <cover-view class="name">我</cover-view>
+        <cover-image class="vs" src="/images/vs.png"></cover-image>
+        <cover-view class="name">{{pkresult_other['姓名']}}</cover-view>
+      </cover-view>
+      <cover-view class="body">
+        <cover-view class="score-s" style="color: #e90000; font-weight: bold;" wx:if="{{pkresult_self['体重'] > pkresult_other['体重']}}">重</cover-view>
+        <cover-view class="score-s" style="color: #808080;" wx:else>轻</cover-view>
+        <cover-view class="item">体重</cover-view>
+        <cover-view class="score-o" style="color: #e90000; font-weight: bold;" wx:if="{{pkresult_other['体重'] > pkresult_self['体重']}}">重</cover-view>
+        <cover-view class="score-o" style="color: #808080;" wx:else>轻</cover-view>
+      </cover-view>
+      <cover-view class="line"></cover-view>
+      <cover-view class="body">
+        <cover-view class="score-s" style="color: #e90000; font-weight: bold;" wx:if="{{pkresult_self['身高'] > pkresult_other['身高']}}">高</cover-view>
+        <cover-view class="score-s" style="color: #808080;" wx:else>低</cover-view>
+        <cover-view class="item">身高</cover-view>
+        <cover-view class="score-o" style="color: #e90000; font-weight: bold;" wx:if="{{pkresult_other['身高'] > pkresult_self['身高']}}">高</cover-view>
+        <cover-view class="score-o" style="color: #808080;" wx:else>低</cover-view>
+      </cover-view>
+      <cover-view class="line"></cover-view>
+      <cover-view class="body" wx:if="{{college == 'imnu'}}">
+        <cover-view class="score-s" style="color: #e90000; font-weight: bold;" wx:if="{{pkresult_self['五十米跑'] < pkresult_other['五十米跑']}}">{{pkresult_self['五十米跑']}}秒</cover-view>
+        <cover-view class="score-s" style="color: #808080;" wx:else>{{pkresult_self['五十米跑']}}秒</cover-view>
+        <cover-view class="item">50米跑</cover-view>
+        <cover-view class="score-o" style="color: #e90000; font-weight: bold;" wx:if="{{pkresult_other['五十米跑'] < pkresult_self['五十米跑']}}">{{pkresult_other['五十米跑']}}秒</cover-view>
+        <cover-view class="score-o" style="color: #808080;" wx:else>{{pkresult_other['五十米跑']}}秒</cover-view>
+      </cover-view>
+      <cover-view class="body" wx:if="{{college == 'imau'}}">
+        <cover-view class="score-s" style="color: #e90000; font-weight: bold;" wx:if="{{pkresult_self['五十米跑测试数值'] < pkresult_other['五十米跑测试数值']}}">{{pkresult_self['五十米跑测试数值']}}秒</cover-view>
+        <cover-view class="score-s" style="color: #808080;" wx:else>{{pkresult_self['五十米跑测试数值']}}秒</cover-view>
+        <cover-view class="item">50米跑</cover-view>
+        <cover-view class="score-o" style="color: #e90000; font-weight: bold;" wx:if="{{pkresult_other['五十米跑测试数值'] < pkresult_self['五十米跑测试数值']}}">{{pkresult_other['五十米跑测试数值']}}秒</cover-view>
+        <cover-view class="score-o" style="color: #808080;" wx:else>{{pkresult_other['五十米跑测试数值']}}秒</cover-view>
+      </cover-view>
+      <cover-view class="line"></cover-view>
+      <cover-view class="body" wx:if="{{college == 'imnu'}}">
+        <cover-view class="score-s" style="color: #e90000; font-weight: bold;" wx:if="{{pkresult_self['千米跑'] < pkresult_other['千米跑']}}">{{pkresult_self['千米跑']}}分</cover-view>
+        <cover-view class="score-s" style="color: #808080;" wx:else>{{pkresult_self['千米跑']}}分</cover-view>
+        <cover-view class="item">800/1000米跑</cover-view>
+        <cover-view class="score-o" style="color: #e90000; font-weight: bold;" wx:if="{{pkresult_other['千米跑'] < pkresult_self['千米跑']}}">{{pkresult_other['千米跑']}}分</cover-view>
+        <cover-view class="score-o" style="color: #808080;" wx:else>{{pkresult_other['千米跑']}}分</cover-view>
+      </cover-view>
+      <cover-view class="body" wx:if="{{college == 'imau'}}">
+        <cover-view class="score-s" style="color: #e90000; font-weight: bold;" wx:if="{{pkresult_self['千米跑测试数值'] < pkresult_other['千米跑测试数值']}}">{{pkresult_self['千米跑测试数值']}}分</cover-view>
+        <cover-view class="score-s" style="color: #808080;" wx:else>{{pkresult_self['千米跑测试数值']}}分</cover-view>
+        <cover-view class="item">800/1000米跑</cover-view>
+        <cover-view class="score-o" style="color: #e90000; font-weight: bold;" wx:if="{{pkresult_other['千米跑测试数值'] < pkresult_self['千米跑测试数值']}}">{{pkresult_other['千米跑测试数值']}}分</cover-view>
+        <cover-view class="score-o" style="color: #808080;" wx:else>{{pkresult_other['千米跑测试数值']}}分</cover-view>
+      </cover-view>
+      <cover-view class="line"></cover-view>
+      <cover-view class="body" wx:if="{{college == 'imnu'}}">
+        <cover-view class="score-s" style="color: #e90000; font-weight: bold;" wx:if="{{pkresult_self['立定跳远'] > pkresult_other['立定跳远']}}">{{pkresult_self['立定跳远']/100}}米</cover-view>
+        <cover-view class="score-s" style="color: #808080;" wx:else>{{pkresult_self['立定跳远']/100}}米</cover-view>
+        <cover-view class="item">立定跳远</cover-view>
+        <cover-view class="score-o" style="color: #e90000; font-weight: bold;" wx:if="{{pkresult_other['立定跳远'] > pkresult_self['立定跳远']}}">{{pkresult_other['立定跳远']/100}}米</cover-view>
+        <cover-view class="score-o" style="color: #808080;" wx:else>{{pkresult_other['立定跳远']/100}}米</cover-view>
+      </cover-view>
+      <cover-view class="body" wx:if="{{college == 'imau'}}">
+        <cover-view class="score-s" style="color: #e90000; font-weight: bold;" wx:if="{{pkresult_self['立定跳远测试数值'] > pkresult_other['立定跳远测试数值']}}">{{pkresult_self['立定跳远测试数值']/100}}米</cover-view>
+        <cover-view class="score-s" style="color: #808080;" wx:else>{{pkresult_self['立定跳远测试数值']/100}}米</cover-view>
+        <cover-view class="item">立定跳远</cover-view>
+        <cover-view class="score-o" style="color: #e90000; font-weight: bold;" wx:if="{{pkresult_other['立定跳远测试数值'] > pkresult_self['立定跳远测试数值']}}">{{pkresult_other['立定跳远测试数值']/100}}米</cover-view>
+        <cover-view class="score-o" style="color: #808080;" wx:else>{{pkresult_other['立定跳远测试数值']/100}}米</cover-view>
+      </cover-view>
+      <cover-view class="line"></cover-view>
+      <cover-view class="body" wx:if="{{college == 'imnu'}}">
+        <cover-view class="score-s" style="color: #e90000; font-weight: bold;" wx:if="{{pkresult_self['坐体前屈'] > pkresult_other['坐体前屈']}}">{{pkresult_self['坐体前屈']}}cM</cover-view>
+        <cover-view class="score-s" style="color: #808080;" wx:else>{{pkresult_self['坐体前屈']}}cM</cover-view>
+        <cover-view class="item">坐位体前屈</cover-view>
+        <cover-view class="score-o" style="color: #e90000; font-weight: bold;" wx:if="{{pkresult_other['坐体前屈'] > pkresult_self['坐体前屈']}}">{{pkresult_other['坐体前屈']}}cM</cover-view>
+        <cover-view class="score-o" style="color: #808080;" wx:else>{{pkresult_other['坐体前屈']}}cM</cover-view>
+      </cover-view>
+      <cover-view class="body" wx:if="{{college == 'imau'}}">
+        <cover-view class="score-s" style="color: #e90000; font-weight: bold;" wx:if="{{pkresult_self['坐体前屈测试数值'] > pkresult_other['坐体前屈测试数值']}}">{{pkresult_self['坐体前屈测试数值']}}cM</cover-view>
+        <cover-view class="score-s" style="color: #808080;" wx:else>{{pkresult_self['坐体前屈测试数值']}}cM</cover-view>
+        <cover-view class="item">坐位体前屈</cover-view>
+        <cover-view class="score-o" style="color: #e90000; font-weight: bold;" wx:if="{{pkresult_other['坐体前屈测试数值'] > pkresult_self['坐体前屈测试数值']}}">{{pkresult_other['坐体前屈测试数值']}}cM</cover-view>
+        <cover-view class="score-o" style="color: #808080;" wx:else>{{pkresult_other['坐体前屈测试数值']}}cM</cover-view>
+      </cover-view>
+      <cover-view class="line"></cover-view>
+      <cover-view class="body" wx:if="{{college == 'imnu'}}">
+        <cover-view class="score-s" style="color: #e90000; font-weight: bold;" wx:if="{{pkresult_self['引体向上'] > pkresult_other['引体向上']}}">{{pkresult_self['引体向上']}}个</cover-view>
+        <cover-view class="score-s" style="color: #808080;" wx:else>{{pkresult_self['引体向上']}}个</cover-view>
+        <cover-view class="item">引体向上</cover-view>
+        <cover-view class="score-o" style="color: #e90000; font-weight: bold;" wx:if="{{pkresult_other['引体向上'] > pkresult_self['引体向上']}}">{{pkresult_other['引体向上']}}个</cover-view>
+        <cover-view class="score-o" style="color: #808080;" wx:else>{{pkresult_other['引体向上']}}个</cover-view>
+      </cover-view>
+      <cover-view class="body" wx:if="{{college == 'imau'}}">
+        <cover-view class="score-s" style="color: #e90000; font-weight: bold;" wx:if="{{pkresult_self['引体向上测试数值'] > pkresult_other['引体向上测试数值']}}">{{pkresult_self['引体向上测试数值']}}个</cover-view>
+        <cover-view class="score-s" style="color: #808080;" wx:else>{{pkresult_self['引体向上测试数值']}}个</cover-view>
+        <cover-view class="item">引体向上</cover-view>
+        <cover-view class="score-o" style="color: #e90000; font-weight: bold;" wx:if="{{pkresult_other['引体向上测试数值'] > pkresult_self['引体向上测试数值']}}">{{pkresult_other['引体向上测试数值']}}个</cover-view>
+        <cover-view class="score-o" style="color: #808080;" wx:else>{{pkresult_other['引体向上测试数值']}}个</cover-view>
+      </cover-view>
+      <cover-view class="line"></cover-view>
+      <cover-view class="body" wx:if="{{college == 'imnu'}}">
+        <cover-view class="score-s" style="color: #e90000; font-weight: bold;" wx:if="{{pkresult_self['仰卧起坐'] > pkresult_other['仰卧起坐']}}">{{pkresult_self['仰卧起坐']}}个</cover-view>
+        <cover-view class="score-s" style="color: #808080;" wx:else>{{pkresult_self['仰卧起坐']}}个</cover-view>
+        <cover-view class="item">仰卧起坐</cover-view>
+        <cover-view class="score-o" style="color: #e90000; font-weight: bold;" wx:if="{{pkresult_other['仰卧起坐'] > pkresult_self['仰卧起坐']}}">{{pkresult_other['仰卧起坐']}}个</cover-view>
+        <cover-view class="score-o" style="color: #808080;" wx:else>{{pkresult_other['仰卧起坐']}}个</cover-view>
+      </cover-view>
+      <cover-view class="body" wx:if="{{college == 'imau'}}">
+        <cover-view class="score-s" style="color: #e90000; font-weight: bold;" wx:if="{{pkresult_self['仰卧起坐测试数值'] > pkresult_other['仰卧起坐测试数值']}}">{{pkresult_self['仰卧起坐测试数值']}}个</cover-view>
+        <cover-view class="score-s" style="color: #808080;" wx:else>{{pkresult_self['仰卧起坐测试数值']}}个</cover-view>
+        <cover-view class="item">仰卧起坐</cover-view>
+        <cover-view class="score-o" style="color: #e90000; font-weight: bold;" wx:if="{{pkresult_other['仰卧起坐测试数值'] > pkresult_self['仰卧起坐测试数值']}}">{{pkresult_other['仰卧起坐测试数值']}}个</cover-view>
+        <cover-view class="score-o" style="color: #808080;" wx:else>{{pkresult_other['仰卧起坐测试数值']}}个</cover-view>
+      </cover-view>
+      <cover-view class="line"></cover-view>
+      <cover-view class="body" wx:if="{{college == 'imnu'}}">
+        <cover-view class="score-s" style="color: #e90000; font-weight: bold;" wx:if="{{pkresult_self['肺活量'] > pkresult_other['肺活量']}}">{{pkresult_self['肺活量']}}mL</cover-view>
+        <cover-view class="score-s" style="color: #808080;" wx:else>{{pkresult_self['肺活量']}}mL</cover-view>
+        <cover-view class="item">肺活量</cover-view>
+        <cover-view class="score-o" style="color: #e90000; font-weight: bold;" wx:if="{{pkresult_other['肺活量'] > pkresult_self['肺活量']}}">{{pkresult_other['肺活量']}}mL</cover-view>
+        <cover-view class="score-o" style="color: #808080;" wx:else>{{pkresult_other['肺活量']}}mL</cover-view>
+      </cover-view>
+      <cover-view class="body" wx:if="{{college == 'imau'}}">
+        <cover-view class="score-s" style="color: #e90000; font-weight: bold;" wx:if="{{pkresult_self['肺活量测试数值'] > pkresult_other['肺活量测试数值']}}">{{pkresult_self['肺活量测试数值']}}mL</cover-view>
+        <cover-view class="score-s" style="color: #808080;" wx:else>{{pkresult_self['肺活量测试数值']}}mL</cover-view>
+        <cover-view class="item">肺活量</cover-view>
+        <cover-view class="score-o" style="color: #e90000; font-weight: bold;" wx:if="{{pkresult_other['肺活量测试数值'] > pkresult_self['肺活量测试数值']}}">{{pkresult_other['肺活量测试数值']}}mL</cover-view>
+        <cover-view class="score-o" style="color: #808080;" wx:else>{{pkresult_other['肺活量测试数值']}}mL</cover-view>
+      </cover-view>
+      <cover-view class="line"></cover-view>
+      <cover-view class="body">
+        <cover-view class="score-s" style="color: #e90000; font-weight: bold;" wx:if="{{pkresult_self['总分'] > pkresult_other['总分']}}">{{pkresult_self['总分']}}</cover-view>
+        <cover-view class="score-s" style="color: #808080;" wx:else>{{pkresult_self['总分']}}</cover-view>
+        <cover-view class="item">总分</cover-view>
+        <cover-view class="score-o" style="color: #e90000; font-weight: bold;" wx:if="{{pkresult_other['总分'] > pkresult_self['总分']}}">{{pkresult_other['总分']}}</cover-view>
+        <cover-view class="score-o" style="color: #808080;" wx:else>{{pkresult_other['总分']}}</cover-view>
+      </cover-view>
+      <cover-view class="line"></cover-view>
+    </cover-view>
+  </cover-view>
+
+  <!-- 首页底部版权信息 -->
+  <view class="copyright">
+    <text>Copyright © 2018-2019 Enjoyfun Studio. All Rights Reserved</text>
+  </view>
+</view>

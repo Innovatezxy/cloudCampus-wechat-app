@@ -1,0 +1,55 @@
+<navbar page-name="后台数据"></navbar>
+<view class="page" style='margin-top: {{navH + 46}}px'>
+  <view class="list">
+    <picker class="picker" bindchange="codePicker" value="{{codeIndex}}" range="{{codepick}}">{{codepick[codeIndex]}}
+    </picker>
+    <input class="search" type="text" placeholder="搜索（日期/学号/姓名）" adjust-position="false" bindinput="search_input" bindconfirm="search" confirm-type="search" />
+    <view class="line"></view>
+    <view class="main">
+      <view class="title_1">日期</view>
+      <view class="title_2">时间</view>
+      <view class="title_3">姓名</view>
+      <view class="title_4">学院</view>
+    </view>
+    <view class="line"></view>
+    <scroll-view scroll-y="true" class="sub" style="height: calc(100vh - {{navH + 165}}px);" enable-back-to-top="true">
+      <block wx:for="{{results}}" wx:key="visit">
+        <view class="body" bindtap="info" data-date="{{item.date}}" data-time="{{item.time}}" data-name="{{item.name}}" data-sex="{{item.sex}}" data-number="{{item.number}}" data-class="{{item.class}}" data-birth="{{item.birth}}">
+          <view class="content_1">
+            <text>{{item.date}}</text>
+          </view>
+          <view class="content_2">
+            <text>{{item.time}}</text>
+          </view>
+          <view class="content_3">
+            <text>{{item.name}}</text>
+          </view>
+          <view class="content_4">
+            <text>{{item.class}}</text>
+          </view>
+        </view>
+        <view class="line"></view>
+      </block>
+    </scroll-view>
+    <view class="change_page">
+      <view class="btn" bindtap="lastpage">上一页</view>
+      <view class="page_index">{{(page/500)+1}}</view>
+      <view class="btn" bindtap="nextpage">下一页</view>
+    </view>
+  </view>
+  <view class="info" bindtap="hideview" hidden="{{display}}" catchtouchmove="ture">
+    <view class="info-items">
+      <view class="title">基本信息</view>
+      <text>访问时间：{{data.date}} {{data.time}}</text>
+      <view class="info-line"></view>
+      <text>姓名性别：{{data.name}} {{data.sex}}</text>
+      <view class="info-line"></view>
+      <text>学生学号：{{data.number}}</text>
+      <view class="info-line"></view>
+      <text>出生日期：{{data.birth}}</text>
+      <view class="info-line"></view>
+      <text>学院班级：{{data.class}}</text>
+      <view class="info-line"></view>      
+    </view>
+  </view>
+</view>

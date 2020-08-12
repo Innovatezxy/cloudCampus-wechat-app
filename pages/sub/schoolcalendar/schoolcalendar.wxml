@@ -1,0 +1,28 @@
+<navbar page-name="校历"></navbar>
+<view class="page"  style='margin-top: {{navH + 46}}px' wx:if="{{college == 'imnu'}}">
+  <image class="image" src="https://www.enjfun.com/img/weimnu/new_calendar.jpg" mode="widthFix"></image>
+  <view class="bottom">
+    <button class="sharebtn" open-type="share">
+      <image class="share" src="/images/share.png"></image>
+    </button>
+  </view>
+</view>
+
+<view class="page" style='margin-top: {{navH + 46}}px' wx:if="{{college == 'imufe'}}">
+  <image class="image" src="https://www.enjfun.com/img/weimufe/calendar_1.jpg" mode="widthFix"></image>
+  <image class="image" src="https://www.enjfun.com/img/weimufe/calendar_2.jpg" mode="widthFix"></image>
+  <view class="bottom">
+    <button class="sharebtn" open-type="share">
+      <image class="share" src="/images/share.png"></image>
+    </button>
+  </view>
+</view>
+
+<view class="page" style='margin-top: {{navH + 46}}px' wx:if="{{college == 'imau'}}">
+  <image class="image" src="https://www.enjfun.com/img/weimau/calendar.jpg" mode="widthFix"></image>
+  <view class="bottom">
+    <button class="sharebtn" open-type="share">
+      <image class="share" src="/images/share.png"></image>
+    </button>
+  </view>
+</view>

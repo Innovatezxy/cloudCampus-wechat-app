@@ -1,0 +1,10 @@
+<navbar page-name="登录"></navbar>
+<view class="login" style='height: calc(100vh - {{navH + 46}}px);'>
+  <image class="logo" src="/images/logo_432.png"></image>
+  <text class="logo-text-a">登录云校</text>
+  <text class="logo-text-b">人手一份的校园小程序</text>
+  <input class="infoinput" type="number" maxlength="7" placeholder="账号" bindinput="accountInput" />
+  <input class="infoinput" password type="text" placeholder="密码" bindinput="passwordInput" />
+  <button class="login-button" bindtap="logintouser">登录</button>
+  <text class="copyright">Copyright © 2018-2020 Enjoyfun Studio. All Rights Reserved</text>
+</view>

@@ -1,0 +1,449 @@
+Page{
+  width: 101%;
+  background: #fff;
+}
+.page{
+  display: flex;
+  flex-direction: column;
+}
+.main{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+.order{
+  width: 7%;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-content: center;
+}
+.scroll{
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.top{
+  height: 5vh;
+}
+.num{
+  width: 100%;
+  height: 8.4vh;
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: space-around;
+  font-size: 30rpx;
+  color: #000;
+}
+.week{
+  height: 4vh;
+  font-size: 30rpx;
+  padding-top: 5rpx;
+}
+.sub{
+  width: 19%;
+  display: inline-flex;
+  flex-direction: row;
+}
+.body{
+  width: 100%;
+  display: inline-flex;
+  flex-direction: column;
+}
+.course{
+  width: 100%;
+  background:#fff;
+  display: inline-flex;
+  flex-direction: column;
+  margin: 5rpx 0;
+}
+.item{
+  width: 100%;
+  display: inline-flex;
+  flex-direction: column;
+  padding: 15rpx 0;
+  border-radius: 20rpx;
+}
+.r-line{
+  width: 100%;
+  height: 3rpx;
+  background: #fff;
+}
+.c-line-a{
+  width: 3rpx;
+  background: #d4d4d4;
+}
+.c-line{
+  width: 4rpx;
+  background: #fff;
+}
+.monday{
+  width: 100%;
+  display: inline-flex;
+  flex-direction: column;
+  text-align: center;
+}
+.tuesday{
+  width: 100%;
+  display: inline-flex;
+  flex-direction: column;
+  text-align: center;
+}
+.wednesday{
+  width: 100%;
+  display: inline-flex;
+  flex-direction: column;
+  text-align: center;
+}
+.thursday{
+  width: 100%;
+  display: inline-flex;
+  flex-direction: column;
+  text-align: center;
+}
+.friday{
+  width: 100%;
+  display: inline-flex;
+  flex-direction: column;
+  text-align: center;
+}
+.saturday{
+  width: 100%;
+  display: inline-flex;
+  flex-direction: column;
+  text-align: center;
+}
+.sunday{
+  width: 100%;
+  display: inline-flex;
+  flex-direction: column;
+  text-align: center;
+}
+.item text{
+  margin: auto 5rpx;
+  color: #fff;
+}
+.title{
+  display: inline-block;
+  font-size: 24rpx;
+  white-space: pre-wrap;
+  font-weight: bold;
+}
+.teacher{
+  display: inline-block;
+  font-size: 18rpx;
+  white-space: pre-wrap;
+}
+.room{
+  display: inline-block;
+  font-size: 24rpx;
+  white-space: pre-wrap;
+  margin: 10rpx 0;
+  font-weight: bold;
+}
+.datetime{
+  display: inline-block;
+  font-size: 18rpx;
+  white-space: pre-wrap;
+}
+.addicon{
+  width: 60rpx;
+  height: 60rpx;
+  position: absolute;
+  right: 30rpx;
+  bottom: 455rpx;
+}
+.delicon{
+  width: 60rpx;
+  height: 60rpx;
+  position: absolute;
+  right: 30rpx;
+  bottom: 370rpx;
+}
+.coloricon{
+  width: 60rpx;
+  height: 60rpx;
+  position: absolute;
+  right: 30rpx;
+  bottom: 285rpx;
+}
+.friendicon{
+  width: 60rpx;
+  height: 60rpx;
+  position: absolute;
+  right: 30rpx;
+  bottom: 200rpx;
+}
+.share{
+  width: 60rpx;
+  height: 60rpx;
+  margin: 20rpx auto;
+}
+.sharebtn{
+  background: none;
+  border: none;
+  border-radius: 100%;
+  position: absolute;
+  right: 4rpx;
+  bottom: 65rpx;
+}
+.sharebtn::after{
+  border: none;
+}
+.search{
+  width: 60rpx;
+  height: 60rpx;
+  position: absolute;
+  right: 30rpx;
+  bottom: 30rpx;
+}
+/*遮罩弹窗*/
+.info{
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.495);
+  position: absolute;
+  display: flex;
+}
+.info-items{
+  width: 100%;
+  height: 450rpx;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  bottom: 0;
+  border-top-right-radius: 30rpx;
+  border-top-left-radius: 30rpx;
+}
+.name-top{
+  font-size: 37rpx;
+  margin: 20rpx auto;
+  color: #fff;
+}
+.name-body{
+  margin: 0 auto;
+}
+.name-body text{
+  color: #fff;
+  font-size: 32rpx;
+  margin: 5rpx 0;
+}
+.info-line{
+  width: 93vw;
+  padding: 2rpx 0;
+  margin: 0 auto;
+  background: #fff;
+}
+/*添加课程*/
+.addclass{
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.495);
+  position: absolute;
+  display: flex;
+}
+.add-items{
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  bottom: 0;
+  border-top-right-radius: 30rpx;
+  border-top-left-radius: 30rpx;
+}
+.name-top{
+  font-size: 37rpx;
+  margin: 20rpx auto;
+  color: #fff;
+  font-weight: bold;
+}
+.add-body{
+  margin: 0 auto;
+}
+.addclass input{
+  background: #fff;
+  width: 650rpx;
+  line-height: 60rpx;
+  font-size: 30rpx;
+  text-align: center;
+  margin: 15rpx 0;
+  padding: 17rpx 0;
+  border-radius: 20rpx;
+}
+.picker{
+  background: #fff;
+  width: 650rpx;
+  line-height: 60rpx;
+  color: #707070;
+  font-size: 30rpx;
+  text-align: center;
+  margin: 15rpx 0;
+  padding: 10rpx 0;
+  border-radius: 20rpx;
+}
+.addtip{
+  color: #fff;
+  font-size: 28rpx;
+  margin: 10rpx auto;
+}
+.button{
+  width: 650rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin: 20rpx auto 30rpx;
+  font-size: 35rpx;
+}
+.cancel-button{
+  width: 300rpx;
+  line-height: 60rpx;
+  padding: 15rpx;
+  background-color: #fff;
+}
+.add-button{
+  width: 300rpx;
+  line-height: 60rpx;
+  padding: 15rpx;
+  background-color: #fff;
+}
+/*删除课程*/
+.delclass{
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.495);
+  position: absolute;
+  display: flex;
+}
+.del-items{
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  bottom: 0;
+  border-top-right-radius: 30rpx;
+  border-top-left-radius: 30rpx;
+}
+.del-top{
+  font-size: 37rpx;
+  margin: 20rpx auto;
+  color: #fff;
+  font-weight: bold;
+}
+.del-body{
+  display: flex;
+  flex-direction: row;
+  width: 95%;
+  margin: 15rpx auto;
+}
+.delname{
+  width: 45%;
+  margin: auto 10rpx;
+  text-align: center;
+  color: #fff;
+  font-size: 32rpx;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.deltime{
+  width: 35%;
+  color: #fff;
+  font-size: 32rpx;
+  margin: auto 10rpx;
+  text-align: center;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.delimg{
+  width: 55rpx;
+  height: 55rpx;
+  margin: auto 15rpx;
+}
+.button{
+  width: 700rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin: 20rpx auto 30rpx;
+}
+.del-button{
+  width: 700rpx;
+  line-height: 60rpx;
+  padding: 15rpx 0;
+  font-size: 35rpx;
+  background-color: #fff;
+}
+.none{
+  font-size: 33rpx;
+  margin: 15rpx auto;
+  color: #fff;
+}
+/* 课表皮肤 */
+.schcolor{
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.495);
+  position: absolute;
+  display: flex;
+}
+.color-main{
+  width: 100%;
+  background: #fff;
+  position: absolute;
+  bottom: 0;
+  border-top-right-radius: 30rpx;
+  border-top-left-radius: 30rpx;
+}
+.color-top{
+  color: #a1a1a1;
+  font-size: 32rpx;
+  font-weight: bold;
+  margin: 15rpx 35rpx;
+}
+.color-line{
+  width: 95%;
+  height: 3rpx;
+  background: #a1a1a1;
+  position: absolute;
+  right: 0;
+}
+.color-list{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.color-items{
+  display: inline-block;
+  text-align: center;
+  padding: 25rpx 25rpx;
+}
+.color-skin{
+  width: 140rpx;
+  height: 210rpx;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  padding: 20rpx 0;
+  border-radius: 20rpx;
+  box-shadow: 0 0 5rpx 5rpx rgba(150, 150, 150, 0.233)
+}
+.color-title{
+  color: #707070;
+  font-size: 30rpx;
+  margin: 10rpx auto;
+}
+.color-button{
+  width: 700rpx;
+  line-height: 60rpx;
+  padding: 15rpx 0;
+  font-size: 35rpx;
+  background-color: #2ec28c;
+  color: #fff;
+  margin: 15rpx auto 30rpx;
+}

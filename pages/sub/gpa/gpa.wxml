@@ -1,0 +1,168 @@
+<navbar page-name="绩点"></navbar>
+<view class="page" wx:if="{{college == 'imnu'}}">
+  <view class="top" style='margin-top: {{navH + 46}}px'>
+    <text class="gpa">{{gpa}}</text>
+    <text class="bxxf">已获必修科目学分：{{bxxf}}分</text>
+  </view>
+  <view class="tip">仅计算必修科目学分，如需计算其它科目请自定义添加</view>
+  <view class="main">
+    <view class="title">
+      <text class="class">课程</text>
+      <text class="credit">学分</text>
+      <text class="score">成绩</text>
+    </view>
+    <view class="line"></view>
+    <scroll-view scroll-y class="body">
+      <view class="items" wx:for="{{bxresult}}" wx:key="cj">
+        <view class="item">
+          <text class="class">{{item.KCM || item.kcm}}</text>
+          <text class="credit">{{item.XF || item.xf}}</text>
+          <text class="score">{{item.CJ || item.cj}}</text>
+        </view>
+        <view class="line"></view>
+      </view>
+    </scroll-view>
+  </view>
+  <view class="choose" hidden="{{display}}" bindtap="hideview">
+    <view class="tips">
+      <text>点击+添加对应课程</text>
+    </view>
+    <scroll-view scroll-y class="add-body">
+      <view class="add-items" wx:for="{{fbxresult}}" wx:key="choice">
+        <view class="add-item" bindtap="mgrclass" data-KCM="{{item.KCM}}" data-XF="{{item.XF}}" data-CJ="{{item.CJ}}" data-index="{{index}}">
+          <text class="add-class">{{item.KCM}}</text>
+          <text class="add-credit">{{item.XF}}</text>
+          <text class="add-score">{{item.CJ}}</text>
+          <image class="add-btn" src="/images/add.png"></image>
+        </view>
+        <view class="add-line"></view>
+      </view>
+    </scroll-view>
+  </view>
+  <view class="helpview-a" hidden="{{helpdisplay}}" bindtap="helphide">
+    <image src="https://www.enjfun.com/img/weimnu/gpahelp.jpg"></image>
+  </view>
+  <view class="bottom-a">
+    <button class="helpbtn" bindtap="help" bindtap="helpview">
+      <image class="help" src="/images/gpahelp.png"></image>
+    </button>
+    <button class="delbtn" bindtap="add">
+      <image class="del" src="/images/add.png"></image>
+    </button>
+    <button class="sharebtn" open-type="share">
+      <image class="share" src="/images/share.png"></image>
+    </button>
+  </view>
+</view>
+
+<view class="page" wx:if="{{college == 'imufe'}}">
+  <view class="top" style='margin-top: {{navH + 46}}px'>
+    <text class="gpa">{{gpa}}</text>
+    <text class="bxxf">已获科目总学分：{{bxxf}}分</text>
+  </view>
+  <view class="tip">已计算所有科目学分，如需调整请自定义删除对应科目</view>
+  <view class="main">
+    <view class="title">
+      <text class="class">课程</text>
+      <text class="credit">学分</text>
+      <text class="score">成绩</text>
+    </view>
+    <view class="line"></view>
+    <scroll-view scroll-y class="body">
+      <view class="items" wx:for="{{bxresult}}" wx:key="cj">
+        <view class="item">
+          <text class="class">{{item.KCM || item.kcm}}</text>
+          <text class="credit">{{item.XF || item.xf}}</text>
+          <text class="score">{{item.CJ || item.cj}}</text>
+        </view>
+        <view class="line"></view>
+      </view>
+    </scroll-view>
+  </view>
+  <view class="choose" hidden="{{display}}" bindtap="hideview">
+    <view class="tips">
+      <text>点击-删除对应课程</text>
+    </view>
+    <scroll-view scroll-y class="add-body">
+      <view class="add-items" wx:for="{{fbxresult}}" wx:key="choice">
+        <view class="add-item" bindtap="mgrclass" data-KCM="{{item.KCM}}" data-XF="{{item.XF}}" data-CJ="{{item.CJ}}" data-index="{{index}}">
+          <text class="add-class">{{item.KCM}}</text>
+          <text class="add-credit">{{item.XF}}</text>
+          <text class="add-score">{{item.CJ}}</text>
+          <image class="add-btn" src="/images/delete.png"></image>
+        </view>
+        <view class="add-line"></view>
+      </view>
+    </scroll-view>
+  </view>
+  <view class="helpview-b" hidden="{{helpdisplay}}" bindtap="helphide">
+    <image src="https://www.enjfun.com/img/weimufe/gpahelp.jpg"></image>
+  </view>
+  <view class="bottom-a">
+    <button class="helpbtn" bindtap="help" bindtap="helpview">
+      <image class="help" src="/images/gpahelp.png"></image>
+    </button>
+    <button class="delbtn" bindtap="delete">
+      <image class="del" src="/images/delete.png"></image>
+    </button>
+    <button class="sharebtn" open-type="share">
+      <image class="share" src="/images/share.png"></image>
+    </button>
+  </view>
+</view>
+
+<view class="page" wx:if="{{college == 'imau'}}">
+  <view class="top" style='margin-top: {{navH + 46}}px'>
+    <text class="gpa">{{gpa}}</text>
+    <text class="bxxf">已获科目总学分：{{bxxf}}分</text>
+  </view>
+  <view class="tip">已计算所有科目学分，如需调整请自定义删除对应科目</view>
+  <view class="main">
+    <view class="title">
+      <text class="class">课程</text>
+      <text class="credit">学分</text>
+      <text class="score">成绩</text>
+    </view>
+    <view class="line"></view>
+    <scroll-view scroll-y class="body">
+      <view class="items" wx:for="{{bxresult}}" wx:key="cj">
+        <view class="item">
+          <text class="class">{{item.KCM || item.kcm}}</text>
+          <text class="credit">{{item.XF || item.xf}}</text>
+          <text class="score">{{item.CJ || item.cj}}</text>
+        </view>
+        <view class="line"></view>
+      </view>
+    </scroll-view>
+  </view>
+  <view class="choose" hidden="{{display}}" bindtap="hideview">
+    <view class="tips">
+      <text>点击-删除对应课程</text>
+    </view>
+    <scroll-view scroll-y class="add-body">
+      <view class="add-items" wx:for="{{fbxresult}}" wx:key="choice">
+        <view class="add-item" bindtap="mgrclass" data-KCM="{{item.KCM}}" data-XF="{{item.XF}}" data-CJ="{{item.CJ}}" data-index="{{index}}">
+          <text class="add-class">{{item.KCM}}</text>
+          <text class="add-credit">{{item.XF}}</text>
+          <text class="add-score">{{item.CJ}}</text>
+          <image class="add-btn" src="/images/delete.png"></image>
+        </view>
+        <view class="add-line"></view>
+      </view>
+    </scroll-view>
+  </view>
+  <view class="helpview-c" hidden="{{helpdisplay}}" bindtap="helphide">
+    <image src="https://www.enjfun.com/img/weimau/gpahelp.jpg"></image>
+  </view>
+  <view class="bottom-a">
+    <button class="helpbtn" bindtap="help" bindtap="helpview">
+      <image class="help" src="/images/gpahelp.png"></image>
+    </button>
+    <button class="delbtn" bindtap="delete">
+      <image class="del" src="/images/delete.png"></image>
+    </button>
+    <button class="sharebtn" open-type="share">
+      <image class="share" src="/images/share.png"></image>
+    </button>
+  </view>
+</view>

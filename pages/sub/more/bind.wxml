@@ -1,0 +1,74 @@
+<navbar page-name="个人信息"></navbar>
+<view class="Page" wx:if="{{college == '' || college == 'imnu' || college == 'imau'}}">
+  <view class="info" style='margin-top: {{navH + 46}}px'>
+    <view class="useravater">
+      <open-data class="avatar" type="userAvatarUrl" mode="cover"></open-data>
+    </view>
+    <view class="list">
+      <view class="line"></view>
+      <view class="items">
+        <text class="name">姓名</text>
+        <text class="value">{{name}}</text>
+      </view>
+      <view class="line"></view>
+      <view class="items">
+        <text class="name">学号</text>
+        <text class="value">{{number}}</text>
+      </view>
+      <view class="line"></view>
+      <view class="items">
+        <text class="name">班级</text>
+        <text class="value">{{subclass}}</text>
+      </view>
+      <view class="line"></view>
+      <view class="items">
+        <text class="name">专业</text>
+        <text class="value">{{pro}}</text>
+      </view>
+      <view class="line"></view>
+      <view class="items">
+        <text class="name">学院</text>
+        <text class="value">{{class}}</text>
+      </view>
+      <view class="line"></view>
+      <view class="items">
+        <text class="name">学校</text>
+        <text class="value">{{location}}</text>
+      </view>
+      <view class="line"></view>
+    </view>
+    <button class="bind-button" bindtap="tologin">{{status}}</button>
+  </view>
+</view>
+
+<view class="Page" wx:if="{{college == 'imufe'}}">
+  <view class="info" style='margin-top: {{navH + 46}}px'>
+    <view class="useravater">
+      <open-data class="avatar" type="userAvatarUrl" mode="cover"></open-data>
+    </view>
+    <view class="list">
+      <view class="line"></view>
+      <view class="items">
+        <text class="name">姓名</text>
+        <text class="value">{{name}}</text>
+      </view>
+      <view class="line"></view>
+      <view class="items">
+        <text class="name">学号</text>
+        <text class="value">{{number}}</text>
+      </view>
+      <view class="line"></view>
+      <view class="items">
+        <text class="name">班级</text>
+        <text class="value">{{class}}</text>
+      </view>
+      <view class="line"></view>
+      <view class="items">
+        <text class="name">学校</text>
+        <text class="value">{{location}}</text>
+      </view>
+      <view class="line"></view>
+    </view>
+    <button class="bind-button" bindtap="tologin">{{status}}</button>
+  </view>
+</view>

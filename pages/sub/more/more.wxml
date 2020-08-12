@@ -1,0 +1,55 @@
+<view class='navbar-bg' style='height: {{navH + 46}}px'></view>
+<view class='navbar-title' style='top: {{navH}}px'>i云校</view>
+<navigator class="top" style='margin-top: {{navH + 46}}px' url='../more/bind'>
+  <open-data class="avatar" type="userAvatarUrl" mode="cover"></open-data>
+  <view class="top-items">
+    <text class="name">{{name}}</text>
+    <view class="header">
+      <text class="id">{{id}}</text>
+      <text class="status">{{status}}</text>
+    </view>
+  </view>
+  <image class="img-b" src="/images/arrow.png"></image>
+</navigator>
+<view class="between-line"></view>
+<view class="list">
+  <navigator class="items" url='../more/setting'>
+    <image class="img-a" src="/images/setting.png"></image>
+    <text class="text">显示设置</text>
+    <image class="img-b" src="/images/arrow.png"></image>
+  </navigator>
+  <view class="line"></view>
+  <navigator class="items" url='../more/skin'>
+    <image class="img-a" src="/images/skin_setting.png"></image>
+    <text class="text">皮肤设置</text>
+    <image class="img-b" src="/images/arrow.png"></image>
+  </navigator>
+  <view class="line"></view>
+  <view class="items" bindtap="clear">
+    <image class="img-a" src="/images/clear_cache.png"></image>
+    <text class="text">清除缓存</text>
+    <image class="img-b" src="/images/arrow.png"></image>
+  </view>
+  <view class="line"></view>
+  <navigator class="items" url="../article/article?money=true">
+    <image class="img-a" src="/images/money.png"></image>
+    <text class="text">打个赏吧</text>
+    <image class="img-b" src="/images/arrow.png"></image>
+  </navigator>
+  <view class="line"></view>
+  <navigator class="items" url="../more/other">
+    <image class="img-a" src="/images/about.png"></image>
+    <text class="text">关于i云校</text>
+    <image class="img-b" src="/images/arrow.png"></image>
+  </navigator>
+  <view class="edge-line"></view>
+</view>
+<view class="contact">
+  <button open-type="contact">客服</button>
+</view>
+<view class="version">
+  <text>Version 1.3.0</text>
+</view>
+<view class="copyright-a">
+  <text>Copyright © 2018-2020 Enjoyfun Studio. All Rights Reserved</text>
+</view>

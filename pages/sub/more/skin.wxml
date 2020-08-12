@@ -1,0 +1,114 @@
+<navbar page-name="皮肤中心"></navbar>
+<view class="page" style='margin-top: {{navH + 60}}px'>
+  <view class="main">
+    <view class="top">
+      <text class="top-title">平铺</text>
+      <text class="tip">(右滑获取更多>>)</text>
+    </view>
+    <view class="line"></view>
+    <scroll-view scroll-x class="list">
+      <view class="items" wx:for="{{pingpu}}" wx:key="color">
+        <view class="skin" style="{{item.skintmp}}" bindtap="skinset" data-skin="{{item.skin}}"></view>
+        <text class="title">{{item.name}}</text>
+      </view>
+    </scroll-view>
+  </view>
+  <view class="main">
+    <view class="top">
+      <text class="top-title">星空</text>
+      <text class="tip">(右滑获取更多>>)</text>
+    </view>
+    <view class="line"></view>
+    <scroll-view scroll-x class="list">
+      <view class="items" wx:for="{{xingkong}}" wx:key="color">
+        <view class="skin" style="{{item.skintmp}}" bindtap="skinset" data-skin="{{item.skin}}"></view>
+        <text class="title">{{item.name}}</text>
+      </view>
+    </scroll-view>
+  </view>
+  <view class="main">
+    <view class="top">
+      <text class="top-title">海洋</text>
+      <text class="tip">(右滑获取更多>>)</text>
+    </view>
+    <view class="line"></view>
+    <scroll-view scroll-x class="list">
+      <view class="items" wx:for="{{sea}}" wx:key="color">
+        <view class="skin" style="{{item.skintmp}}" bindtap="skinset" data-skin="{{item.skin}}"></view>
+        <text class="title">{{item.name}}</text>
+      </view>
+    </scroll-view>
+  </view>
+  <view class="main">
+    <view class="top">
+      <text class="top-title">天空</text>
+      <text class="tip">(右滑获取更多>>)</text>
+    </view>
+    <view class="line"></view>
+    <scroll-view scroll-x class="list">
+      <view class="items" wx:for="{{sky}}" wx:key="color">
+        <view class="skin" style="{{item.skintmp}}" bindtap="skinset" data-skin="{{item.skin}}"></view>
+        <text class="title">{{item.name}}</text>
+      </view>
+    </scroll-view>
+  </view>
+  <view class="main">
+    <view class="top">
+      <text class="top-title">建筑</text>
+      <text class="tip">(右滑获取更多>>)</text>
+    </view>
+    <view class="line"></view>
+    <scroll-view scroll-x class="list">
+      <view class="items" wx:for="{{jianzhu}}" wx:key="color">
+        <view class="skin" style="{{item.skintmp}}" bindtap="skinset" data-skin="{{item.skin}}"></view>
+        <text class="title">{{item.name}}</text>
+      </view>
+    </scroll-view>
+  </view>
+  <view class="main">
+    <view class="top">
+      <text class="top-title">卡通/动漫</text>
+      <text class="tip">(右滑获取更多>>)</text>
+    </view>
+    <view class="line"></view>
+    <scroll-view scroll-x class="list">
+      <view class="items" wx:for="{{dongman}}" wx:key="color">
+        <view class="skin" style="{{item.skintmp}}" bindtap="skinset" data-skin="{{item.skin}}"></view>
+        <text class="title">{{item.name}}</text>
+      </view>
+    </scroll-view>
+  </view>
+  <view class="main">
+    <view class="top">
+      <text class="top-title">明星</text>
+      <text class="tip">(右滑获取更多>>)</text>
+    </view>
+    <view class="line"></view>
+    <scroll-view scroll-x class="list">
+      <view class="items" wx:for="{{mingxing}}" wx:key="color">
+        <view class="skin" style="{{item.skintmp}}" bindtap="skinset" data-skin="{{item.skin}}"></view>
+        <text class="title">{{item.name}}</text>
+      </view>
+    </scroll-view>
+  </view>
+  <view class="main">
+    <view class="top">
+      <text class="top-title">投稿区</text>
+      <text class="tip">(皮肤投稿征集中)</text>
+    </view>
+    <view class="line"></view>
+    <scroll-view scroll-x class="list">
+      <view class="items" wx:for="{{tougao}}" wx:key="color">
+        <view class="skin" style="{{item.skintmp}}"></view>
+        <text class="title">{{item.name}}</text>
+      </view>
+    </scroll-view>
+  </view>
+  <view class="default" bindtap="default">
+    <text class="defaultskin">恢复默认皮肤</text>
+    <text class="tips">加载未完成的皮肤请耐心等待加载完成</text>
+  </view>
+  <view class="custom-skin">
+    <button bindtap="custom">DIY皮肤</button>
+  </view>
+</view>

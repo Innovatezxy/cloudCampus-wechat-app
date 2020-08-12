@@ -1,0 +1,51 @@
+<!-- 导航栏 -->
+<view class='navbar-bg' style='height: {{navH + 46}}px'></view>
+<view class='navbar-title' style='top: {{navH}}px'>考试安排</view>
+<view class="navbar" style='top: {{navH + 4}}px'>
+  <image class="back" src="/images/barback.png" style="margin: auto 20rpx;" bindtap="navBack"></image>
+  <button class="sharebtn" style="position: fixed; top:{{navH + 4}}px; left: 60rpx;" open-type="share">
+    <image class="share" src="/images/share_black.png"></image>
+  </button>
+</view>
+
+<view class="page" style='margin-top: {{navH + 46}}px'>
+  <view class="top">
+    <view class="info">{{name}}</view>
+    <view class="info">{{id}}</view>
+  </view>
+  <view class="list" wx:for="{{res}}" wx:key="item">
+    <view class="item">
+      <view class="title">学期:</view>
+      <view class="value">{{item.XQM}}</view>
+    </view>
+    <view class="line"></view>
+    <view class="item">
+      <view class="title">学年:</view>
+      <view class="value">{{item.XN}}</view>
+    </view>
+    <view class="line"></view>
+    <view class="item">
+      <view class="title">考试课程:</view>
+      <view class="value">{{item.KSKCMC}}</view>
+    </view>
+    <view class="line"></view>
+    <view class="item">
+      <view class="title">考试地点:</view>
+      <view class="value">{{item.KSJSH}}</view>
+    </view>
+    <view class="line"></view>
+    <view class="item">
+      <view class="title">考试日期:</view>
+      <view class="value">{{item.KSRQ}}</view>
+    </view>
+    <view class="line"></view>
+    <view class="item">
+      <view class="title">考试时间:</view>
+      <view class="value">{{item.KSSJ}}</view>
+    </view>
+  </view>
+  <view class="switch" style='background: #238aeb;' wx:if="{{switch == true}}" bindtap="switch_on">仅显示本学期</view>
+  <view class="switch" style='background: #fda533;' wx:if="{{switch == false}}" bindtap="switch_off">显示全部学期</view>
+  <view class="tip">没有啦，真的到底了~</view>
+  <view class="tips">本数据由教务系统提供，若有差异，请以实际情况为准</view>
+</view>

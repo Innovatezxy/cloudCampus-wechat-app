@@ -1,0 +1,1103 @@
+<navbar wx:if="{{college == 'imnu'}}" page-name="{{wkpick[wkIndex]}}"></navbar>
+<navbar page-name="课表" wx:else></navbar>
+<view class="page" wx:if="{{college == 'imnu'}}">
+  <view class="main" style='height: calc(100vh - {{navH + 46}}px); margin-top: {{navH + 46}}px'>
+    <view class="order">
+      <view class="top"></view>
+      <view wx:for="{{order}}" wx:key="order">
+        <view class="num">
+          <view>{{item}}</view>
+        </view>
+      </view>
+    </view>
+    <view class="c-line-a"></view>
+    <scroll-view class="scroll" scroll-x="true">
+      <view class="sub">
+        <view class="monday">
+          <block wx:if="{{todaydate == '星期一'}}">
+            <view class="week" style="color:#ff0000">周一</view>
+          </block>
+          <block wx:else>
+            <view class="week" style="color:#000">周一</view>
+          </block>
+          <view class="r-line"></view>
+          <view class="body">
+            <view class="course" style='height: calc((95.5vh - {{navH + 46}}px)/5.2)'>
+              <block wx:for="{{schedule}}" wx:key="week">
+                <block wx:if="{{item[0].xqj == '星期一' && (item[0].djj_xh == '1,2' || item[0].djj_xh == '1,2,3,4' || item[0].djj_xh == '1,2,3,4,5,6' || item[0].djj_xh == '1,2,3,4,5,6,7,8' || item[0].djj_xh == '1,2,3,4,5,6,7,8,9,10')}}">
+                  <view class="item" style="{{bg}}; height: calc((95.5vh - {{navH+ 46}}px)/5.2)" bindtap="click" data-class="{{item[0].kcm}}" data-order="{{item[0].djj_xh}}" data-teacher="{{item[0].jsxm}}" data-school="{{item[0].xqmc}}" data-room="{{item[1].jxl}}{{item[0].skddmc}}" data-date="{{item[0].rq}}" data-note="{{item[0].beizhu}}">
+                    <text class="title">{{item[0].kcm}}</text>
+                    <text class="room">@{{item[1].jxl}}{{item[0].skddmc}}</text>
+                  </view>
+                </block>
+              </block>
+            </view>
+            <view class="course" style='height: calc((95.5vh - {{navH + 46}}px)/5.2)'>
+              <block wx:for="{{schedule}}" wx:key="week">
+                <block wx:if="{{item[0].xqj == '星期一' && (item[0].djj_xh == '3,4' || item[0].djj_xh == '1,2,3,4' || item[0].djj_xh == '1,2,3,4,5,6' || item[0].djj_xh == '1,2,3,4,5,6,7,8' || item[0].djj_xh == '3,4,5,6,7,8,9,10' || item[0].djj_xh == '1,2,3,4,5,6,7,8,9,10')}}">
+                  <view class="item" style="{{bg}}; height: calc((95.5vh - {{navH+ 46}}px)/5.2)" bindtap="click" data-class="{{item[0].kcm}}" data-order="{{item[0].djj_xh}}" data-teacher="{{item[0].jsxm}}" data-school="{{item[0].xqmc}}" data-room="{{item[1].jxl}}{{item[0].skddmc}}" data-date="{{item[0].rq}}" data-note="{{item[0].beizhu}}">
+                    <text class="title">{{item[0].kcm}}</text>
+                    <text class="room">@{{item[1].jxl}}{{item[0].skddmc}}</text>
+                  </view>
+                </block>
+              </block>
+            </view>
+            <view class="course" style='height: calc((95.5vh - {{navH + 46}}px)/5.2)'>
+              <block wx:for="{{schedule}}" wx:key="week">
+                <block wx:if="{{item[0].xqj == '星期一' && (item[0].djj_xh == '5,6' || item[0].djj_xh == '5,6,7,8' || item[0].djj_xh == '1,2,3,4,5,6' || item[0].djj_xh == '1,2,3,4,5,6,7,8' || item[0].djj_xh == '3,4,5,6,7,8,9,10' || item[0].djj_xh == '1,2,3,4,5,6,7,8,9,10' || item[0].djj_xh == '5,6,7,8,9,10')}}">
+                  <view class="item" style="{{bg}}; height: calc((95.5vh - {{navH+ 46}}px)/5.2)" bindtap="click" data-class="{{item[0].kcm}}" data-order="{{item[0].djj_xh}}" data-teacher="{{item[0].jsxm}}" data-school="{{item[0].xqmc}}" data-room="{{item[1].jxl}}{{item[0].skddmc}}" data-date="{{item[0].rq}}" data-note="{{item[0].beizhu}}">
+                    <text class="title">{{item[0].kcm}}</text>
+                    <text class="room">@{{item[1].jxl}}{{item[0].skddmc}}</text>
+                  </view>
+                </block>
+              </block>
+            </view>
+            <view class="course" style='height: calc((95.5vh - {{navH + 46}}px)/5.2)'>
+              <block wx:for="{{schedule}}" wx:key="week">
+                <block wx:if="{{item[0].xqj == '星期一' && (item[0].djj_xh == '7,8' || item[0].djj_xh == '5,6,7,8' || item[0].djj_xh == '7,8,9,10' || item[0].djj_xh == '1,2,3,4,5,6,7,8' || item[0].djj_xh == '3,4,5,6,7,8,9,10' || item[0].djj_xh == '1,2,3,4,5,6,7,8,9,10' || item[0].djj_xh == '5,6,7,8,9,10')}}">
+                  <view class="item" style="{{bg}}; height: calc((95.5vh - {{navH+ 46}}px)/5.2)" bindtap="click" data-class="{{item[0].kcm}}" data-order="{{item[0].djj_xh}}" data-teacher="{{item[0].jsxm}}" data-school="{{item[0].xqmc}}" data-room="{{item[1].jxl}}{{item[0].skddmc}}" data-date="{{item[0].rq}}" data-note="{{item[0].beizhu}}">
+                    <text class="title">{{item[0].kcm}}</text>
+                    <text class="room">@{{item[1].jxl}}{{item[0].skddmc}}</text>
+                  </view>
+                </block>
+              </block>
+            </view>
+            <view class="course" style='height: calc((95.5vh - {{navH + 46}}px)/5.2)'>
+              <block wx:for="{{schedule}}" wx:key="week">
+                <block wx:if="{{item[0].xqj == '星期一' && (item[0].djj_xh == '9,10' || item[0].djj_xh == '7,8,9,10'|| item[0].djj_xh == '3,4,5,6,7,8,9,10' || item[0].djj_xh == '1,2,3,4,5,6,7,8,9,10' || item[0].djj_xh == '5,6,7,8,9,10')}}">
+                  <view class="item" style="{{bg}}; height: calc((95.5vh - {{navH+ 46}}px)/5.2)" bindtap="click" data-class="{{item[0].kcm}}" data-order="{{item[0].djj_xh}}" data-teacher="{{item[0].jsxm}}" data-school="{{item[0].xqmc}}" data-room="{{item[1].jxl}}{{item[0].skddmc}}" data-date="{{item[0].rq}}" data-note="{{item[0].beizhu}}">
+                    <text class="title">{{item[0].kcm}}</text>
+                    <text class="room">@{{item[1].jxl}}{{item[0].skddmc}}</text>
+                  </view>
+                </block>
+              </block>
+            </view>
+          </view>
+        </view>
+        <view class="c-line"></view>
+      </view>
+      <view class="sub">
+        <view class="tuesday">
+          <block wx:if="{{todaydate == '星期二'}}">
+            <view class="week" style="color:#ff0000">周二</view>
+          </block>
+          <block wx:else>
+            <view class="week" style="color:#000">周二</view>
+          </block>
+          <view class="r-line"></view>
+          <view class="body">
+            <view class="course" style='height: calc((95.5vh - {{navH + 46}}px)/5.2)'>
+              <block wx:for="{{schedule}}" wx:key="week">
+                <block wx:if="{{item[0].xqj == '星期二' && (item[0].djj_xh == '1,2' || item[0].djj_xh == '1,2,3,4' || item[0].djj_xh == '1,2,3,4,5,6' || item[0].djj_xh == '1,2,3,4,5,6,7,8' || item[0].djj_xh == '1,2,3,4,5,6,7,8,9,10')}}">
+                  <view class="item" style="{{bg}}; height: calc((95.5vh - {{navH+ 46}}px)/5.2)" bindtap="click" data-class="{{item[0].kcm}}" data-order="{{item[0].djj_xh}}" data-teacher="{{item[0].jsxm}}" data-school="{{item[0].xqmc}}" data-room="{{item[1].jxl}}{{item[0].skddmc}}" data-date="{{item[0].rq}}" data-note="{{item[0].beizhu}}">
+                    <text class="title">{{item[0].kcm}}</text>
+                    <text class="room">@{{item[1].jxl}}{{item[0].skddmc}}</text>
+                  </view>
+                </block>
+              </block>
+            </view>
+            <view class="course" style='height: calc((95.5vh - {{navH + 46}}px)/5.2)'>
+              <block wx:for="{{schedule}}" wx:key="week">
+                <block wx:if="{{item[0].xqj == '星期二' && (item[0].djj_xh == '3,4' || item[0].djj_xh == '1,2,3,4' || item[0].djj_xh == '1,2,3,4,5,6' || item[0].djj_xh == '1,2,3,4,5,6,7,8' || item[0].djj_xh == '3,4,5,6,7,8,9,10' || item[0].djj_xh == '1,2,3,4,5,6,7,8,9,10')}}">
+                  <view class="item" style="{{bg}}; height: calc((95.5vh - {{navH+ 46}}px)/5.2)" bindtap="click" data-class="{{item[0].kcm}}" data-order="{{item[0].djj_xh}}" data-teacher="{{item[0].jsxm}}" data-school="{{item[0].xqmc}}" data-room="{{item[1].jxl}}{{item[0].skddmc}}" data-date="{{item[0].rq}}" data-note="{{item[0].beizhu}}">
+                    <text class="title">{{item[0].kcm}}</text>
+                    <text class="room">@{{item[1].jxl}}{{item[0].skddmc}}</text>
+                  </view>
+                </block>
+              </block>
+            </view>
+            <view class="course" style='height: calc((95.5vh - {{navH + 46}}px)/5.2)'>
+              <block wx:for="{{schedule}}" wx:key="week">
+                <block wx:if="{{item[0].xqj == '星期二' && (item[0].djj_xh == '5,6' || item[0].djj_xh == '5,6,7,8' || item[0].djj_xh == '1,2,3,4,5,6' || item[0].djj_xh == '1,2,3,4,5,6,7,8' || item[0].djj_xh == '3,4,5,6,7,8,9,10' || item[0].djj_xh == '1,2,3,4,5,6,7,8,9,10' || item[0].djj_xh == '5,6,7,8,9,10')}}">
+                  <view class="item" style="{{bg}}; height: calc((95.5vh - {{navH+ 46}}px)/5.2)" bindtap="click" data-class="{{item[0].kcm}}" data-order="{{item[0].djj_xh}}" data-teacher="{{item[0].jsxm}}" data-school="{{item[0].xqmc}}" data-room="{{item[1].jxl}}{{item[0].skddmc}}" data-date="{{item[0].rq}}" data-note="{{item[0].beizhu}}">
+                    <text class="title">{{item[0].kcm}}</text>
+                    <text class="room">@{{item[1].jxl}}{{item[0].skddmc}}</text>
+                  </view>
+                </block>
+              </block>
+            </view>
+            <view class="course" style='height: calc((95.5vh - {{navH + 46}}px)/5.2)'>
+              <block wx:for="{{schedule}}" wx:key="week">
+                <block wx:if="{{item[0].xqj == '星期二' && (item[0].djj_xh == '7,8' || item[0].djj_xh == '5,6,7,8' || item[0].djj_xh == '7,8,9,10' || item[0].djj_xh == '1,2,3,4,5,6,7,8' || item[0].djj_xh == '3,4,5,6,7,8,9,10' || item[0].djj_xh == '1,2,3,4,5,6,7,8,9,10' || item[0].djj_xh == '5,6,7,8,9,10')}}">
+                  <view class="item" style="{{bg}}; height: calc((95.5vh - {{navH+ 46}}px)/5.2)" bindtap="click" data-class="{{item[0].kcm}}" data-order="{{item[0].djj_xh}}" data-teacher="{{item[0].jsxm}}" data-school="{{item[0].xqmc}}" data-room="{{item[1].jxl}}{{item[0].skddmc}}" data-date="{{item[0].rq}}" data-note="{{item[0].beizhu}}">
+                    <text class="title">{{item[0].kcm}}</text>
+                    <text class="room">@{{item[1].jxl}}{{item[0].skddmc}}</text>
+                  </view>
+                </block>
+              </block>
+            </view>
+            <view class="course" style='height: calc((95.5vh - {{navH + 46}}px)/5.2)'>
+              <block wx:for="{{schedule}}" wx:key="week">
+                <block wx:if="{{item[0].xqj == '星期二' && (item[0].djj_xh == '9,10' || item[0].djj_xh == '7,8,9,10'|| item[0].djj_xh == '3,4,5,6,7,8,9,10' || item[0].djj_xh == '1,2,3,4,5,6,7,8,9,10' || item[0].djj_xh == '5,6,7,8,9,10')}}">
+                  <view class="item" style="{{bg}}; height: calc((95.5vh - {{navH+ 46}}px)/5.2)" bindtap="click" data-class="{{item[0].kcm}}" data-order="{{item[0].djj_xh}}" data-teacher="{{item[0].jsxm}}" data-school="{{item[0].xqmc}}" data-room="{{item[1].jxl}}{{item[0].skddmc}}" data-date="{{item[0].rq}}" data-note="{{item[0].beizhu}}">
+                    <text class="title">{{item[0].kcm}}</text>
+                    <text class="room">@{{item[1].jxl}}{{item[0].skddmc}}</text>
+                  </view>
+                </block>
+              </block>
+            </view>
+          </view>
+        </view>
+        <view class="c-line"></view>
+      </view>
+      <view class="sub">
+        <view class="wednesday">
+          <block wx:if="{{todaydate == '星期三'}}">
+            <view class="week" style="color:#ff0000">周三</view>
+          </block>
+          <block wx:else>
+            <view class="week" style="color:#000">周三</view>
+          </block>
+          <view class="r-line"></view>
+          <view class="body">
+            <view class="course" style='height: calc((95.5vh - {{navH + 46}}px)/5.2)'>
+              <block wx:for="{{schedule}}" wx:key="week">
+                <block wx:if="{{item[0].xqj == '星期三' && (item[0].djj_xh == '1,2' || item[0].djj_xh == '1,2,3,4' || item[0].djj_xh == '1,2,3,4,5,6' || item[0].djj_xh == '1,2,3,4,5,6,7,8' || item[0].djj_xh == '1,2,3,4,5,6,7,8,9,10')}}">
+                  <view class="item" style="{{bg}}; height: calc((95.5vh - {{navH+ 46}}px)/5.2)" bindtap="click" data-class="{{item[0].kcm}}" data-order="{{item[0].djj_xh}}" data-teacher="{{item[0].jsxm}}" data-school="{{item[0].xqmc}}" data-room="{{item[1].jxl}}{{item[0].skddmc}}" data-date="{{item[0].rq}}" data-note="{{item[0].beizhu}}">
+                    <text class="title">{{item[0].kcm}}</text>
+                    <text class="room">@{{item[1].jxl}}{{item[0].skddmc}}</text>
+                  </view>
+                </block>
+              </block>
+            </view>
+            <view class="course" style='height: calc((95.5vh - {{navH + 46}}px)/5.2)'>
+              <block wx:for="{{schedule}}" wx:key="week">
+                <block wx:if="{{item[0].xqj == '星期三' && (item[0].djj_xh == '3,4' || item[0].djj_xh == '1,2,3,4' || item[0].djj_xh == '1,2,3,4,5,6' || item[0].djj_xh == '1,2,3,4,5,6,7,8' || item[0].djj_xh == '3,4,5,6,7,8,9,10' || item[0].djj_xh == '1,2,3,4,5,6,7,8,9,10')}}">
+                  <view class="item" style="{{bg}}; height: calc((95.5vh - {{navH+ 46}}px)/5.2)" bindtap="click" data-class="{{item[0].kcm}}" data-order="{{item[0].djj_xh}}" data-teacher="{{item[0].jsxm}}" data-school="{{item[0].xqmc}}" data-room="{{item[1].jxl}}{{item[0].skddmc}}" data-date="{{item[0].rq}}" data-note="{{item[0].beizhu}}">
+                    <text class="title">{{item[0].kcm}}</text>
+                    <text class="room">@{{item[1].jxl}}{{item[0].skddmc}}</text>
+                  </view>
+                </block>
+              </block>
+            </view>
+            <view class="course" style='height: calc((95.5vh - {{navH + 46}}px)/5.2)'>
+              <block wx:for="{{schedule}}" wx:key="week">
+                <block wx:if="{{item[0].xqj == '星期三' && (item[0].djj_xh == '5,6' || item[0].djj_xh == '5,6,7,8' || item[0].djj_xh == '1,2,3,4,5,6' || item[0].djj_xh == '1,2,3,4,5,6,7,8' || item[0].djj_xh == '3,4,5,6,7,8,9,10' || item[0].djj_xh == '1,2,3,4,5,6,7,8,9,10' || item[0].djj_xh == '5,6,7,8,9,10')}}">
+                  <view class="item" style="{{bg}}; height: calc((95.5vh - {{navH+ 46}}px)/5.2)" bindtap="click" data-class="{{item[0].kcm}}" data-order="{{item[0].djj_xh}}" data-teacher="{{item[0].jsxm}}" data-school="{{item[0].xqmc}}" data-room="{{item[1].jxl}}{{item[0].skddmc}}" data-date="{{item[0].rq}}" data-note="{{item[0].beizhu}}">
+                    <text class="title">{{item[0].kcm}}</text>
+                    <text class="room">@{{item[1].jxl}}{{item[0].skddmc}}</text>
+                  </view>
+                </block>
+              </block>
+            </view>
+            <view class="course" style='height: calc((95.5vh - {{navH + 46}}px)/5.2)'>
+              <block wx:for="{{schedule}}" wx:key="week">
+                <block wx:if="{{item[0].xqj == '星期三' && (item[0].djj_xh == '7,8' || item[0].djj_xh == '5,6,7,8' || item[0].djj_xh == '7,8,9,10' || item[0].djj_xh == '1,2,3,4,5,6,7,8' || item[0].djj_xh == '3,4,5,6,7,8,9,10' || item[0].djj_xh == '1,2,3,4,5,6,7,8,9,10' || item[0].djj_xh == '5,6,7,8,9,10')}}">
+                  <view class="item" style="{{bg}}; height: calc((95.5vh - {{navH+ 46}}px)/5.2)" bindtap="click" data-class="{{item[0].kcm}}" data-order="{{item[0].djj_xh}}" data-teacher="{{item[0].jsxm}}" data-school="{{item[0].xqmc}}" data-room="{{item[1].jxl}}{{item[0].skddmc}}" data-date="{{item[0].rq}}" data-note="{{item[0].beizhu}}">
+                    <text class="title">{{item[0].kcm}}</text>
+                    <text class="room">@{{item[1].jxl}}{{item[0].skddmc}}</text>
+                  </view>
+                </block>
+              </block>
+            </view>
+            <view class="course" style='height: calc((95.5vh - {{navH + 46}}px)/5.2)'>
+              <block wx:for="{{schedule}}" wx:key="week">
+                <block wx:if="{{item[0].xqj == '星期三' && (item[0].djj_xh == '9,10' || item[0].djj_xh == '7,8,9,10'|| item[0].djj_xh == '3,4,5,6,7,8,9,10' || item[0].djj_xh == '1,2,3,4,5,6,7,8,9,10' || item[0].djj_xh == '5,6,7,8,9,10')}}">
+                  <view class="item" style="{{bg}}; height: calc((95.5vh - {{navH+ 46}}px)/5.2)" bindtap="click" data-class="{{item[0].kcm}}" data-order="{{item[0].djj_xh}}" data-teacher="{{item[0].jsxm}}" data-school="{{item[0].xqmc}}" data-room="{{item[1].jxl}}{{item[0].skddmc}}" data-date="{{item[0].rq}}" data-note="{{item[0].beizhu}}">
+                    <text class="title">{{item[0].kcm}}</text>
+                    <text class="room">@{{item[1].jxl}}{{item[0].skddmc}}</text>
+                  </view>
+                </block>
+              </block>
+            </view>
+          </view>
+        </view>
+        <view class="c-line"></view>
+      </view>
+      <view class="sub">
+        <view class="thursday">
+          <block wx:if="{{todaydate == '星期四'}}">
+            <view class="week" style="color:#ff0000">周四</view>
+          </block>
+          <block wx:else>
+            <view class="week" style="color:#000">周四</view>
+          </block>
+          <view class="r-line"></view>
+          <view class="body">
+            <view class="course" style='height: calc((95.5vh - {{navH + 46}}px)/5.2)'>
+              <block wx:for="{{schedule}}" wx:key="week">
+                <block wx:if="{{item[0].xqj == '星期四' && (item[0].djj_xh == '1,2' || item[0].djj_xh == '1,2,3,4' || item[0].djj_xh == '1,2,3,4,5,6' || item[0].djj_xh == '1,2,3,4,5,6,7,8' || item[0].djj_xh == '1,2,3,4,5,6,7,8,9,10')}}">
+                  <view class="item" style="{{bg}}; height: calc((95.5vh - {{navH+ 46}}px)/5.2)" bindtap="click" data-class="{{item[0].kcm}}" data-order="{{item[0].djj_xh}}" data-teacher="{{item[0].jsxm}}" data-school="{{item[0].xqmc}}" data-room="{{item[1].jxl}}{{item[0].skddmc}}" data-date="{{item[0].rq}}" data-note="{{item[0].beizhu}}">
+                    <text class="title">{{item[0].kcm}}</text>
+                    <text class="room">@{{item[1].jxl}}{{item[0].skddmc}}</text>
+                  </view>
+                </block>
+              </block>
+            </view>
+            <view class="course" style='height: calc((95.5vh - {{navH + 46}}px)/5.2)'>
+              <block wx:for="{{schedule}}" wx:key="week">
+                <block wx:if="{{item[0].xqj == '星期四' && (item[0].djj_xh == '3,4' || item[0].djj_xh == '1,2,3,4' || item[0].djj_xh == '1,2,3,4,5,6' || item[0].djj_xh == '1,2,3,4,5,6,7,8' || item[0].djj_xh == '3,4,5,6,7,8,9,10' || item[0].djj_xh == '1,2,3,4,5,6,7,8,9,10')}}">
+                  <view class="item" style="{{bg}}; height: calc((95.5vh - {{navH+ 46}}px)/5.2)" bindtap="click" data-class="{{item[0].kcm}}" data-order="{{item[0].djj_xh}}" data-teacher="{{item[0].jsxm}}" data-school="{{item[0].xqmc}}" data-room="{{item[1].jxl}}{{item[0].skddmc}}" data-date="{{item[0].rq}}" data-note="{{item[0].beizhu}}">
+                    <text class="title">{{item[0].kcm}}</text>
+                    <text class="room">@{{item[1].jxl}}{{item[0].skddmc}}</text>
+                  </view>
+                </block>
+              </block>
+            </view>
+            <view class="course" style='height: calc((95.5vh - {{navH + 46}}px)/5.2)'>
+              <block wx:for="{{schedule}}" wx:key="week">
+                <block wx:if="{{item[0].xqj == '星期四' && (item[0].djj_xh == '5,6' || item[0].djj_xh == '5,6,7,8' || item[0].djj_xh == '1,2,3,4,5,6' || item[0].djj_xh == '1,2,3,4,5,6,7,8' || item[0].djj_xh == '3,4,5,6,7,8,9,10' || item[0].djj_xh == '1,2,3,4,5,6,7,8,9,10' || item[0].djj_xh == '5,6,7,8,9,10')}}">
+                  <view class="item" style="{{bg}}; height: calc((95.5vh - {{navH+ 46}}px)/5.2)" bindtap="click" data-class="{{item[0].kcm}}" data-order="{{item[0].djj_xh}}" data-teacher="{{item[0].jsxm}}" data-school="{{item[0].xqmc}}" data-room="{{item[1].jxl}}{{item[0].skddmc}}" data-date="{{item[0].rq}}" data-note="{{item[0].beizhu}}">
+                    <text class="title">{{item[0].kcm}}</text>
+                    <text class="room">@{{item[1].jxl}}{{item[0].skddmc}}</text>
+                  </view>
+                </block>
+              </block>
+            </view>
+            <view class="course" style='height: calc((95.5vh - {{navH + 46}}px)/5.2)'>
+              <block wx:for="{{schedule}}" wx:key="week">
+                <block wx:if="{{item[0].xqj == '星期四' && (item[0].djj_xh == '7,8' || item[0].djj_xh == '5,6,7,8' || item[0].djj_xh == '7,8,9,10' || item[0].djj_xh == '1,2,3,4,5,6,7,8' || item[0].djj_xh == '3,4,5,6,7,8,9,10' || item[0].djj_xh == '1,2,3,4,5,6,7,8,9,10' || item[0].djj_xh == '5,6,7,8,9,10')}}">
+                  <view class="item" style="{{bg}}; height: calc((95.5vh - {{navH+ 46}}px)/5.2)" bindtap="click" data-class="{{item[0].kcm}}" data-order="{{item[0].djj_xh}}" data-teacher="{{item[0].jsxm}}" data-school="{{item[0].xqmc}}" data-room="{{item[1].jxl}}{{item[0].skddmc}}" data-date="{{item[0].rq}}" data-note="{{item[0].beizhu}}">
+                    <text class="title">{{item[0].kcm}}</text>
+                    <text class="room">@{{item[1].jxl}}{{item[0].skddmc}}</text>
+                  </view>
+                </block>
+              </block>
+            </view>
+            <view class="course" style='height: calc((95.5vh - {{navH + 46}}px)/5.2)'>
+              <block wx:for="{{schedule}}" wx:key="week">
+                <block wx:if="{{item[0].xqj == '星期四' && (item[0].djj_xh == '9,10' || item[0].djj_xh == '7,8,9,10'|| item[0].djj_xh == '3,4,5,6,7,8,9,10' || item[0].djj_xh == '1,2,3,4,5,6,7,8,9,10' || item[0].djj_xh == '5,6,7,8,9,10')}}">
+                  <view class="item" style="{{bg}}; height: calc((95.5vh - {{navH+ 46}}px)/5.2)" bindtap="click" data-class="{{item[0].kcm}}" data-order="{{item[0].djj_xh}}" data-teacher="{{item[0].jsxm}}" data-school="{{item[0].xqmc}}" data-room="{{item[1].jxl}}{{item[0].skddmc}}" data-date="{{item[0].rq}}" data-note="{{item[0].beizhu}}">
+                    <text class="title">{{item[0].kcm}}</text>
+                    <text class="room">@{{item[1].jxl}}{{item[0].skddmc}}</text>
+                  </view>
+                </block>
+              </block>
+            </view>
+          </view>
+        </view>
+        <view class="c-line"></view>
+      </view>
+      <view class="sub">
+        <view class="friday">
+          <block wx:if="{{todaydate == '星期五'}}">
+            <view class="week" style="color:#ff0000">周五</view>
+          </block>
+          <block wx:else>
+            <view class="week" style="color:#000">周五</view>
+          </block>
+          <view class="r-line"></view>
+          <view class="body">
+            <view class="course" style='height: calc((95.5vh - {{navH + 46}}px)/5.2)'>
+              <block wx:for="{{schedule}}" wx:key="week">
+                <block wx:if="{{item[0].xqj == '星期五' && (item[0].djj_xh == '1,2' || item[0].djj_xh == '1,2,3,4' || item[0].djj_xh == '1,2,3,4,5,6' || item[0].djj_xh == '1,2,3,4,5,6,7,8' || item[0].djj_xh == '1,2,3,4,5,6,7,8,9,10')}}">
+                  <view class="item" style="{{bg}}; height: calc((95.5vh - {{navH+ 46}}px)/5.2)" bindtap="click" data-class="{{item[0].kcm}}" data-order="{{item[0].djj_xh}}" data-teacher="{{item[0].jsxm}}" data-school="{{item[0].xqmc}}" data-room="{{item[1].jxl}}{{item[0].skddmc}}" data-date="{{item[0].rq}}" data-note="{{item[0].beizhu}}">
+                    <text class="title">{{item[0].kcm}}</text>
+                    <text class="room">@{{item[1].jxl}}{{item[0].skddmc}}</text>
+                  </view>
+                </block>
+              </block>
+            </view>
+            <view class="course" style='height: calc((95.5vh - {{navH + 46}}px)/5.2)'>
+              <block wx:for="{{schedule}}" wx:key="week">
+                <block wx:if="{{item[0].xqj == '星期五' && (item[0].djj_xh == '3,4' || item[0].djj_xh == '1,2,3,4' || item[0].djj_xh == '1,2,3,4,5,6' || item[0].djj_xh == '1,2,3,4,5,6,7,8' || item[0].djj_xh == '3,4,5,6,7,8,9,10' || item[0].djj_xh == '1,2,3,4,5,6,7,8,9,10')}}">
+                  <view class="item" style="{{bg}}; height: calc((95.5vh - {{navH+ 46}}px)/5.2)" bindtap="click" data-class="{{item[0].kcm}}" data-order="{{item[0].djj_xh}}" data-teacher="{{item[0].jsxm}}" data-school="{{item[0].xqmc}}" data-room="{{item[1].jxl}}{{item[0].skddmc}}" data-date="{{item[0].rq}}" data-note="{{item[0].beizhu}}">
+                    <text class="title">{{item[0].kcm}}</text>
+                    <text class="room">@{{item[1].jxl}}{{item[0].skddmc}}</text>
+                  </view>
+                </block>
+              </block>
+            </view>
+            <view class="course" style='height: calc((95.5vh - {{navH + 46}}px)/5.2)'>
+              <block wx:for="{{schedule}}" wx:key="week">
+                <block wx:if="{{item[0].xqj == '星期五' && (item[0].djj_xh == '5,6' || item[0].djj_xh == '5,6,7,8' || item[0].djj_xh == '1,2,3,4,5,6' || item[0].djj_xh == '1,2,3,4,5,6,7,8' || item[0].djj_xh == '3,4,5,6,7,8,9,10' || item[0].djj_xh == '1,2,3,4,5,6,7,8,9,10' || item[0].djj_xh == '5,6,7,8,9,10')}}">
+                  <view class="item" style="{{bg}}; height: calc((95.5vh - {{navH+ 46}}px)/5.2)" bindtap="click" data-class="{{item[0].kcm}}" data-order="{{item[0].djj_xh}}" data-teacher="{{item[0].jsxm}}" data-school="{{item[0].xqmc}}" data-room="{{item[1].jxl}}{{item[0].skddmc}}" data-date="{{item[0].rq}}" data-note="{{item[0].beizhu}}">
+                    <text class="title">{{item[0].kcm}}</text>
+                    <text class="room">@{{item[1].jxl}}{{item[0].skddmc}}</text>
+                  </view>
+                </block>
+              </block>
+            </view>
+            <view class="course" style='height: calc((95.5vh - {{navH + 46}}px)/5.2)'>
+              <block wx:for="{{schedule}}" wx:key="week">
+                <block wx:if="{{item[0].xqj == '星期五' && (item[0].djj_xh == '7,8' || item[0].djj_xh == '5,6,7,8' || item[0].djj_xh == '7,8,9,10' || item[0].djj_xh == '1,2,3,4,5,6,7,8' || item[0].djj_xh == '3,4,5,6,7,8,9,10' || item[0].djj_xh == '1,2,3,4,5,6,7,8,9,10' || item[0].djj_xh == '5,6,7,8,9,10')}}">
+                  <view class="item" style="{{bg}}; height: calc((95.5vh - {{navH+ 46}}px)/5.2)" bindtap="click" data-class="{{item[0].kcm}}" data-order="{{item[0].djj_xh}}" data-teacher="{{item[0].jsxm}}" data-school="{{item[0].xqmc}}" data-room="{{item[1].jxl}}{{item[0].skddmc}}" data-date="{{item[0].rq}}" data-note="{{item[0].beizhu}}">
+                    <text class="title">{{item[0].kcm}}</text>
+                    <text class="room">@{{item[1].jxl}}{{item[0].skddmc}}</text>
+                  </view>
+                </block>
+              </block>
+            </view>
+            <view class="course" style='height: calc((95.5vh - {{navH + 46}}px)/5.2)'>
+              <block wx:for="{{schedule}}" wx:key="week">
+                <block wx:if="{{item[0].xqj == '星期五' && (item[0].djj_xh == '9,10' || item[0].djj_xh == '7,8,9,10'|| item[0].djj_xh == '3,4,5,6,7,8,9,10' || item[0].djj_xh == '1,2,3,4,5,6,7,8,9,10' || item[0].djj_xh == '5,6,7,8,9,10')}}">
+                  <view class="item" style="{{bg}}; height: calc((95.5vh - {{navH+ 46}}px)/5.2)" bindtap="click" data-class="{{item[0].kcm}}" data-order="{{item[0].djj_xh}}" data-teacher="{{item[0].jsxm}}" data-school="{{item[0].xqmc}}" data-room="{{item[1].jxl}}{{item[0].skddmc}}" data-date="{{item[0].rq}}" data-note="{{item[0].beizhu}}">
+                    <text class="title">{{item[0].kcm}}</text>
+                    <text class="room">@{{item[1].jxl}}{{item[0].skddmc}}</text>
+                  </view>
+                </block>
+              </block>
+            </view>
+          </view>
+        </view>
+        <view class="c-line"></view>
+      </view>
+      <view class="sub">
+        <view class="saturday">
+          <block wx:if="{{todaydate == '星期六'}}">
+            <view class="week" style="color:#ff0000">周六</view>
+          </block>
+          <block wx:else>
+            <view class="week" style="color:#000">周六</view>
+          </block>
+          <view class="r-line"></view>
+          <view class="body">
+            <view class="course" style='height: calc((95.5vh - {{navH + 46}}px)/5.2)'>
+              <block wx:for="{{schedule}}" wx:key="week">
+                <block wx:if="{{item[0].xqj == '星期六' && (item[0].djj_xh == '1,2' || item[0].djj_xh == '1,2,3,4' || item[0].djj_xh == '1,2,3,4,5,6' || item[0].djj_xh == '1,2,3,4,5,6,7,8' || item[0].djj_xh == '1,2,3,4,5,6,7,8,9,10')}}">
+                  <view class="item" style="{{bg}}; height: calc((95.5vh - {{navH+ 46}}px)/5.2)" bindtap="click" data-class="{{item[0].kcm}}" data-order="{{item[0].djj_xh}}" data-teacher="{{item[0].jsxm}}" data-school="{{item[0].xqmc}}" data-room="{{item[1].jxl}}{{item[0].skddmc}}" data-date="{{item[0].rq}}" data-note="{{item[0].beizhu}}">
+                    <text class="title">{{item[0].kcm}}</text>
+                    <text class="room">@{{item[1].jxl}}{{item[0].skddmc}}</text>
+                  </view>
+                </block>
+              </block>
+            </view>
+            <view class="course" style='height: calc((95.5vh - {{navH + 46}}px)/5.2)'>
+              <block wx:for="{{schedule}}" wx:key="week">
+                <block wx:if="{{item[0].xqj == '星期六' && (item[0].djj_xh == '3,4' || item[0].djj_xh == '1,2,3,4' || item[0].djj_xh == '1,2,3,4,5,6' || item[0].djj_xh == '1,2,3,4,5,6,7,8' || item[0].djj_xh == '3,4,5,6,7,8,9,10' || item[0].djj_xh == '1,2,3,4,5,6,7,8,9,10')}}">
+                  <view class="item" style="{{bg}}; height: calc((95.5vh - {{navH+ 46}}px)/5.2)" bindtap="click" data-class="{{item[0].kcm}}" data-order="{{item[0].djj_xh}}" data-teacher="{{item[0].jsxm}}" data-school="{{item[0].xqmc}}" data-room="{{item[1].jxl}}{{item[0].skddmc}}" data-date="{{item[0].rq}}" data-note="{{item[0].beizhu}}">
+                    <text class="title">{{item[0].kcm}}</text>
+                    <text class="room">@{{item[1].jxl}}{{item[0].skddmc}}</text>
+                  </view>
+                </block>
+              </block>
+            </view>
+            <view class="course" style='height: calc((95.5vh - {{navH + 46}}px)/5.2)'>
+              <block wx:for="{{schedule}}" wx:key="week">
+                <block wx:if="{{item[0].xqj == '星期六' && (item[0].djj_xh == '5,6' || item[0].djj_xh == '5,6,7,8' || item[0].djj_xh == '1,2,3,4,5,6' || item[0].djj_xh == '1,2,3,4,5,6,7,8' || item[0].djj_xh == '3,4,5,6,7,8,9,10' || item[0].djj_xh == '1,2,3,4,5,6,7,8,9,10' || item[0].djj_xh == '5,6,7,8,9,10')}}">
+                  <view class="item" style="{{bg}}; height: calc((95.5vh - {{navH+ 46}}px)/5.2)" bindtap="click" data-class="{{item[0].kcm}}" data-order="{{item[0].djj_xh}}" data-teacher="{{item[0].jsxm}}" data-school="{{item[0].xqmc}}" data-room="{{item[1].jxl}}{{item[0].skddmc}}" data-date="{{item[0].rq}}" data-note="{{item[0].beizhu}}">
+                    <text class="title">{{item[0].kcm}}</text>
+                    <text class="room">@{{item[1].jxl}}{{item[0].skddmc}}</text>
+                  </view>
+                </block>
+              </block>
+            </view>
+            <view class="course" style='height: calc((95.5vh - {{navH + 46}}px)/5.2)'>
+              <block wx:for="{{schedule}}" wx:key="week">
+                <block wx:if="{{item[0].xqj == '星期六' && (item[0].djj_xh == '7,8' || item[0].djj_xh == '5,6,7,8' || item[0].djj_xh == '7,8,9,10' || item[0].djj_xh == '1,2,3,4,5,6,7,8' || item[0].djj_xh == '3,4,5,6,7,8,9,10' || item[0].djj_xh == '1,2,3,4,5,6,7,8,9,10' || item[0].djj_xh == '5,6,7,8,9,10')}}">
+                  <view class="item" style="{{bg}}; height: calc((95.5vh - {{navH+ 46}}px)/5.2)" bindtap="click" data-class="{{item[0].kcm}}" data-order="{{item[0].djj_xh}}" data-teacher="{{item[0].jsxm}}" data-school="{{item[0].xqmc}}" data-room="{{item[1].jxl}}{{item[0].skddmc}}" data-date="{{item[0].rq}}" data-note="{{item[0].beizhu}}">
+                    <text class="title">{{item[0].kcm}}</text>
+                    <text class="room">@{{item[1].jxl}}{{item[0].skddmc}}</text>
+                  </view>
+                </block>
+              </block>
+            </view>
+            <view class="course" style='height: calc((95.5vh - {{navH + 46}}px)/5.2)'>
+              <block wx:for="{{schedule}}" wx:key="week">
+                <block wx:if="{{item[0].xqj == '星期六' && (item[0].djj_xh == '9,10' || item[0].djj_xh == '7,8,9,10'|| item[0].djj_xh == '3,4,5,6,7,8,9,10' || item[0].djj_xh == '1,2,3,4,5,6,7,8,9,10' || item[0].djj_xh == '5,6,7,8,9,10')}}">
+                  <view class="item" style="{{bg}}; height: calc((95.5vh - {{navH+ 46}}px)/5.2)" bindtap="click" data-class="{{item[0].kcm}}" data-order="{{item[0].djj_xh}}" data-teacher="{{item[0].jsxm}}" data-school="{{item[0].xqmc}}" data-room="{{item[1].jxl}}{{item[0].skddmc}}" data-date="{{item[0].rq}}" data-note="{{item[0].beizhu}}">
+                    <text class="title">{{item[0].kcm}}</text>
+                    <text class="room">@{{item[1].jxl}}{{item[0].skddmc}}</text>
+                  </view>
+                </block>
+              </block>
+            </view>
+          </view>
+        </view>
+        <view class="c-line"></view>
+      </view>
+      <view class="sub">
+        <view class="sunday">
+          <block wx:if="{{todaydate == '星期日'}}">
+            <view class="week" style="color:#ff0000">周日</view>
+          </block>
+          <block wx:else>
+            <view class="week" style="color:#000">周日</view>
+          </block>
+          <view class="r-line"></view>
+          <view class="body">
+            <view class="course" style='height: calc((95.5vh - {{navH + 46}}px)/5.2)'>
+              <block wx:for="{{schedule}}" wx:key="week">
+                <block wx:if="{{item[0].xqj == '星期日' && (item[0].djj_xh == '1,2' || item[0].djj_xh == '1,2,3,4' || item[0].djj_xh == '1,2,3,4,5,6' || item[0].djj_xh == '1,2,3,4,5,6,7,8' || item[0].djj_xh == '1,2,3,4,5,6,7,8,9,10')}}">
+                  <view class="item" style="{{bg}}; height: calc((95.5vh - {{navH+ 46}}px)/5.2)" bindtap="click" data-class="{{item[0].kcm}}" data-order="{{item[0].djj_xh}}" data-teacher="{{item[0].jsxm}}" data-school="{{item[0].xqmc}}" data-room="{{item[1].jxl}}{{item[0].skddmc}}" data-date="{{item[0].rq}}" data-note="{{item[0].beizhu}}">
+                    <text class="title">{{item[0].kcm}}</text>
+                    <text class="room">@{{item[1].jxl}}{{item[0].skddmc}}</text>
+                  </view>
+                </block>
+              </block>
+            </view>
+            <view class="course" style='height: calc((95.5vh - {{navH + 46}}px)/5.2)'>
+              <block wx:for="{{schedule}}" wx:key="week">
+                <block wx:if="{{item[0].xqj == '星期日' && (item[0].djj_xh == '3,4' || item[0].djj_xh == '1,2,3,4' || item[0].djj_xh == '1,2,3,4,5,6' || item[0].djj_xh == '1,2,3,4,5,6,7,8' || item[0].djj_xh == '3,4,5,6,7,8,9,10' || item[0].djj_xh == '1,2,3,4,5,6,7,8,9,10')}}">
+                  <view class="item" style="{{bg}}; height: calc((95.5vh - {{navH+ 46}}px)/5.2)" bindtap="click" data-class="{{item[0].kcm}}" data-order="{{item[0].djj_xh}}" data-teacher="{{item[0].jsxm}}" data-school="{{item[0].xqmc}}" data-room="{{item[1].jxl}}{{item[0].skddmc}}" data-date="{{item[0].rq}}" data-note="{{item[0].beizhu}}">
+                    <text class="title">{{item[0].kcm}}</text>
+                    <text class="room">@{{item[1].jxl}}{{item[0].skddmc}}</text>
+                  </view>
+                </block>
+              </block>
+            </view>
+            <view class="course" style='height: calc((95.5vh - {{navH + 46}}px)/5.2)'>
+              <block wx:for="{{schedule}}" wx:key="week">
+                <block wx:if="{{item[0].xqj == '星期日' && (item[0].djj_xh == '5,6' || item[0].djj_xh == '5,6,7,8' || item[0].djj_xh == '1,2,3,4,5,6' || item[0].djj_xh == '1,2,3,4,5,6,7,8' || item[0].djj_xh == '3,4,5,6,7,8,9,10' || item[0].djj_xh == '1,2,3,4,5,6,7,8,9,10' || item[0].djj_xh == '5,6,7,8,9,10')}}">
+                  <view class="item" style="{{bg}}; height: calc((95.5vh - {{navH+ 46}}px)/5.2)" bindtap="click" data-class="{{item[0].kcm}}" data-order="{{item[0].djj_xh}}" data-teacher="{{item[0].jsxm}}" data-school="{{item[0].xqmc}}" data-room="{{item[1].jxl}}{{item[0].skddmc}}" data-date="{{item[0].rq}}" data-note="{{item[0].beizhu}}">
+                    <text class="title">{{item[0].kcm}}</text>
+                    <text class="room">@{{item[1].jxl}}{{item[0].skddmc}}</text>
+                  </view>
+                </block>
+              </block>
+            </view>
+            <view class="course" style='height: calc((95.5vh - {{navH + 46}}px)/5.2)'>
+              <block wx:for="{{schedule}}" wx:key="week">
+                <block wx:if="{{item[0].xqj == '星期日' && (item[0].djj_xh == '7,8' || item[0].djj_xh == '5,6,7,8' || item[0].djj_xh == '7,8,9,10' || item[0].djj_xh == '1,2,3,4,5,6,7,8' || item[0].djj_xh == '3,4,5,6,7,8,9,10' || item[0].djj_xh == '1,2,3,4,5,6,7,8,9,10' || item[0].djj_xh == '5,6,7,8,9,10')}}">
+                  <view class="item" style="{{bg}}; height: calc((95.5vh - {{navH+ 46}}px)/5.2)" bindtap="click" data-class="{{item[0].kcm}}" data-order="{{item[0].djj_xh}}" data-teacher="{{item[0].jsxm}}" data-school="{{item[0].xqmc}}" data-room="{{item[1].jxl}}{{item[0].skddmc}}" data-date="{{item[0].rq}}" data-note="{{item[0].beizhu}}">
+                    <text class="title">{{item[0].kcm}}</text>
+                    <text class="room">@{{item[1].jxl}}{{item[0].skddmc}}</text>
+                  </view>
+                </block>
+              </block>
+            </view>
+            <view class="course" style='height: calc((95.5vh - {{navH + 46}}px)/5.2)'>
+              <block wx:for="{{schedule}}" wx:key="week">
+                <block wx:if="{{item[0].xqj == '星期日' && (item[0].djj_xh == '9,10' || item[0].djj_xh == '7,8,9,10' || item[0].djj_xh == '3,4,5,6,7,8,9,10' || item[0].djj_xh == '1,2,3,4,5,6,7,8,9,10' || item[0].djj_xh == '5,6,7,8,9,10')}}">
+                  <view class="item" style="{{bg}}; height: calc((95.5vh - {{navH+ 46}}px)/5.2)" bindtap="click" data-class="{{item[0].kcm}}" data-order="{{item[0].djj_xh}}" data-teacher="{{item[0].jsxm}}" data-school="{{item[0].xqmc}}" data-room="{{item[1].jxl}}{{item[0].skddmc}}" data-date="{{item[0].rq}}" data-note="{{item[0].beizhu}}">
+                    <text class="title">{{item[0].kcm}}</text>
+                    <text class="room">@{{item[1].jxl}}{{item[0].skddmc}}</text>
+                  </view>
+                </block>
+              </block>
+            </view>
+          </view>
+        </view>
+      </view>
+    </scroll-view>
+    <image class="addicon" src="/images/addclass.png" bindtap="addclass"></image>
+    <image class="delicon" src="/images/delclass.png" bindtap="delclass"></image>
+    <image class="coloricon" src="/images/sch_color.png" bindtap="schcolor"></image>
+    <image class="friendicon" src="/images/friendsch.png" bindtap="friendsch"></image>
+    <button class="sharebtn" open-type="share">
+      <image class="share" src="/images/sharesch.png"></image>
+    </button>
+    <picker value="{{wkIndex}}" range="{{wkpick}}" bindchange="wkPicker">
+      <image class="search" src="/images/calendar.png"></image>
+    </picker>
+  </view>
+  <!-- 遮罩弹窗 -->
+  <view class="info" bindtap="hideview" hidden="{{display}}" catchtouchmove="ture">
+    <view class="info-items" style="{{bg}}">
+      <text class="name-top">{{info.class}}</text>
+      <view class="name-body">
+        <text class="name">节次：{{info.order}}</text>
+        <view class="info-line"></view>
+        <text class="name">地点：{{info.room}}</text>
+        <view class="info-line"></view>
+        <text class="name">教师：{{info.teacher}}</text>
+        <view class="info-line"></view>
+        <text class="name">校区：{{info.school}}</text>
+        <view class="info-line"></view>
+        <text class="name">日期：{{info.date}}</text>
+        <view class="info-line"></view>
+        <text class="name">备注：{{info.note}}</text>
+        <view class="info-line"></view>
+      </view>
+    </view>
+  </view>
+  <!-- 添加课程 -->
+  <view class="addclass" hidden="{{adddisplay}}" catchtouchmove="ture">
+    <view class="add-items" style="{{bg}}">
+      <text class="name-top">自定义添加课程</text>
+      <view class="add-body">
+        <input type="text" placeholder="课程名(必填)" bindinput="classInput" />
+        <input type="text" placeholder="地点(必填)" bindinput="roomInput" />
+        <picker class="picker" bindchange="orderPicker" value="{{orderIndex}}" range="{{orderpick}}">{{orderpick[orderIndex]}}</picker>
+        <picker class="picker" bindchange="weekPicker" value="{{weekIndex}}" range="{{weekpick}}">{{weekpick[weekIndex]}}</picker>
+        <picker class="picker" bindchange="schoolPicker" value="{{schoolIndex}}" range="{{schoolpick}}">{{schoolpick[schoolIndex]}}</picker>
+        <input type="text" placeholder="教师(选填)" bindinput="teacherInput" />
+        <input type="text" placeholder="备注(选填)" bindinput="noteInput" />
+      </view>
+      <view class="addtip">最多可自定义添加5门课程呦</view>
+      <view class="button">
+        <button class="cancel-button" bindtap="addcancel" style="{{bt_color}}">取消</button>
+        <button class="add-button" bindtap="addconfirm" style="{{bt_color}}">确定</button>
+      </view>
+    </view>
+  </view>
+  <!-- 删除课程 -->
+  <view class="delclass" hidden="{{deldisplay}}" catchtouchmove="ture">
+    <view class="del-items" style="{{bg}}">
+      <view class="del-top">删除自定义课程</view>
+      <block wx:if="{{delclass[0] == '' && delclass[1] == '' && delclass[2] == '' && delclass[3] == '' && delclass[4] == ''}}">
+        <view class="none">你还没有添加过课程呦</view>
+      </block>
+      <view class="del-body" wx:for="{{delclass}}" wx:key="delete">
+        <block wx:if="{{item.length == 1}}">
+          <text class="delname">{{item[0].kcm}}</text>
+          <text class="deltime">{{item[0].xqj}}{{item[0].djj_xh}}节</text>
+          <image class="delimg" src="/images/delimg.png" data-index="{{index}}" bindtap="delete"></image>
+        </block>
+      </view>
+      <view class="button">
+        <button class="del-button" bindtap="delcancel" style="{{bt_color}}">取消</button>
+      </view>
+    </view>
+  </view>
+  <!-- 课表皮肤 -->
+  <view class="schcolor" hidden="{{colordisplay}}" catchtouchmove="ture">
+    <view class="color-main">
+      <view class="color-top">课表皮肤中心（右滑获取更多>>）</view>
+      <view class="color-line"></view>
+      <scroll-view scroll-x class="color-list">
+        <view class="color-items" wx:for="{{color}}" wx:key="schcolor">
+          <view class="color-skin" style="{{item.bg}}" bindtap="skinset" data-bg="{{item.bg}}" data-color="{{item.color}}">
+            <text class="title">中国近代史纲要</text>
+            <text class="room">@行知楼815</text>
+            <text class="room">点击设置</text>
+          </view>
+          <text class="color-title">{{item.name}}</text>
+        </view>
+      </scroll-view>
+      <view class="button">
+        <button class="color-button" bindtap="colorcancel">取消</button>
+      </view>
+    </view>
+  </view>
+</view>
+
+
+<view class="page" wx:if="{{college == 'imufe' || college == 'imau'}}">
+  <view class="main" style='height: calc(100vh - {{navH + 46}}px); margin-top: {{navH + 46}}px'>
+    <view class="order">
+      <view class="top"></view>
+      <view wx:for="{{order}}" wx:key="order">
+        <view class="num">
+          <view>{{item}}</view>
+        </view>
+      </view>
+    </view>
+    <view class="c-line-a"></view>
+    <scroll-view class="scroll" scroll-x="true">
+      <view class="sub">
+        <view class="monday">
+          <block wx:if="{{todaydate == '星期一'}}">
+            <view class="week" style="color:#ff0000">周一</view>
+          </block>
+          <block wx:else>
+            <view class="week" style="color:#000">周一</view>
+          </block>
+          <view class="r-line"></view>
+          <view class="body">
+            <view class="course" style='height: calc((95.5vh - {{navH + 46}}px)/5.2)'>
+              <block wx:for="{{schedule}}" wx:key="week">
+                <block wx:if="{{item[0].xqj == '星期一' && (item[0].djj_xh == '1,2' || item[0].djj_xh == '1,2,3,4' || item[0].djj_xh == '1,2,3,4,5,6,7,8')}}">
+                  <view class="item" style="{{bg}}; height: calc((95.5vh - {{navH+ 46}}px)/5.2)" bindtap="click" data-class="{{item[0].kcm}}" data-order="{{item[0].djj_xh}}" data-teacher="{{item[0].jsxm}}" data-school="{{item[0].xqmc}}" data-room="{{item[1].jxl}}" data-date="{{item[0].rq}}" data-note="{{item[0].beizhu}}">
+                    <text class="title">{{item[0].kcm}}</text>
+                    <text class="room">@{{item[1].jxl}}</text>
+                  </view>
+                </block>
+              </block>
+            </view>
+            <view class="course" style='height: calc((95.5vh - {{navH + 46}}px)/5.2)'>
+              <block wx:for="{{schedule}}" wx:key="week">
+                <block wx:if="{{item[0].xqj == '星期一' && (item[0].djj_xh == '3,4' || item[0].djj_xh == '1,2,3,4' || item[0].djj_xh == '1,2,3,4,5,6,7,8')}}">
+                  <view class="item" style="{{bg}}; height: calc((95.5vh - {{navH+ 46}}px)/5.2)" bindtap="click" data-class="{{item[0].kcm}}" data-order="{{item[0].djj_xh}}" data-teacher="{{item[0].jsxm}}" data-school="{{item[0].xqmc}}" data-room="{{item[1].jxl}}" data-date="{{item[0].rq}}" data-note="{{item[0].beizhu}}">
+                    <text class="title">{{item[0].kcm}}</text>
+                    <text class="room">@{{item[1].jxl}}</text>
+                  </view>
+                </block>
+              </block>
+            </view>
+            <view class="course" style='height: calc((95.5vh - {{navH + 46}}px)/5.2)'>
+              <block wx:for="{{schedule}}" wx:key="week">
+                <block wx:if="{{item[0].xqj == '星期一' && (item[0].djj_xh == '5,6' || item[0].djj_xh == '5,6,7,8' || item[0].djj_xh == '1,2,3,4,5,6,7,8')}}">
+                  <view class="item" style="{{bg}}; height: calc((95.5vh - {{navH+ 46}}px)/5.2)" bindtap="click" data-class="{{item[0].kcm}}" data-order="{{item[0].djj_xh}}" data-teacher="{{item[0].jsxm}}" data-school="{{item[0].xqmc}}" data-room="{{item[1].jxl}}" data-date="{{item[0].rq}}" data-note="{{item[0].beizhu}}">
+                    <text class="title">{{item[0].kcm}}</text>
+                    <text class="room">@{{item[1].jxl}}</text>
+                  </view>
+                </block>
+              </block>
+            </view>
+            <view class="course" style='height: calc((95.5vh - {{navH + 46}}px)/5.2)'>
+              <block wx:for="{{schedule}}" wx:key="week">
+                <block wx:if="{{item[0].xqj == '星期一' && (item[0].djj_xh == '7,8' || item[0].djj_xh == '5,6,7,8' || item[0].djj_xh == '7,8,9,10,11' || item[0].djj_xh == '1,2,3,4,5,6,7,8')}}">
+                  <view class="item" style="{{bg}}; height: calc((95.5vh - {{navH+ 46}}px)/5.2)" bindtap="click" data-class="{{item[0].kcm}}" data-order="{{item[0].djj_xh}}" data-teacher="{{item[0].jsxm}}" data-school="{{item[0].xqmc}}" data-room="{{item[1].jxl}}" data-date="{{item[0].rq}}" data-note="{{item[0].beizhu}}">
+                    <text class="title">{{item[0].kcm}}</text>
+                    <text class="room">@{{item[1].jxl}}</text>
+                  </view>
+                </block>
+              </block>
+            </view>
+            <view class="course" style='height: calc((95.5vh - {{navH + 46}}px)/5.2)'>
+              <block wx:for="{{schedule}}" wx:key="week">
+                <block wx:if="{{item[0].xqj == '星期一' && (item[0].djj_xh == '9,10' || item[0].djj_xh == '9,10,11' || item[0].djj_xh == '7,8,9,10,11')}}">
+                  <view class="item" style="{{bg}}; height: calc((95.5vh - {{navH+ 46}}px)/5.2)" bindtap="click" data-class="{{item[0].kcm}}" data-order="{{item[0].djj_xh}}" data-teacher="{{item[0].jsxm}}" data-school="{{item[0].xqmc}}" data-room="{{item[1].jxl}}" data-date="{{item[0].rq}}" data-note="{{item[0].beizhu}}">
+                    <text class="title">{{item[0].kcm}}</text>
+                    <text class="room">@{{item[1].jxl}}</text>
+                  </view>
+                </block>
+              </block>
+            </view>
+          </view>
+        </view>
+        <view class="c-line"></view>
+      </view>
+      <view class="sub">
+        <view class="tuesday">
+          <block wx:if="{{todaydate == '星期二'}}">
+            <view class="week" style="color:#ff0000">周二</view>
+          </block>
+          <block wx:else>
+            <view class="week" style="color:#000">周二</view>
+          </block>
+          <view class="r-line"></view>
+          <view class="body">
+            <view class="course" style='height: calc((95.5vh - {{navH + 46}}px)/5.2)'>
+              <block wx:for="{{schedule}}" wx:key="week">
+                <block wx:if="{{item[0].xqj == '星期二' && (item[0].djj_xh == '1,2' || item[0].djj_xh == '1,2,3,4' || item[0].djj_xh == '1,2,3,4,5,6,7,8')}}">
+                  <view class="item" style="{{bg}}; height: calc((95.5vh - {{navH+ 46}}px)/5.2)" bindtap="click" data-class="{{item[0].kcm}}" data-order="{{item[0].djj_xh}}" data-teacher="{{item[0].jsxm}}" data-school="{{item[0].xqmc}}" data-room="{{item[1].jxl}}" data-date="{{item[0].rq}}" data-note="{{item[0].beizhu}}">
+                    <text class="title">{{item[0].kcm}}</text>
+                    <text class="room">@{{item[1].jxl}}</text>
+                  </view>
+                </block>
+              </block>
+            </view>
+            <view class="course" style='height: calc((95.5vh - {{navH + 46}}px)/5.2)'>
+              <block wx:for="{{schedule}}" wx:key="week">
+                <block wx:if="{{item[0].xqj == '星期二' && (item[0].djj_xh == '3,4' || item[0].djj_xh == '1,2,3,4' || item[0].djj_xh == '1,2,3,4,5,6,7,8')}}">
+                  <view class="item" style="{{bg}}; height: calc((95.5vh - {{navH+ 46}}px)/5.2)" bindtap="click" data-class="{{item[0].kcm}}" data-order="{{item[0].djj_xh}}" data-teacher="{{item[0].jsxm}}" data-school="{{item[0].xqmc}}" data-room="{{item[1].jxl}}" data-date="{{item[0].rq}}" data-note="{{item[0].beizhu}}">
+                    <text class="title">{{item[0].kcm}}</text>
+                    <text class="room">@{{item[1].jxl}}</text>
+                  </view>
+                </block>
+              </block>
+            </view>
+            <view class="course" style='height: calc((95.5vh - {{navH + 46}}px)/5.2)'>
+              <block wx:for="{{schedule}}" wx:key="week">
+                <block wx:if="{{item[0].xqj == '星期二' && (item[0].djj_xh == '5,6' || item[0].djj_xh == '5,6,7,8' || item[0].djj_xh == '1,2,3,4,5,6,7,8')}}">
+                  <view class="item" style="{{bg}}; height: calc((95.5vh - {{navH+ 46}}px)/5.2)" bindtap="click" data-class="{{item[0].kcm}}" data-order="{{item[0].djj_xh}}" data-teacher="{{item[0].jsxm}}" data-school="{{item[0].xqmc}}" data-room="{{item[1].jxl}}" data-date="{{item[0].rq}}" data-note="{{item[0].beizhu}}">
+                    <text class="title">{{item[0].kcm}}</text>
+                    <text class="room">@{{item[1].jxl}}</text>
+                  </view>
+                </block>
+              </block>
+            </view>
+            <view class="course" style='height: calc((95.5vh - {{navH + 46}}px)/5.2)'>
+              <block wx:for="{{schedule}}" wx:key="week">
+                <block wx:if="{{item[0].xqj == '星期二' && (item[0].djj_xh == '7,8' || item[0].djj_xh == '5,6,7,8' || item[0].djj_xh == '7,8,9,10,11' || item[0].djj_xh == '1,2,3,4,5,6,7,8')}}">
+                  <view class="item" style="{{bg}}; height: calc((95.5vh - {{navH+ 46}}px)/5.2)" bindtap="click" data-class="{{item[0].kcm}}" data-order="{{item[0].djj_xh}}" data-teacher="{{item[0].jsxm}}" data-school="{{item[0].xqmc}}" data-room="{{item[1].jxl}}" data-date="{{item[0].rq}}" data-note="{{item[0].beizhu}}">
+                    <text class="title">{{item[0].kcm}}</text>
+                    <text class="room">@{{item[1].jxl}}</text>
+                  </view>
+                </block>
+              </block>
+            </view>
+            <view class="course" style='height: calc((95.5vh - {{navH + 46}}px)/5.2)'>
+              <block wx:for="{{schedule}}" wx:key="week">
+                <block wx:if="{{item[0].xqj == '星期二' && (item[0].djj_xh == '9,10' || item[0].djj_xh == '9,10,11' || item[0].djj_xh == '7,8,9,10,11')}}">
+                  <view class="item" style="{{bg}}; height: calc((95.5vh - {{navH+ 46}}px)/5.2)" bindtap="click" data-class="{{item[0].kcm}}" data-order="{{item[0].djj_xh}}" data-teacher="{{item[0].jsxm}}" data-school="{{item[0].xqmc}}" data-room="{{item[1].jxl}}" data-date="{{item[0].rq}}" data-note="{{item[0].beizhu}}">
+                    <text class="title">{{item[0].kcm}}</text>
+                    <text class="room">@{{item[1].jxl}}</text>
+                  </view>
+                </block>
+              </block>
+            </view>
+          </view>
+        </view>
+        <view class="c-line"></view>
+      </view>
+      <view class="sub">
+        <view class="wednesday">
+          <block wx:if="{{todaydate == '星期三'}}">
+            <view class="week" style="color:#ff0000">周三</view>
+          </block>
+          <block wx:else>
+            <view class="week" style="color:#000">周三</view>
+          </block>
+          <view class="r-line"></view>
+          <view class="body">
+            <view class="course" style='height: calc((95.5vh - {{navH + 46}}px)/5.2)'>
+              <block wx:for="{{schedule}}" wx:key="week">
+                <block wx:if="{{item[0].xqj == '星期三' && (item[0].djj_xh == '1,2' || item[0].djj_xh == '1,2,3,4' || item[0].djj_xh == '1,2,3,4,5,6,7,8')}}">
+                  <view class="item" style="{{bg}}; height: calc((95.5vh - {{navH+ 46}}px)/5.2)" bindtap="click" data-class="{{item[0].kcm}}" data-order="{{item[0].djj_xh}}" data-teacher="{{item[0].jsxm}}" data-school="{{item[0].xqmc}}" data-room="{{item[1].jxl}}" data-date="{{item[0].rq}}" data-note="{{item[0].beizhu}}">
+                    <text class="title">{{item[0].kcm}}</text>
+                    <text class="room">@{{item[1].jxl}}</text>
+                  </view>
+                </block>
+              </block>
+            </view>
+            <view class="course" style='height: calc((95.5vh - {{navH + 46}}px)/5.2)'>
+              <block wx:for="{{schedule}}" wx:key="week">
+                <block wx:if="{{item[0].xqj == '星期三' && (item[0].djj_xh == '3,4' || item[0].djj_xh == '1,2,3,4' || item[0].djj_xh == '1,2,3,4,5,6,7,8')}}">
+                  <view class="item" style="{{bg}}; height: calc((95.5vh - {{navH+ 46}}px)/5.2)" bindtap="click" data-class="{{item[0].kcm}}" data-order="{{item[0].djj_xh}}" data-teacher="{{item[0].jsxm}}" data-school="{{item[0].xqmc}}" data-room="{{item[1].jxl}}" data-date="{{item[0].rq}}" data-note="{{item[0].beizhu}}">
+                    <text class="title">{{item[0].kcm}}</text>
+                    <text class="room">@{{item[1].jxl}}</text>
+                  </view>
+                </block>
+              </block>
+            </view>
+            <view class="course" style='height: calc((95.5vh - {{navH + 46}}px)/5.2)'>
+              <block wx:for="{{schedule}}" wx:key="week">
+                <block wx:if="{{item[0].xqj == '星期三' && (item[0].djj_xh == '5,6' || item[0].djj_xh == '5,6,7,8' || item[0].djj_xh == '1,2,3,4,5,6,7,8')}}">
+                  <view class="item" style="{{bg}}; height: calc((95.5vh - {{navH+ 46}}px)/5.2)" bindtap="click" data-class="{{item[0].kcm}}" data-order="{{item[0].djj_xh}}" data-teacher="{{item[0].jsxm}}" data-school="{{item[0].xqmc}}" data-room="{{item[1].jxl}}" data-date="{{item[0].rq}}" data-note="{{item[0].beizhu}}">
+                    <text class="title">{{item[0].kcm}}</text>
+                    <text class="room">@{{item[1].jxl}}</text>
+                  </view>
+                </block>
+              </block>
+            </view>
+            <view class="course" style='height: calc((95.5vh - {{navH + 46}}px)/5.2)'>
+              <block wx:for="{{schedule}}" wx:key="week">
+                <block wx:if="{{item[0].xqj == '星期三' && (item[0].djj_xh == '7,8' || item[0].djj_xh == '5,6,7,8' || item[0].djj_xh == '7,8,9,10,11' || item[0].djj_xh == '1,2,3,4,5,6,7,8')}}">
+                  <view class="item" style="{{bg}}; height: calc((95.5vh - {{navH+ 46}}px)/5.2)" bindtap="click" data-class="{{item[0].kcm}}" data-order="{{item[0].djj_xh}}" data-teacher="{{item[0].jsxm}}" data-school="{{item[0].xqmc}}" data-room="{{item[1].jxl}}" data-date="{{item[0].rq}}" data-note="{{item[0].beizhu}}">
+                    <text class="title">{{item[0].kcm}}</text>
+                    <text class="room">@{{item[1].jxl}}</text>
+                  </view>
+                </block>
+              </block>
+            </view>
+            <view class="course" style='height: calc((95.5vh - {{navH + 46}}px)/5.2)'>
+              <block wx:for="{{schedule}}" wx:key="week">
+                <block wx:if="{{item[0].xqj == '星期三' && (item[0].djj_xh == '9,10' || item[0].djj_xh == '9,10,11' || item[0].djj_xh == '7,8,9,10,11')}}">
+                  <view class="item" style="{{bg}}; height: calc((95.5vh - {{navH+ 46}}px)/5.2)" bindtap="click" data-class="{{item[0].kcm}}" data-order="{{item[0].djj_xh}}" data-teacher="{{item[0].jsxm}}" data-school="{{item[0].xqmc}}" data-room="{{item[1].jxl}}" data-date="{{item[0].rq}}" data-note="{{item[0].beizhu}}">
+                    <text class="title">{{item[0].kcm}}</text>
+                    <text class="room">@{{item[1].jxl}}</text>
+                  </view>
+                </block>
+              </block>
+            </view>
+          </view>
+        </view>
+        <view class="c-line"></view>
+      </view>
+      <view class="sub">
+        <view class="thursday">
+          <block wx:if="{{todaydate == '星期四'}}">
+            <view class="week" style="color:#ff0000">周四</view>
+          </block>
+          <block wx:else>
+            <view class="week" style="color:#000">周四</view>
+          </block>
+          <view class="r-line"></view>
+          <view class="body">
+            <view class="course" style='height: calc((95.5vh - {{navH + 46}}px)/5.2)'>
+              <block wx:for="{{schedule}}" wx:key="week">
+                <block wx:if="{{item[0].xqj == '星期四' && (item[0].djj_xh == '1,2' || item[0].djj_xh == '1,2,3,4' || item[0].djj_xh == '1,2,3,4,5,6,7,8')}}">
+                  <view class="item" style="{{bg}}; height: calc((95.5vh - {{navH+ 46}}px)/5.2)" bindtap="click" data-class="{{item[0].kcm}}" data-order="{{item[0].djj_xh}}" data-teacher="{{item[0].jsxm}}" data-school="{{item[0].xqmc}}" data-room="{{item[1].jxl}}" data-date="{{item[0].rq}}" data-note="{{item[0].beizhu}}">
+                    <text class="title">{{item[0].kcm}}</text>
+                    <text class="room">@{{item[1].jxl}}</text>
+                  </view>
+                </block>
+              </block>
+            </view>
+            <view class="course" style='height: calc((95.5vh - {{navH + 46}}px)/5.2)'>
+              <block wx:for="{{schedule}}" wx:key="week">
+                <block wx:if="{{item[0].xqj == '星期四' && (item[0].djj_xh == '3,4' || item[0].djj_xh == '1,2,3,4' || item[0].djj_xh == '1,2,3,4,5,6,7,8')}}">
+                  <view class="item" style="{{bg}}; height: calc((95.5vh - {{navH+ 46}}px)/5.2)" bindtap="click" data-class="{{item[0].kcm}}" data-order="{{item[0].djj_xh}}" data-teacher="{{item[0].jsxm}}" data-school="{{item[0].xqmc}}" data-room="{{item[1].jxl}}" data-date="{{item[0].rq}}" data-note="{{item[0].beizhu}}">
+                    <text class="title">{{item[0].kcm}}</text>
+                    <text class="room">@{{item[1].jxl}}</text>
+                  </view>
+                </block>
+              </block>
+            </view>
+            <view class="course" style='height: calc((95.5vh - {{navH + 46}}px)/5.2)'>
+              <block wx:for="{{schedule}}" wx:key="week">
+                <block wx:if="{{item[0].xqj == '星期四' && (item[0].djj_xh == '5,6' || item[0].djj_xh == '5,6,7,8' || item[0].djj_xh == '1,2,3,4,5,6,7,8')}}">
+                  <view class="item" style="{{bg}}; height: calc((95.5vh - {{navH+ 46}}px)/5.2)" bindtap="click" data-class="{{item[0].kcm}}" data-order="{{item[0].djj_xh}}" data-teacher="{{item[0].jsxm}}" data-school="{{item[0].xqmc}}" data-room="{{item[1].jxl}}" data-date="{{item[0].rq}}" data-note="{{item[0].beizhu}}">
+                    <text class="title">{{item[0].kcm}}</text>
+                    <text class="room">@{{item[1].jxl}}</text>
+                  </view>
+                </block>
+              </block>
+            </view>
+            <view class="course" style='height: calc((95.5vh - {{navH + 46}}px)/5.2)'>
+              <block wx:for="{{schedule}}" wx:key="week">
+                <block wx:if="{{item[0].xqj == '星期四' && (item[0].djj_xh == '7,8' || item[0].djj_xh == '5,6,7,8' || item[0].djj_xh == '7,8,9,10,11' || item[0].djj_xh == '1,2,3,4,5,6,7,8')}}">
+                  <view class="item" style="{{bg}}; height: calc((95.5vh - {{navH+ 46}}px)/5.2)" bindtap="click" data-class="{{item[0].kcm}}" data-order="{{item[0].djj_xh}}" data-teacher="{{item[0].jsxm}}" data-school="{{item[0].xqmc}}" data-room="{{item[1].jxl}}" data-date="{{item[0].rq}}" data-note="{{item[0].beizhu}}">
+                    <text class="title">{{item[0].kcm}}</text>
+                    <text class="room">@{{item[1].jxl}}</text>
+                  </view>
+                </block>
+              </block>
+            </view>
+            <view class="course" style='height: calc((95.5vh - {{navH + 46}}px)/5.2)'>
+              <block wx:for="{{schedule}}" wx:key="week">
+                <block wx:if="{{item[0].xqj == '星期四' && (item[0].djj_xh == '9,10' || item[0].djj_xh == '9,10,11' || item[0].djj_xh == '7,8,9,10,11')}}">
+                  <view class="item" style="{{bg}}; height: calc((95.5vh - {{navH+ 46}}px)/5.2)" bindtap="click" data-class="{{item[0].kcm}}" data-order="{{item[0].djj_xh}}" data-teacher="{{item[0].jsxm}}" data-school="{{item[0].xqmc}}" data-room="{{item[1].jxl}}" data-date="{{item[0].rq}}" data-note="{{item[0].beizhu}}">
+                    <text class="title">{{item[0].kcm}}</text>
+                    <text class="room">@{{item[1].jxl}}</text>
+                  </view>
+                </block>
+              </block>
+            </view>
+          </view>
+        </view>
+        <view class="c-line"></view>
+      </view>
+      <view class="sub">
+        <view class="friday">
+          <block wx:if="{{todaydate == '星期五'}}">
+            <view class="week" style="color:#ff0000">周五</view>
+          </block>
+          <block wx:else>
+            <view class="week" style="color:#000">周五</view>
+          </block>
+          <view class="r-line"></view>
+          <view class="body">
+            <view class="course" style='height: calc((95.5vh - {{navH + 46}}px)/5.2)'>
+              <block wx:for="{{schedule}}" wx:key="week">
+                <block wx:if="{{item[0].xqj == '星期五' && (item[0].djj_xh == '1,2' || item[0].djj_xh == '1,2,3,4' || item[0].djj_xh == '1,2,3,4,5,6,7,8')}}">
+                  <view class="item" style="{{bg}}; height: calc((95.5vh - {{navH+ 46}}px)/5.2)" bindtap="click" data-class="{{item[0].kcm}}" data-order="{{item[0].djj_xh}}" data-teacher="{{item[0].jsxm}}" data-school="{{item[0].xqmc}}" data-room="{{item[1].jxl}}" data-date="{{item[0].rq}}" data-note="{{item[0].beizhu}}">
+                    <text class="title">{{item[0].kcm}}</text>
+                    <text class="room">@{{item[1].jxl}}</text>
+                  </view>
+                </block>
+              </block>
+            </view>
+            <view class="course" style='height: calc((95.5vh - {{navH + 46}}px)/5.2)'>
+              <block wx:for="{{schedule}}" wx:key="week">
+                <block wx:if="{{item[0].xqj == '星期五' && (item[0].djj_xh == '3,4' || item[0].djj_xh == '1,2,3,4' || item[0].djj_xh == '1,2,3,4,5,6,7,8')}}">
+                  <view class="item" style="{{bg}}; height: calc((95.5vh - {{navH+ 46}}px)/5.2)" bindtap="click" data-class="{{item[0].kcm}}" data-order="{{item[0].djj_xh}}" data-teacher="{{item[0].jsxm}}" data-school="{{item[0].xqmc}}" data-room="{{item[1].jxl}}" data-date="{{item[0].rq}}" data-note="{{item[0].beizhu}}">
+                    <text class="title">{{item[0].kcm}}</text>
+                    <text class="room">@{{item[1].jxl}}</text>
+                  </view>
+                </block>
+              </block>
+            </view>
+            <view class="course" style='height: calc((95.5vh - {{navH + 46}}px)/5.2)'>
+              <block wx:for="{{schedule}}" wx:key="week">
+                <block wx:if="{{item[0].xqj == '星期五' && (item[0].djj_xh == '5,6' || item[0].djj_xh == '5,6,7,8' || item[0].djj_xh == '1,2,3,4,5,6,7,8')}}">
+                  <view class="item" style="{{bg}}; height: calc((95.5vh - {{navH+ 46}}px)/5.2)" bindtap="click" data-class="{{item[0].kcm}}" data-order="{{item[0].djj_xh}}" data-teacher="{{item[0].jsxm}}" data-school="{{item[0].xqmc}}" data-room="{{item[1].jxl}}" data-date="{{item[0].rq}}" data-note="{{item[0].beizhu}}">
+                    <text class="title">{{item[0].kcm}}</text>
+                    <text class="room">@{{item[1].jxl}}</text>
+                  </view>
+                </block>
+              </block>
+            </view>
+            <view class="course" style='height: calc((95.5vh - {{navH + 46}}px)/5.2)'>
+              <block wx:for="{{schedule}}" wx:key="week">
+                <block wx:if="{{item[0].xqj == '星期五' && (item[0].djj_xh == '7,8' || item[0].djj_xh == '5,6,7,8' || item[0].djj_xh == '7,8,9,10,11' || item[0].djj_xh == '1,2,3,4,5,6,7,8')}}">
+                  <view class="item" style="{{bg}}; height: calc((95.5vh - {{navH+ 46}}px)/5.2)" bindtap="click" data-class="{{item[0].kcm}}" data-order="{{item[0].djj_xh}}" data-teacher="{{item[0].jsxm}}" data-school="{{item[0].xqmc}}" data-room="{{item[1].jxl}}" data-date="{{item[0].rq}}" data-note="{{item[0].beizhu}}">
+                    <text class="title">{{item[0].kcm}}</text>
+                    <text class="room">@{{item[1].jxl}}</text>
+                  </view>
+                </block>
+              </block>
+            </view>
+            <view class="course" style='height: calc((95.5vh - {{navH + 46}}px)/5.2)'>
+              <block wx:for="{{schedule}}" wx:key="week">
+                <block wx:if="{{item[0].xqj == '星期五' && (item[0].djj_xh == '9,10' || item[0].djj_xh == '9,10,11' || item[0].djj_xh == '7,8,9,10,11')}}">
+                  <view class="item" style="{{bg}}; height: calc((95.5vh - {{navH+ 46}}px)/5.2)" bindtap="click" data-class="{{item[0].kcm}}" data-order="{{item[0].djj_xh}}" data-teacher="{{item[0].jsxm}}" data-school="{{item[0].xqmc}}" data-room="{{item[1].jxl}}" data-date="{{item[0].rq}}" data-note="{{item[0].beizhu}}">
+                    <text class="title">{{item[0].kcm}}</text>
+                    <text class="room">@{{item[1].jxl}}</text>
+                  </view>
+                </block>
+              </block>
+            </view>
+          </view>
+        </view>
+        <view class="c-line"></view>
+      </view>
+      <view class="sub">
+        <view class="saturday">
+          <block wx:if="{{todaydate == '星期六'}}">
+            <view class="week" style="color:#ff0000">周六</view>
+          </block>
+          <block wx:else>
+            <view class="week" style="color:#000">周六</view>
+          </block>
+          <view class="r-line"></view>
+          <view class="body">
+            <view class="course" style='height: calc((95.5vh - {{navH + 46}}px)/5.2)'>
+              <block wx:for="{{schedule}}" wx:key="week">
+                <block wx:if="{{item[0].xqj == '星期六' && (item[0].djj_xh == '1,2' || item[0].djj_xh == '1,2,3,4' || item[0].djj_xh == '1,2,3,4,5,6,7,8')}}">
+                  <view class="item" style="{{bg}}; height: calc((95.5vh - {{navH+ 46}}px)/5.2)" bindtap="click" data-class="{{item[0].kcm}}" data-order="{{item[0].djj_xh}}" data-teacher="{{item[0].jsxm}}" data-school="{{item[0].xqmc}}" data-room="{{item[1].jxl}}" data-date="{{item[0].rq}}" data-note="{{item[0].beizhu}}">
+                    <text class="title">{{item[0].kcm}}</text>
+                    <text class="room">@{{item[1].jxl}}</text>
+                  </view>
+                </block>
+              </block>
+            </view>
+            <view class="course" style='height: calc((95.5vh - {{navH + 46}}px)/5.2)'>
+              <block wx:for="{{schedule}}" wx:key="week">
+                <block wx:if="{{item[0].xqj == '星期六' && (item[0].djj_xh == '3,4' || item[0].djj_xh == '1,2,3,4' || item[0].djj_xh == '1,2,3,4,5,6,7,8')}}">
+                  <view class="item" style="{{bg}}; height: calc((95.5vh - {{navH+ 46}}px)/5.2)" bindtap="click" data-class="{{item[0].kcm}}" data-order="{{item[0].djj_xh}}" data-teacher="{{item[0].jsxm}}" data-school="{{item[0].xqmc}}" data-room="{{item[1].jxl}}" data-date="{{item[0].rq}}" data-note="{{item[0].beizhu}}">
+                    <text class="title">{{item[0].kcm}}</text>
+                    <text class="room">@{{item[1].jxl}}</text>
+                  </view>
+                </block>
+              </block>
+            </view>
+            <view class="course" style='height: calc((95.5vh - {{navH + 46}}px)/5.2)'>
+              <block wx:for="{{schedule}}" wx:key="week">
+                <block wx:if="{{item[0].xqj == '星期六' && (item[0].djj_xh == '5,6' || item[0].djj_xh == '5,6,7,8' || item[0].djj_xh == '1,2,3,4,5,6,7,8')}}">
+                  <view class="item" style="{{bg}}; height: calc((95.5vh - {{navH+ 46}}px)/5.2)" bindtap="click" data-class="{{item[0].kcm}}" data-order="{{item[0].djj_xh}}" data-teacher="{{item[0].jsxm}}" data-school="{{item[0].xqmc}}" data-room="{{item[1].jxl}}" data-date="{{item[0].rq}}" data-note="{{item[0].beizhu}}">
+                    <text class="title">{{item[0].kcm}}</text>
+                    <text class="room">@{{item[1].jxl}}</text>
+                  </view>
+                </block>
+              </block>
+            </view>
+            <view class="course" style='height: calc((95.5vh - {{navH + 46}}px)/5.2)'>
+              <block wx:for="{{schedule}}" wx:key="week">
+                <block wx:if="{{item[0].xqj == '星期六' && (item[0].djj_xh == '7,8' || item[0].djj_xh == '5,6,7,8' || item[0].djj_xh == '7,8,9,10,11' || item[0].djj_xh == '1,2,3,4,5,6,7,8')}}">
+                  <view class="item" style="{{bg}}; height: calc((95.5vh - {{navH+ 46}}px)/5.2)" bindtap="click" data-class="{{item[0].kcm}}" data-order="{{item[0].djj_xh}}" data-teacher="{{item[0].jsxm}}" data-school="{{item[0].xqmc}}" data-room="{{item[1].jxl}}" data-date="{{item[0].rq}}" data-note="{{item[0].beizhu}}">
+                    <text class="title">{{item[0].kcm}}</text>
+                    <text class="room">@{{item[1].jxl}}</text>
+                  </view>
+                </block>
+              </block>
+            </view>
+            <view class="course" style='height: calc((95.5vh - {{navH + 46}}px)/5.2)'>
+              <block wx:for="{{schedule}}" wx:key="week">
+                <block wx:if="{{item[0].xqj == '星期六' && (item[0].djj_xh == '9,10' || item[0].djj_xh == '9,10,11' || item[0].djj_xh == '7,8,9,10,11')}}">
+                  <view class="item" style="{{bg}}; height: calc((95.5vh - {{navH+ 46}}px)/5.2)" bindtap="click" data-class="{{item[0].kcm}}" data-order="{{item[0].djj_xh}}" data-teacher="{{item[0].jsxm}}" data-school="{{item[0].xqmc}}" data-room="{{item[1].jxl}}" data-date="{{item[0].rq}}" data-note="{{item[0].beizhu}}">
+                    <text class="title">{{item[0].kcm}}</text>
+                    <text class="room">@{{item[1].jxl}}</text>
+                  </view>
+                </block>
+              </block>
+            </view>
+          </view>
+        </view>
+        <view class="c-line"></view>
+      </view>
+      <view class="sub">
+        <view class="sunday">
+          <block wx:if="{{todaydate == '星期日'}}">
+            <view class="week" style="color:#ff0000">周日</view>
+          </block>
+          <block wx:else>
+            <view class="week" style="color:#000">周日</view>
+          </block>
+          <view class="r-line"></view>
+          <view class="body">
+            <view class="course" style='height: calc((95.5vh - {{navH + 46}}px)/5.2)'>
+              <block wx:for="{{schedule}}" wx:key="week">
+                <block wx:if="{{item[0].xqj == '星期日' && (item[0].djj_xh == '1,2' || item[0].djj_xh == '1,2,3,4' || item[0].djj_xh == '1,2,3,4,5,6,7,8')}}">
+                  <view class="item" style="{{bg}}; height: calc((95.5vh - {{navH+ 46}}px)/5.2)" bindtap="click" data-class="{{item[0].kcm}}" data-order="{{item[0].djj_xh}}" data-teacher="{{item[0].jsxm}}" data-school="{{item[0].xqmc}}" data-room="{{item[1].jxl}}" data-date="{{item[0].rq}}" data-note="{{item[0].beizhu}}">
+                    <text class="title">{{item[0].kcm}}</text>
+                    <text class="room">@{{item[1].jxl}}</text>
+                  </view>
+                </block>
+              </block>
+            </view>
+            <view class="course" style='height: calc((95.5vh - {{navH + 46}}px)/5.2)'>
+              <block wx:for="{{schedule}}" wx:key="week">
+                <block wx:if="{{item[0].xqj == '星期日' && (item[0].djj_xh == '3,4' || item[0].djj_xh == '1,2,3,4' || item[0].djj_xh == '1,2,3,4,5,6,7,8')}}">
+                  <view class="item" style="{{bg}}; height: calc((95.5vh - {{navH+ 46}}px)/5.2)" bindtap="click" data-class="{{item[0].kcm}}" data-order="{{item[0].djj_xh}}" data-teacher="{{item[0].jsxm}}" data-school="{{item[0].xqmc}}" data-room="{{item[1].jxl}}" data-date="{{item[0].rq}}" data-note="{{item[0].beizhu}}">
+                    <text class="title">{{item[0].kcm}}</text>
+                    <text class="room">@{{item[1].jxl}}</text>
+                  </view>
+                </block>
+              </block>
+            </view>
+            <view class="course" style='height: calc((95.5vh - {{navH + 46}}px)/5.2)'>
+              <block wx:for="{{schedule}}" wx:key="week">
+                <block wx:if="{{item[0].xqj == '星期日' && (item[0].djj_xh == '5,6' || item[0].djj_xh == '5,6,7,8' || item[0].djj_xh == '1,2,3,4,5,6,7,8')}}">
+                  <view class="item" style="{{bg}}; height: calc((95.5vh - {{navH+ 46}}px)/5.2)" bindtap="click" data-class="{{item[0].kcm}}" data-order="{{item[0].djj_xh}}" data-teacher="{{item[0].jsxm}}" data-school="{{item[0].xqmc}}" data-room="{{item[1].jxl}}" data-date="{{item[0].rq}}" data-note="{{item[0].beizhu}}">
+                    <text class="title">{{item[0].kcm}}</text>
+                    <text class="room">@{{item[1].jxl}}</text>
+                  </view>
+                </block>
+              </block>
+            </view>
+            <view class="course" style='height: calc((95.5vh - {{navH + 46}}px)/5.2)'>
+              <block wx:for="{{schedule}}" wx:key="week">
+                <block wx:if="{{item[0].xqj == '星期日' && (item[0].djj_xh == '7,8' || item[0].djj_xh == '5,6,7,8' || item[0].djj_xh == '7,8,9,10,11' || item[0].djj_xh == '1,2,3,4,5,6,7,8')}}">
+                  <view class="item" style="{{bg}}; height: calc((95.5vh - {{navH+ 46}}px)/5.2)" bindtap="click" data-class="{{item[0].kcm}}" data-order="{{item[0].djj_xh}}" data-teacher="{{item[0].jsxm}}" data-school="{{item[0].xqmc}}" data-room="{{item[1].jxl}}" data-date="{{item[0].rq}}" data-note="{{item[0].beizhu}}">
+                    <text class="title">{{item[0].kcm}}</text>
+                    <text class="room">@{{item[1].jxl}}</text>
+                  </view>
+                </block>
+              </block>
+            </view>
+            <view class="course" style='height: calc((95.5vh - {{navH + 46}}px)/5.2)'>
+              <block wx:for="{{schedule}}" wx:key="week">
+                <block wx:if="{{item[0].xqj == '星期日' && (item[0].djj_xh == '9,10' || item[0].djj_xh == '9,10,11' || item[0].djj_xh == '7,8,9,10,11')}}">
+                  <view class="item" style="{{bg}}; height: calc((95.5vh - {{navH+ 46}}px)/5.2)" bindtap="click" data-class="{{item[0].kcm}}" data-order="{{item[0].djj_xh}}" data-teacher="{{item[0].jsxm}}" data-school="{{item[0].xqmc}}" data-room="{{item[1].jxl}}" data-date="{{item[0].rq}}" data-note="{{item[0].beizhu}}">
+                    <text class="title">{{item[0].kcm}}</text>
+                    <text class="room">@{{item[1].jxl}}</text>
+                  </view>
+                </block>
+              </block>
+            </view>
+          </view>
+        </view>
+      </view>
+    </scroll-view>
+    <image class="addicon" src="/images/addclass.png" bindtap="addclass"></image>
+    <image class="delicon" src="/images/delclass.png" bindtap="delclass"></image>
+    <image class="coloricon" src="/images/sch_color.png" bindtap="schcolor"></image>
+    <image class="friendicon" src="/images/friendsch.png" bindtap="friendsch"></image>
+    <button class="sharebtn" open-type="share">
+      <image class="share" src="/images/sharesch.png"></image>
+    </button>
+    <picker mode="date" value="{{choosedate}}" start="2017-09-01" end="2020-09-01" bindchange="datechange">
+      <image class="search" src="/images/calendar.png"></image>
+    </picker>
+  </view>
+  <!-- 遮罩弹窗 -->
+  <view class="info" bindtap="hideview" hidden="{{display}}" catchtouchmove="ture">
+    <view class="info-items" style="{{bg}}">
+      <text class="name-top">{{info.class}}</text>
+      <view class="name-body">
+        <text class="name">节次：{{info.order}}</text>
+        <view class="info-line"></view>
+        <text class="anme">地点：{{info.room}}</text>
+        <view class="info-line"></view>
+        <text class="name">教师：{{info.teacher}}</text>
+        <view class="info-line"></view>
+        <text class="name">日期：{{info.date}}</text>
+        <view class="info-line"></view>
+        <text class="name">备注：{{info.note}}</text>
+        <view class="info-line"></view>
+      </view>
+    </view>
+  </view>
+  <!-- 添加课程 -->
+  <view class="addclass" hidden="{{adddisplay}}" catchtouchmove="ture">
+    <view class="add-items" style="{{bg}}">
+      <text class="name-top">自定义添加课程</text>
+      <view class="add-body">
+        <input type="text" placeholder="课程名(必填)" bindinput="classInput" />
+        <input type="text" placeholder="地点(必填)" bindinput="roomInput" />
+        <picker class="picker" bindchange="orderPicker" value="{{orderIndex}}" range="{{orderpick}}">{{orderpick[orderIndex]}}</picker>
+        <picker class="picker" bindchange="weekPicker" value="{{weekIndex}}" range="{{weekpick}}">{{weekpick[weekIndex]}}</picker>
+        <input type="text" placeholder="教师(选填)" bindinput="teacherInput" />
+        <input type="text" placeholder="备注(选填)" bindinput="noteInput" />
+      </view>
+      <view class="addtip">最多可自定义添加5门课程呦</view>
+      <view class="button">
+        <button class="cancel-button" bindtap="addcancel" style="{{bt_color}}">取消</button>
+        <button class="add-button" bindtap="addconfirm" style="{{bt_color}}">确定</button>
+      </view>
+    </view>
+  </view>
+  <!-- 删除课程 -->
+  <view class="delclass" hidden="{{deldisplay}}" catchtouchmove="ture">
+    <view class="del-items" style="{{bg}}">
+      <view class="del-top">删除自定义课程</view>
+      <block wx:if="{{delclass[0] == '' && delclass[1] == '' && delclass[2] == '' && delclass[3] == '' && delclass[4] == ''}}">
+        <view class="none">你还没有添加过课程呦</view>
+      </block>
+      <view class="del-body" wx:for="{{delclass}}" wx:key="delete">
+        <block wx:if="{{item.length == 2}}">
+          <text class="delname">{{item[0].kcm}}</text>
+          <text class="deltime">{{item[0].xqj}}{{item[0].djj_xh}}节</text>
+          <image class="delimg" src="/images/delimg.png" data-index="{{index}}" bindtap="delete"></image>
+        </block>
+      </view>
+      <view class="button">
+        <button class="del-button" bindtap="delcancel" style="{{bt_color}}">取消</button>
+      </view>
+    </view>
+  </view>
+  <!-- 课表皮肤 -->
+  <view class="schcolor" hidden="{{colordisplay}}" catchtouchmove="ture">
+    <view class="color-main">
+      <view class="color-top">课表皮肤中心（右滑获取更多>>）</view>
+      <view class="color-line"></view>
+      <scroll-view scroll-x class="color-list">
+        <view class="color-items" wx:for="{{color}}" wx:key="schcolor">
+          <view class="color-skin" style="{{item.bg}}" bindtap="skinset" data-bg="{{item.bg}}" data-color="{{item.color}}">
+            <text class="title">中国近代史纲要</text>
+            <text class="room">@行知楼815</text>
+            <text class="room">点击设置</text>
+          </view>
+          <text class="color-title">{{item.name}}</text>
+        </view>
+      </scroll-view>
+      <view class="button">
+        <button class="color-button" bindtap="colorcancel">取消</button>
+      </view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,41 @@
+<navbar page-name="更多"></navbar>
+<view class="logo" style='margin-top: {{navH + 46}}px'>
+  <image class="logo-img" src="/images/logo_432.png"></image>
+  <text class="logo-text-a">i云校</text>
+  <text class="logo-text-b">Version 1.3.0</text>
+</view>
+<view class="list">
+  <view class="edge-line"></view>
+  <navigator class="items" url="../article/article?help=true">
+    <image class="img-a" src="/images/help.png"></image>
+    <text class="text">使用帮助</text>
+    <image class="img-b" src="/images/arrow.png"></image>
+  </navigator>
+  <view class="line"></view>
+  <navigator class="items" url="../more/update">
+    <image class="img-a" src="/images/update.png"></image>
+    <text class="text">更新日志</text>
+    <image class="img-b" src="/images/arrow.png"></image>
+  </navigator>
+  <view class="line"></view>
+  <navigator class="items" url="../login/admin?database=true">
+    <image class="img-a" src="/images/data_view.png"></image>
+    <text class="text">后台数据</text>
+    <image class="img-b" src="/images/arrow.png"></image>
+  </navigator>
+  <view class="line"></view>
+  <navigator class="items" url="../article/article?about=true">
+    <image class="img-a" src="/images/about_us.png"></image>
+    <text class="text">关于我们</text>
+    <image class="img-b" src="/images/arrow.png"></image>
+  </navigator>
+  <view class="edge-line"></view>
+</view>
+<view class="agreement">
+  <navigator class="blue" url='/pages/sub/article/article?user_agreement=true'>《i云校用户协议》</navigator>
+  <text class="normal">和</text>
+  <navigator class="blue" url='/pages/sub/article/article?privacy=true'>《i云校隐私条款》</navigator>
+</view>
+<view class="copyright-b">
+  <text>Copyright © 2018-2020 Enjoyfun Studio. All Rights Reserved</text>
+</view>

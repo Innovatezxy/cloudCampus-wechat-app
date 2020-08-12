@@ -1,0 +1,540 @@
+Page{
+  width: 100%;
+  background: #f4f4f7;
+}
+/* 添加到我的小程序 */
+.tips-box {
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 996;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  flex-direction: column;
+  width: 650rpx;
+}
+.tips-arrow {
+  width: 0;
+  height: 0;
+  margin-right: 120rpx;
+  border-width: 20rpx;
+  border-style: solid;
+  border-color:  transparent transparent #fff transparent;
+}
+.tips-body {
+  background-color: #fff;
+  box-shadow: 0 10rpx 20rpx -10rpx #fff;
+  border-radius: 20rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 84rpx;
+  padding: 0 25rpx;
+  margin-right: 40rpx;
+}
+.tips-body text {
+  color: #000;
+  font-size: 28rpx;
+  font-weight: bold;
+}
+
+/* 顶部皮夫卡 */
+.top{
+  position: relative;
+  margin: 0 auto;
+  filter: blur(22px);
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+.top image{
+  width: 100%;
+  height: 100%;
+}
+.top-bg{
+  position: relative;
+  border-radius: 20rpx;
+  z-index: 9;
+}
+.top-bg image{
+  width: 100%;
+  height: 100%;
+  border-radius: 20rpx;
+}
+.user{
+  position: relative;
+  border-radius: 20rpx;
+  z-index: 99;
+}
+.useravater{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.avatar{ 
+  display: flex;
+  width: 120rpx;  
+  height: 120rpx;  
+  border-radius: 50%;
+  overflow: hidden;
+  margin-top: 50rpx;
+}
+.vip{
+  position: absolute;
+  top: 128rpx;
+  right: 300rpx;
+}
+.vipimg{
+  width: 40rpx;
+  height: 40rpx;
+}
+.svip{
+  position: absolute;
+  top: 16rpx;
+  left: 46.5%;
+}
+.svipimg{
+  width: 55rpx;
+  height: 55rpx;
+}
+.location{
+  color: #fff;
+  font-size: 28rpx;
+  font-weight: bold;
+  position: absolute;
+  left: 75rpx;
+  top: 25rpx;
+}
+.location-img{
+  width: 40rpx;
+  height: 40rpx;
+  position: absolute;
+  left: 25rpx;
+  top: 23rpx;
+}
+.skin{
+  width: 40rpx;
+  height: 40rpx;
+  position: absolute;
+  right: 55rpx;
+}
+.user{
+  width: 100%;
+  height: 100%;
+  text-align: center;
+}
+.username{
+  font-size: 28rpx;
+  display: block;
+  color: #fff;
+  margin-top: 8rpx;
+}
+.signature{
+  width: 93%;
+  display: flex;
+  flex-direction: row;
+  margin: 0 auto;
+  justify-content: center;
+}
+.signature text{
+  color: #fff;
+  font-size: 20rpx;
+  margin-left: 37rpx;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.penedit{
+  width: 25rpx;
+  height: 25rpx;
+  margin: auto 10rpx;
+}
+.userinfo{
+  display: flex;
+  flex-direction: column;
+}
+.userinfo .list{
+  display: flex;
+  flex-direction: row;
+  flex: 1;
+}
+.userinfo .items{
+  flex: 1;
+  text-align: center;
+}
+.userinfo .list .number{
+  color: #fff;
+  font-size: 31rpx;
+  font-weight: bolder;
+}
+.userinfo .list .name{
+  color: #fff;
+  font-size: 30rpx;
+  display: block;
+  text-align: center; 
+}
+.loading{
+  width: 140rpx;
+  height: 35rpx;
+}
+
+/* 个性签名设置 */
+.signatureset{
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  background: rgba(0, 0, 0, 0.495);
+  display: flex;
+  z-index: 29;
+}
+.signatureset-body{
+  width: 100%;
+  height: auto;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  bottom: 0;
+  border-top-right-radius: 30rpx;
+  border-top-left-radius: 30rpx;
+}
+.signatureset .title{
+  color: #000;
+  font-size: 25pt;
+  font-weight: bolder;
+  margin: 15rpx auto;
+  text-align: center;
+}
+.signatureset input{
+  color: #000;
+  background: #f4f4f7;
+  width: 85%;
+  line-height: 60rpx;
+  font-size: 32rpx;
+  text-align: center;
+  padding: 17rpx 0;
+  border-radius: 30rpx;
+  margin: 15rpx auto;
+}
+.signatureset .button{
+  width: 93%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin: 15rpx auto;
+}
+.signatureset .cancel-button{
+  width: 40%;
+  background-color: #fff;
+  color: #000;
+  margin: 10rpx auto;
+}
+.signatureset .add-button{
+  width: 40%;
+  background-color: #000;
+  color: #fff;
+  margin: 10rpx auto;
+}
+
+/* 滚动通知栏 */
+.services-swiper{
+  background: #ffffff;
+  height: 40rpx;
+  width: 93%;
+  border-radius: 20rpx;
+  padding: 15rpx 5rpx;
+  margin: 25rpx auto 25rpx;
+}
+.swiper-item{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-content: center;
+}
+.swiper-text{
+  font-size: 30rpx;
+  color: #ee0000;
+  margin: auto 5rpx;
+}
+/* 日程卡 */
+.days{
+  width: 93%;
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  border-radius: 20rpx;
+  box-shadow: 0 0 5rpx 5rpx rgba(150, 150, 150, 0.233);
+  margin: 25rpx auto;
+}
+.dayslist{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.info-body{
+  width: 93%;
+  display: flex;
+  flex-direction: row;
+  margin: 10rpx auto;
+}
+.content{
+  width: 62%;
+  line-height: 40rpx;
+  padding: 10rpx 20rpx;
+  color: #000;
+  background: #fff;
+  font-size: 28rpx;
+  font-weight: 500;
+  margin: auto 0;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.reduct-days{
+  width: 28%;
+  line-height: 40rpx;
+  padding: 10rpx;
+  color: #fff;
+  font-size: 28rpx;
+  font-weight: bolder;
+  margin: auto 0;
+  text-align: center;
+  background: #87cefa;
+  border-top-left-radius: 20rpx;
+  border-bottom-left-radius: 20rpx;
+}
+.reduct-unit{
+  width: 10%;
+  line-height: 40rpx;
+  padding: 10rpx;
+  color: #fff;
+  font-size: 28rpx;
+  font-weight: bolder;
+  margin: auto 0;
+  text-align: center;
+  background: #009dff;
+  border-top-right-radius: 20rpx;
+  border-bottom-right-radius: 20rpx;
+}
+.addup-days{
+  width: 28%;
+  line-height: 40rpx;
+  padding: 10rpx;
+  color: #fff;
+  font-size: 28rpx;
+  font-weight: bolder;
+  margin: auto 0;
+  text-align: center;
+  background: #ff9797;
+  border-top-left-radius: 20rpx;
+  border-bottom-left-radius: 20rpx;
+}
+.addup-unit{
+  width: 10%;
+  line-height: 40rpx;
+  padding: 10rpx;
+  color: #fff;
+  font-size: 28rpx;
+  font-weight: bolder;
+  margin: auto 0;
+  text-align: center;
+  background: #db5858;
+  border-top-right-radius: 20rpx;
+  border-bottom-right-radius: 20rpx;
+}
+.daysnone{
+  width: 90%;
+  line-height: 40rpx;
+  padding: 10rpx;
+  font-size: 13pt;
+  text-align: center;
+  color: #000;
+  font-weight: bold;
+  margin: 10rpx auto;
+}
+
+/* 课程提醒卡 */
+.schedule{
+  width: 93%;
+  background: #fff;
+  margin: 35rpx auto;
+  border-radius: 20rpx;
+  box-shadow: 0 0 5rpx 5rpx rgba(150, 150, 150, 0.233);
+}
+.sch-top{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+.title{
+  font-size: 28rpx;
+}
+.date{
+  font-size: 18rpx;
+}
+.classimg{
+  width: 55rpx;
+  height: 55rpx;
+  margin: auto 15rpx;
+}
+.line{
+  width: 90%;
+  height: 3rpx;
+  background: #797979;
+  margin: 3rpx auto;
+}
+.today{
+  width: 95%;
+  display: flex;
+  flex-direction: row;
+}
+.ordermain{
+  display: flex;
+  flex-direction: row;
+}
+.classmain{
+  width: 50%;
+  margin: 5rpx 10rpx; 
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+.roommain{
+  width: 30%;
+  display: flex;
+  flex-direction: row;
+  position: absolute;
+  left: 65%;
+}
+.order{
+  color: #707070;
+  font-size: 23rpx;
+  margin: 2rpx 0;
+}
+.time{
+  color: #707070;
+  font-size: 23rpx;
+  margin: 2rpx 10rpx;
+}
+.class{
+  color: #4d4d4d;
+  font-size: 25rpx;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.classroom{
+  color: #4d4d4d;
+  font-size: 29rpx;
+  margin: 18rpx 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.none{
+  color: #797979;
+  font-size: 30rpx;
+  padding: 10rpx 0;
+  text-align: center;
+}
+
+/* 功能卡 */
+.function{
+  width: 93%;
+  height: auto;
+  border-radius: 20rpx;
+  box-shadow: 0 0 5rpx 5rpx rgba(150, 150, 150, 0.233);
+  margin: 40rpx auto;
+  background: #fff;
+  display: flex;
+  flex-flow: column wrap;
+  margin-bottom: 20rpx;
+}
+.function .list{
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+  text-align: center;
+}
+.function .items{
+  width: 25%;
+  height: 130rpx;
+  margin: 10rpx 0;
+}
+.function .list .img{
+  width: 90rpx;
+  height: 90rpx;
+  margin: 0 auto;
+}
+.function .list .text{
+  color: #a1a1a1;
+  display: block;
+  font-size: 25rpx;
+}
+.unread{
+  width: 35rpx;
+  height: 35rpx;
+  display: inline-block;
+  text-align: center;
+  transform: translate(35rpx, -140rpx);
+}
+.unread image{
+  width: 35rpx;
+  height: 35rpx;
+  display: inline-block;
+}
+.unread text{
+  color: #fff;
+  font-size: 20rpx;
+  font-weight: bold;
+  display: inline-block;
+  transform: translate(1rpx, -56rpx);
+}
+
+/* 底部版权 */
+.copyright{
+  width: 100%;
+  display: flex;
+  text-align: center;
+  margin: 15rpx auto;
+}
+.copyright text{
+  color: #a1a1a1;
+  font-size: 22rpx;
+  margin: 0 auto;
+}
+
+/* 海报 */
+.poster{
+  width: 100%;
+  height: 110%;
+  background: rgba(0, 0, 0, 0.75);
+  position: absolute;
+  z-index: 999;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+.poster-img{
+  width: 100%;
+}
+.poster-close{
+  width: 60rpx;
+  height: 60rpx;
+  position: absolute;
+  bottom: 15%;
+  left: 47%;
+}
+
+/* 首页广告 */
+.ad{
+  width: 93%;
+  height: auto;
+  margin: 15rpx auto;
+  border-radius: 10rpx;
+  box-shadow: 0 0 5rpx 5rpx rgba(150, 150, 150, 0.233);
+}
+.ad-body{
+  border-radius: 10rpx;
+}

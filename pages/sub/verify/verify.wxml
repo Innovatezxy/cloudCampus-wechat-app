@@ -1,0 +1,12 @@
+<navbar page-name="二次验证"></navbar>
+<view class="page" style='height: calc(100vh - {{navH + 46}}px); margin-top: {{navH + 46}}px'>
+  <view class="top">
+    <text class="top-tip">为保障您的信息安全，在首次登录或重新绑定时需要对您的身份进行二次验证</text>
+    <text class="top-tip">请在下方输入您的姓名以完成验证</text>
+  </view>
+  <input type=" text" placeholder="姓名 " bindinput="nameInput"/>
+  <button class="login-button" bindtap="logintouser">确定</button>
+  <view class="bottom">
+    <text class="bottom-tip">※云校不会以任何形式索要，收集您的信息，所有信息只在您本设备留存</text>
+  </view>
+</view>

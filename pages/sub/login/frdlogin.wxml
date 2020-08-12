@@ -1,0 +1,15 @@
+<navbar page-name="登录"></navbar>
+<view class="login" style='height: calc(100vh - {{navH + 46}}px);'>
+  <image class="logo" src="/images/logo_432.png"></image>
+  <text class="logo-text-a">登录云校</text>
+  <text class="logo-text-b">人手一份的校园小程序</text>
+  <input class="infoinput" type="number" maxlength="15" placeholder="学号" bindinput="accountInput" />
+  <button class="login-button" bindtap="logintouser">登录</button>
+  <text class="tips" bindtap="toservices">>>暂不登录</text>
+  <view class="agreement">
+    <text class="normal">登录表示同意</text>
+    <navigator class="blue" url='/pages/sub/article/article?user_agreement=true'>用户协议、</navigator>
+    <navigator class="blue" url='/pages/sub/article/article?privacy=true'>隐私条款</navigator>
+  </view>
+  <text class="copyright">Copyright © 2018-2020 Enjoyfun Studio. All Rights Reserved</text>
+</view>

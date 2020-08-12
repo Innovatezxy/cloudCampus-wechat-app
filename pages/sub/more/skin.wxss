@@ -1,0 +1,92 @@
+Page{
+  width: 100%;
+  background: #f4f4f7;
+}
+.main{
+  width: 93%;
+  background: #fff;
+  border-radius: 20rpx;
+  margin: 30rpx auto;
+}
+.top{
+  display: flex;
+  flex-direction: row;
+}
+.top-title{
+  color: #a1a1a1;
+  padding: 15rpx 35rpx;
+  font-size: 30rpx;
+}
+.tip{
+  color: #a1a1a1;
+  padding: 15rpx 0;
+  font-size: 30rpx;
+}
+.line{
+  width: 89%;
+  height: 3rpx;
+  background: #a1a1a1;
+  position: absolute;
+  right: 3.5%;
+}
+.list{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.items{
+  display: inline-block;
+  text-align: center;
+  padding: 25rpx 25rpx;
+}
+.skin{
+  width: 250rpx;
+  height: 125rpx;
+  background: #fff;
+  border-radius: 20rpx;
+  box-shadow: 0 0 5rpx 5rpx rgba(150, 150, 150, 0.233)
+}
+.title{
+  color: #a1a1a1;
+  font-size: 30rpx;
+  margin: 10rpx auto;
+}
+.default{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin: 20rpx auto;
+  text-align: center;
+}
+.defaultskin{
+  color: #2c2c2c;
+  font-size: 32rpx;
+  text-decoration-line: underline;
+}
+.tips{
+  font-size: 28rpx;
+  color: #a1a1a1;
+  margin: 10rpx;
+}
+.custom-skin{
+  width: 100%;
+  height: auto;
+  position: fixed;
+  bottom: 60rpx;
+  text-align: center;
+  padding: 10rpx auto;
+  border-radius: 30rpx;
+}
+.custom-skin button{
+  width: 580rpx;
+  background-color: #ea3f49;
+  color: white;
+  padding: 10rpx 0;
+  border-radius: 30rpx;
+  box-shadow: 0 0 5rpx 5rpx rgba(150, 150, 150, 0.233);
+  font-size: 38rpx;
+  font-weight: bold;
+  border: 3.5rpx solid #464040;
+}

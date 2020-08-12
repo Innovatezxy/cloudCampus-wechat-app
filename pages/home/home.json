@@ -1,0 +1,8 @@
+{
+  "backgroundTextStyle": "light",
+  "navigationBarBackgroundColor": "#f4f4f7",
+  "navigationBarTitleText": "i云校",
+  "navigationBarTextStyle": "white",
+  "backgroundColor": "#f4f4f7",
+  "enablePullDownRefresh": true
+}

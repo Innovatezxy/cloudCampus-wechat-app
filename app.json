@@ -1,0 +1,68 @@
+{
+  "pages": [
+    "pages/home/home",
+    "pages/notice/notice",
+    "pages/sub/more/more",
+    "pages/sub/location/location",
+    "pages/sub/login/login",
+    "pages/sub/login/admin",
+    "pages/sub/login/frdlogin",
+    "pages/sub/score/score",
+    "pages/sub/gpa/gpa",
+    "pages/sub/schedule/frdsch",
+    "pages/sub/schedule/schedule",
+    "pages/sub/cost/cost",
+    "pages/sub/exam/exam",
+    "pages/sub/book/book",
+    "pages/sub/car/car",
+    "pages/sub/admin/database",
+    "pages/sub/more/bind",
+    "pages/sub/more/setting",
+    "pages/sub/more/skin",
+    "pages/sub/cropper/areacut",
+    "pages/sub/more/update",
+    "pages/sub/more/other",
+    "pages/sub/verify/verify",
+    "pages/sub/verify/frdverify",
+    "pages/sub/article/article",
+    "pages/sub/schoolcalendar/schoolcalendar",
+    "pages/sub/days/days",
+    "pages/sub/sports/sports",
+    "pages/sub/sports/info"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#000",
+    "navigationBarTitleText": "i云校",
+    "navigationBarTextStyle": "black",
+    "navigationStyle": "custom"
+  },
+  "tabBar": {
+    "color": "#2c2c2c",
+    "selectedColor": "#da3e2b",
+    "backgroundColor": "#f0f0f0",
+    "borderStyle": "white",
+    "list": [
+      {
+        "pagePath": "pages/home/home",
+        "text": "首页",
+        "iconPath": "images/home_icc.png",
+        "selectedIconPath": "images/home_icc_c.png"
+      },
+      {
+        "pagePath": "pages/notice/notice",
+        "text": "通知",
+        "iconPath": "images/home_blackbroad.png",
+        "selectedIconPath": "images/home_blackbroad_c.png"
+      },
+      {
+        "pagePath": "pages/sub/more/more",
+        "text": "我的",
+        "iconPath": "images/home_my.png",
+        "selectedIconPath": "images/home_my_c.png"
+      }
+    ]
+  },
+  "debug": true,
+  "sitemapLocation": "sitemap.json"
+}

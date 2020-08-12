@@ -1,0 +1,47 @@
+<navbar page-name="选择学校"></navbar>
+<view class="page" style='margin-top: {{navH + 46}}px'>
+  <view class="logo">
+    <image class="logo-img" src="/images/logo_432.png"></image>
+    <text class="logo-text-a">登录云校</text>
+    <text class="logo-text-b">人手一份的校园小程序</text>
+  </view>
+  <view class="line" />
+  <view class="status">
+    <text>当前选择：{{status}}</text>
+  </view>
+  <view class="line" />
+  <view class="title_1">
+    <text>呼和浩特市:</text>
+  </view>
+  <view class="body">
+    <view wx:for="{{hohhot}}" wx:key="school">
+      <view class="items" bindtap="choose" data-en="{{item.en}}" data-cn="{{item.cn}}">
+        <text>{{item.cn}}</text>
+      </view>
+    </view>
+  </view>
+  <view class="title_2">
+    <text>包头市:</text>
+  </view>
+  <view class="body">
+    <view wx:for="{{baotou}}" wx:key="school">
+      <view class="items" bindtap="choose" data-en="{{item.en}}" data-cn="{{item.cn}}">
+        <text>{{item.cn}}</text>
+      </view>
+    </view>
+  </view>
+  <view class="title_2">
+    <text>通辽市:</text>
+  </view>
+  <view class="body">
+    <view wx:for="{{tongliao}}" wx:key="school">
+      <view class="items" bindtap="choose" data-en="{{item.en}}" data-cn="{{item.cn}}">
+        <text>{{item.cn}}</text>
+      </view>
+    </view>
+  </view>
+  <view class="tips">若在未解绑情况下更换学校需重新绑定账号</view>
+</view>
+<view class="copyright">
+  <text>Copyright © 2018-2019 Enjoyfun Studio. All Rights Reserved</text>
+</view>

@@ -1,0 +1,11 @@
+<navbar page-name="裁剪皮肤"></navbar>
+<import src="/pages/sub/cropper/cropper.wxml"/>
+
+<view class="cropper-wrapper" style='margin-top: 46px'>
+  <template is="we-cropper" data="{{...cropperOpt}}"/>
+  <view class="cropper-buttons">
+    <view class="upload" bindtap="uploadTap">选图</view>
+    <view class="tips">移动与缩放</view>
+    <view class="getCropperImage" bindtap="getCropperImage">确定</view>
+  </view>
+</view>

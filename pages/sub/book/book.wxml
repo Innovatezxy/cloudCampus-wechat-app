@@ -1,0 +1,52 @@
+<navbar page-name="图书借阅查询"></navbar>
+<view class="page">
+  <view class="info" style='margin-top: {{navH + 46}}px'>
+    <view class="items">
+      <text class="names">姓名</text>
+      <text class="values">{{reader.name}}</text>
+    </view>
+    <view class="items">
+      <text class="names">待还册数</text>
+      <text class="values">{{reader.need}}</text>
+    </view>
+    <view class="items">
+      <text class="names">欠款册数</text>
+      <text class="values">{{reader.money}}</text>
+    </view>
+    <view class="items">
+      <text class="names">累借册数</text>
+      <text class="values">{{reader.all}}</text>
+    </view>
+  </view>
+  <view class="line"></view>
+  <view class="title">借阅历史</view>
+  <view wx:if="{{bookinfo.length != 0}}">
+  <view class="list" wx:for="{{bookinfo}}" wx:key="book">
+      <view class="line"></view>
+      <view class="item">
+        <text class="name">图书名称：</text>
+        <text class="value">{{item['图书题名']}}</text>
+      </view>
+      <view class="line"></view>
+      <view class="item">
+        <text class="name">图书编号：</text>
+        <text class="value">{{item['图书条码号']}}</text>
+      </view>
+      <view class="line"></view>
+      <view class="item">
+        <text class="name">借书日期：</text>
+        <text class="value">{{item['借书日期']}}</text>
+      </view>
+      <view class="line"></view>
+      <view class="item">
+        <text class="name">应还日期：</text>
+        <text class="value-tip">{{item['应还日期']}}</text>
+      </view>
+      <view class="line"></view>
+    </view>
+  </view>
+  <view wx:else class="empty">
+    <image class="none" src="/images/none.png"></image>
+    <text class="none-text">空空如也</text>
+  </view>
+</view>

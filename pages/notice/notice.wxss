@@ -1,0 +1,111 @@
+Page{
+  background: #fff;
+}
+.navbar-bg{
+  width: 100%;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 97;
+  background: #fff;
+}
+.navbar-title{
+  width: 100%;
+  height: 46rpx;
+  line-height: 46px;
+  text-align: center;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 98;
+  color: #000;
+  font-size: 37rpx;
+  font-weight: bold;
+}
+.home-swiper{
+  width: 100%;
+  height: 350rpx;
+  border-radius: 30rpx;
+}
+.swiper-item{
+  text-align: center;
+}
+.img{
+  width: 93%;
+  height: 100%;
+  border-radius: 30rpx;
+}
+.notice{
+  background: #fff;
+  width: 100%;
+  height: 100%;
+  padding: 10rpx 0;
+}
+.line{
+  width: 95%;
+  padding: 1rpx 0;
+  background: lightgray;
+  margin: 10rpx auto;
+}
+.list{
+  background: #fff;
+  width: 95%;
+  height: 200rpx;
+  border-radius: 10rpx;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+}
+.res-items{
+  display: flex;
+  flex-direction: row;
+}
+.body{
+  width: 300rpx;
+  height: 200rpx;
+}
+.resimg{
+  width: 300rpx;
+  height: 200rpx;
+  border-radius: 10rpx;
+}
+.restext{
+  display: flex;
+  flex-direction: column;
+  font-size: small;
+  color: black;
+}
+.description{
+  display: -webkit-box;
+  margin: 10rpx;
+  padding-left: 10rpx;
+  line-height: 45rpx;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp:3;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-break: break-all;
+}
+.author{
+  color: deepskyblue;
+  margin: 10rpx;
+  padding-left: 10rpx;
+}
+.date{
+  margin: 5rpx;
+  padding-left: 10rpx;
+}
+.bottom-tip{
+  width: 100%;
+  display: flex;
+}
+.bottom-tip text{
+  font-size: 28rpx;
+  color: #a1a1a1;
+  margin: 10rpx auto;
+}
+.ad{
+  width: 95%;
+  height: auto;
+  margin: 10rpx auto;
+}

@@ -1,0 +1,56 @@
+Page{
+  width: 100%;
+  background: #fff;
+}
+.page{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  text-align: center;
+}
+.top{
+  margin: 50rpx auto;
+  display: flex;
+  flex-direction: column;
+}
+.top-tip{
+  color: #000;
+  font-size: 30rpx;
+  overflow: hidden;
+  margin: 20rpx;
+}
+.page input{
+  background: rgb(245,245,245);
+  width: 300rpx;
+  line-height: 60rpx;
+  font-size:  35rpx;
+  text-align: center;
+  margin: 10rpx auto;
+  margin-top: 100rpx;
+  padding: 15rpx 0;
+  border-radius: 20rpx;
+  border: 3.5rpx solid #464040;
+}
+.login-button{
+  width: 300rpx;
+  line-height: 60rpx;
+  background: #ea3f49;
+  border: 3.5rpx solid #464040;
+  color: white;
+  padding: 15rpx 0;
+  margin: 30rpx auto;
+}
+.bottom{
+  display: flex;
+  position: absolute;
+  bottom: 5rpx;
+  margin: 20rpx auto;
+  text-align: start;
+}
+.bottom-tip{
+  color: #a1a1a1;
+  font-size: 24rpx;
+  overflow: hidden;
+  margin: 0 20rpx;
+}

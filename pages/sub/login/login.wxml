@@ -1,0 +1,25 @@
+<navbar page-name="登录"></navbar>
+<view class="login" style='height: calc(100vh - {{navH + 46}}px);'>
+  <image class="logo" src="/images/logo_432.png"></image>
+  <text class="logo-text-a">登录云校</text>
+  <text class="logo-text-b">人手一份的校园小程序</text>
+  <input class="infoinput" type="number" maxlength="15" placeholder="学号" bindinput="accountInput" />
+  <input class="infoinput" password type="text" placeholder="密码" bindinput="passwordInput" />
+  <view class="verify" wx:if="{{hide == false}}">
+    <input class="verifyinput" type="text" maxlength="4" placeholder="验证码" bindinput="verifyInput" />
+    <image class="verifyimg" src="{{url}}" bindtap="changeverify"></image>
+  </view>
+  <text class="account-tips">学号、密码均为教务系统帐户信息</text>
+  <button class="login-button" style="background-color: #f19197;" bindtap="logintouser" wx:if="{{btn_color == 'light'}}">{{status}}</button>
+  <button class="login-button" style="background-color: #ea3f49;" bindtap="logintouser" wx:if="{{btn_color == 'deep'}}">{{status}}</button>
+  <view class="more">
+    <text bindtap="toservices">>>暂不登录</text>
+    <text bindtap="help">>>获取帮助</text>
+  </view>
+  <view class="agreement">
+    <text class="normal">登录表示同意</text>
+    <navigator class="blue" url='/pages/sub/article/article?user_agreement=true'>用户协议、</navigator>
+    <navigator class="blue" url='/pages/sub/article/article?privacy=true'>隐私条款</navigator>
+  </view>
+  <text class="copyright">Copyright © 2018-2020 Enjoyfun Studio. All Rights Reserved</text>
+</view>

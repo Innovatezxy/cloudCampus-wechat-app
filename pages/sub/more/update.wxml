@@ -1,0 +1,403 @@
+<navbar page-name="更新日志"></navbar>
+<view class="page" style='margin-top: {{navH + 46}}px'>
+  <view class="top">
+    <text class="title">更新日志</text>
+  </view>
+  <view class="main">
+    <view class="header">
+      <text class="name">V1.3.0正式版</text>
+      <text class="date">2019.08.09</text>
+    </view>
+    <view class="line"></view>
+    <view class="body">
+      <text>优化登录界面</text>
+      <text>优化缓存机制</text>
+      <text>新增等级考试查询</text>
+      <text>校车查询（师大）支持发表照片</text>
+      <text>优化体验</text>
+      <text>修复Bug</text>
+    </view>
+  </view>
+  <view class="main">
+    <view class="header">
+      <text class="name">V1.2.9正式版</text>
+      <text class="date">2019.07.07</text>
+    </view>
+    <view class="line"></view>
+    <view class="body">
+      <text>全新Logo</text>
+      <text>红色：激情澎湃，朝气蓬勃</text>
+      <text>博士帽：学有所成，业有所精</text>
+      <text>眼睛：展望未来，未来可期</text>
+      <text>云朵：不断创新，大有所为</text>
+      <text>全局元素视觉优化</text>
+    </view>
+  </view>
+  <view class="main">
+    <view class="header">
+      <text class="name">V1.2.8正式版</text>
+      <text class="date">2019.06.03</text>
+    </view>
+    <view class="line"></view>
+    <view class="body">
+      <text>重大更新：</text>
+      <text>新增内农大考试安排查询功能</text>
+      <text>修复内师大一卡通余额无法更新的问题</text>
+      <text>优化体验</text>
+      <text>修复Bug</text>
+    </view>
+  </view>
+  <view class="main">
+    <view class="header">
+      <text class="name">V1.2.7正式版</text>
+      <text class="date">2019.05.14</text>
+    </view>
+    <view class="line"></view>
+    <view class="body">
+      <text>重大更新：</text>
+      <text>新增内农大体测查询功能，好友PK功能</text>
+      <text>全面提升数据安全性</text>
+      <text>提高流畅度，降低网路延迟</text>
+      <text>修复内财大，内农大课表数据无法获取的问题</text>
+      <text>优化体验</text>
+      <text>修复Bug</text>
+    </view>
+  </view>
+  <view class="main">
+    <view class="header">
+      <text class="name">V1.2.6正式版</text>
+      <text class="date">2019.04.24</text>
+    </view>
+    <view class="line"></view>
+    <view class="body">
+      <text>重大更新：</text>
+      <text>新增内师大体测查询功能，好友PK功能</text>
+      <text>优化体验</text>
+      <text>修复Bug</text>
+    </view>
+  </view>
+  <view class="main">
+    <view class="header">
+      <text class="name">V1.2.5正式版</text>
+      <text class="date">2019.04.15</text>
+    </view>
+    <view class="line"></view>
+    <view class="body">
+      <text>优化页面布局</text>
+      <text>首页皮夫卡支持自定义上传图片，给你更多选择</text>
+      <text>优化体验</text>
+      <text>修复Bug</text>
+    </view>
+  </view>
+  <view class="main">
+    <view class="header">
+      <text class="name">V1.2.4正式版</text>
+      <text class="date">2019.04.02</text>
+    </view>
+    <view class="line"></view>
+    <view class="body">
+      <text>重大更新：</text>
+      <text>首页美化，给你沉浸式的视觉美感</text>
+      <text>所有页面导航栏美化，提高使用便捷性</text>
+      <text>课表导航栏及日期选项卡优化为显示当前周次信息(师大)</text>
+      <text>优化体验</text>
+      <text>修复Bug</text>
+    </view>
+  </view>
+  <view class="main">
+    <view class="header">
+      <text class="name">V1.2.3正式版</text>
+      <text class="date">2019.03.11</text>
+    </view>
+    <view class="line"></view>
+    <view class="body">
+      <text>新增首页课表，校车(师大)未读提醒功能</text>
+      <text>优化体验</text>
+      <text>修复Bug</text>
+    </view>
+  </view>
+  <view class="main">
+    <view class="header">
+      <text class="name">V1.2.2正式版</text>
+      <text class="date">2019.03.08</text>
+    </view>
+    <view class="line"></view>
+    <view class="body">
+      <text>新增课表皮肤功能</text>
+      <text>优化体验</text>
+      <text>修复Bug</text>
+    </view>
+  </view>
+  <view class="main">
+    <view class="header">
+      <text class="name">V1.2.1正式版</text>
+      <text class="date">2019.03.02</text>
+    </view>
+    <view class="line"></view>
+    <view class="body">
+      <text>修复内财大无法登录问题</text>
+      <text>优化课表</text>
+      <text>优化体验</text>
+      <text>修复Bug</text>
+    </view>
+  </view>
+  <view class="main">
+    <view class="header">
+      <text class="name">V1.2.0正式版</text>
+      <text class="date">2019.02.25</text>
+    </view>
+    <view class="line"></view>
+    <view class="body">
+      <text>修复课表显示问题</text>
+      <text>优化体验</text>
+      <text>修复Bug</text>
+    </view>
+  </view>
+  <view class="main">
+    <view class="header">
+      <text class="name">V1.1.9正式版</text>
+      <text class="date">2019.01.30</text>
+    </view>
+    <view class="line"></view>
+    <view class="body">
+      <text>修复登录问题</text>
+      <text>首页新增个性签名</text>
+      <text>新增倒数日，纪念日功能并支持首页显示</text>
+      <text>成绩查询，图书查询，绩点计算支持离线缓存加载</text>
+      <text>优化体验</text>
+      <text>修复Bug</text>
+    </view>
+  </view>
+  <view class="main">
+    <view class="header">
+      <text class="name">V1.1.8正式版</text>
+      <text class="date">2019.01.21</text>
+    </view>
+    <view class="line"></view>
+    <view class="body">
+      <text>"We云校"全新更名"i云校"</text>
+      <text>数据隐私保护全新升级</text>
+      <text>优化皮肤界面加载速度</text>
+      <text>优化体验</text>
+      <text>修复Bug</text>
+    </view>
+  </view>
+  <view class="main">
+    <view class="header">
+      <text class="name">V1.1.7正式版</text>
+      <text class="date">2019.01.01</text>
+    </view>
+    <view class="line"></view>
+    <view class="body">
+      <text>2019全新启航，与梦同行</text>
+      <text>优化体验</text>
+      <text>修复Bug</text>
+    </view>
+  </view>
+  <view class="main">
+    <view class="header">
+      <text class="name">V1.1.6正式版</text>
+      <text class="date">2018.12.06</text>
+    </view>
+    <view class="line"></view>
+    <view class="body">
+      <text>新增学生考勤管理功能</text>
+      <text>优化体验</text>
+      <text>修复Bug</text>
+    </view>
+  </view>
+  <view class="main">
+    <view class="header">
+      <text class="name">V1.1.5正式版</text>
+      <text class="date">2018.12.03</text>
+    </view>
+    <view class="line"></view>
+    <view class="body">
+      <text>新增AI人脸签到考勤功能</text>
+      <text>优化体验</text>
+      <text>修复Bug</text>
+    </view>
+  </view>
+  <view class="main">
+    <view class="header">
+      <text class="name">V1.1.4正式版</text>
+      <text class="date">2018.11.15</text>
+    </view>
+    <view class="line"></view>
+    <view class="body">
+      <text>修复内师大校园网剩余流量数据无法获取问题</text>
+      <text>修复Bug</text>
+    </view>
+  </view>
+  <view class="main">
+    <view class="header">
+      <text class="name">V1.1.3正式版</text>
+      <text class="date">2018.11.06</text>
+    </view>
+    <view class="line"></view>
+    <view class="body">
+      <text>享趣工作室进行资源整合，“We云校”小程序正式上线！支持学校：内蒙古师范大学，内蒙古财经大学，内蒙古农业大学</text>
+    </view>
+  </view>
+  <view class="main">
+    <view class="header">
+      <text class="name">V1.1.2正式版</text>
+      <text class="date">2018.11.04</text>
+    </view>
+    <view class="line"></view>
+    <view class="body">
+      <text>享趣工作室旗下产品“We内农”微信小程序正式上线!</text>
+    </view>
+  </view>
+  <view class="main">
+    <view class="header">
+      <text class="name">V1.1.1正式版</text>
+      <text class="date">2018.11.01</text>
+    </view>
+    <view class="line"></view>
+    <view class="body">
+      <text>享趣工作室旗下产品“We内财”微信小程序正式上线!</text>
+    </view>
+  </view>
+  <view class="main">
+    <view class="header">
+      <text class="name">V1.1.0正式版</text>
+      <text class="date">2018.10.11</text>
+    </view>
+    <view class="line"></view>
+    <view class="body">
+      <text>新增学期进度功能</text>
+      <text>新增校历查询功能</text>
+      <text>修复Bug</text>
+    </view>
+  </view>
+  <view class="main">
+    <view class="header">
+      <text class="name">V1.0.9正式版</text>
+      <text class="date">2018.09.28</text>
+    </view>
+    <view class="line"></view>
+    <view class="body">
+      <text>修复朋友课表账号无法解绑问题</text>
+      <text>修复自定义添加课程后首页今/明日课程无法显示问题</text>
+      <text>新增删除自定义课程功能</text>
+      <text>新增体育体测成绩查询功能</text>
+      <text>修复Bug</text>
+    </view>
+  </view>
+  <view class="main">
+    <view class="header">
+      <text class="name">V1.0.8正式版</text>
+      <text class="date">2018.09.21</text>
+    </view>
+    <view class="line"></view>
+    <view class="body">
+      <text>修复首页余额信息不更新问题</text>
+      <text>新增课程表自定义添加课程功能</text>
+      <text>新增查看朋友课表黑科技功能</text>
+      <text>修复Bug</text>
+    </view>
+  </view>
+  <view class="main">
+    <view class="header">
+      <text class="name">V1.0.7正式版</text>
+      <text class="date">2018.09.17</text>
+    </view>
+    <view class="line"></view>
+    <view class="body">
+      <text>优化首页课程提示</text>
+      <text>优化课程表布局</text>
+      <text>新增首页课程时间，教学楼信息</text>
+      <text>新增课程表教学楼信息</text>
+      <text>修复Bug</text>
+    </view>
+  </view>
+  <view class="main">
+    <view class="header">
+      <text class="name">V1.0.6正式版</text>
+      <text class="date">2018.09.13</text>
+    </view>
+    <view class="line"></view>
+    <view class="body">
+      <text>修复新生登录无信息问题</text>
+      <text>修复Bug</text>
+    </view>
+  </view>
+  <view class="main">
+    <view class="header">
+      <text class="name">V1.0.5正式版</text>
+      <text class="date">2018.09.10</text>
+    </view>
+    <view class="line"></view>
+    <view class="body">
+      <text>修复首页余额获取延时问题</text>
+      <text>修复Bug</text>
+    </view>
+  </view>
+  <view class="main">
+    <view class="header">
+      <text class="name">V1.0.4正式版</text>
+      <text class="date">2018.09.08</text>
+    </view>
+    <view class="line"></view>
+    <view class="body">
+      <text>优化首页卡片信息字体为加粗状态</text>
+      <text>优化首页今，明日课程卡片显示日期</text>
+      <text>优化课程表页面今日星期为红色</text>
+      <text>新增课表，一卡通，图书借阅，校车查询(师大)，快递查询页面右上角分享功能</text>
+      <text>修复Bug</text>
+    </view>
+  </view>
+  <view class="main">
+    <view class="header">
+      <text class="name">V1.0.3正式版</text>
+      <text class="date">2018.09.05</text>
+    </view>
+    <view class="line"></view>
+    <view class="body">
+      <text>修复新生登录没有数据问题</text>
+      <text>修复校车查询发送后异步更新问题</text>
+      <text>优化首页布局结构</text>
+      <text>修复Bug</text>
+    </view>
+  </view>
+  <view class="main">
+    <view class="header">
+      <text class="name">V1.0.2正式版</text>
+      <text class="date">2018.09.01</text>
+    </view>
+    <view class="line"></view>
+    <view class="body">
+      <text>新增GPA绩点计算功能</text>
+      <text>新增校车状态实时查询，发表动态功能</text>
+      <text>新增首页，绩点，校车查询(师大)页面右上角分享功能</text>
+      <text>修复Bug</text>
+    </view>
+  </view>
+  <view class="main">
+    <view class="header">
+      <text class="name">V1.0.1正式版</text>
+      <text class="date">2018.08.28</text>
+    </view>
+    <view class="line"></view>
+    <view class="body">
+      <text>修复获取数据延迟问题</text>
+      <text>皮肤库新增数十款皮肤</text>
+      <text>优化首页显示元素</text>
+      <text>修复Bug</text>
+    </view>
+  </view>
+  <view class="main">
+    <view class="header">
+      <text class="name">V1.0.0正式版</text>
+      <text class="date">2018.08.24</text>
+    </view>
+    <view class="line"></view>
+    <view class="body">
+      <text>享趣工作室旗下产品“We内师”微信小程序正式上线!</text>
+    </view>
+  </view>
+</view>
+<view class="copyright">
+  <text>Copyright © 2018-2019 Enjoyfun Studio. All Rights Reserved</text>
+</view>

@@ -1,0 +1,320 @@
+<!-- 导航栏 -->
+<navbar page-name="体测成绩"></navbar>
+
+<view class="page" style='margin-top: {{navH + 46}}px'>
+  <view class="top">
+    <text class="title">总成绩：</text>
+    <text class="score">{{result['总分']}}</text>
+  </view>
+  <view class="body">
+    <view class="line"></view>
+    <view class="list">
+      <text class="title">姓名：</text>
+      <text class="score">{{result['姓名']}}</text>
+    </view>
+    <view class="line"></view>
+    <view class="list">
+      <text class="title">学号：</text>
+      <text class="score">{{result['学号']}}</text>
+    </view>
+    <view class="line"></view>
+    <view class="list">
+      <text class="title">日期：</text>
+      <text class="score">{{result['年份']}}</text>
+    </view>
+    <view class="line"></view>
+    <view class="list">
+      <text class="title">班级：</text>
+      <text class="score">{{result['班级编号']}}</text>
+    </view>
+    <view class="line"></view>
+    <view class="list">
+      <text class="title">学院：</text>
+      <text class="score">{{result['院系描述']}}</text>
+    </view>
+    <view class="line"></view>
+  </view>
+  <view wx:if="{{college == 'imnu'}}">
+    <view class="body">
+      <view class="line"></view>
+      <view class="list">
+        <text class="title">身高(体重)：</text>
+        <text class="score">{{result['身高']}}CM({{result['体重']}}KG)</text>
+      </view>
+      <view class="line"></view>
+      <view class="list">
+        <text class="title">身高体重分数：</text>
+        <text class="score">{{result['身高体重得分']}}分({{result['身高体重评价']}})</text>
+      </view>
+      <view class="line"></view>
+    </view>
+    <view class="body" wx:if="{{result['性别'] == '男'}}">
+      <view class="line"></view>
+      <view class="list">
+        <text class="title">50米跑：</text>
+        <text class="score">{{result['五十米跑']}}秒</text>
+      </view>
+      <view class="line"></view>
+      <view class="list">
+        <text class="title">50米跑分数：</text>
+        <text class="score">{{result['五十米跑得分']}}分({{result['五十米跑评价']}})</text>
+      </view>
+      <view class="line"></view>
+      <view class="list">
+        <text class="title">1000米跑：</text>
+        <text class="score">{{result['千米跑']}}分</text>
+      </view>
+      <view class="line"></view>
+      <view class="list">
+        <text class="title">1000米跑分数：</text>
+        <text class="score">{{result['千米跑得分']}}分({{result['千米跑评价']}})</text>
+      </view>
+      <view class="line"></view>
+    </view>
+    <view class="body" wx:else>
+      <view class="line"></view>
+      <view class="list">
+        <text class="title">50米跑：</text>
+        <text class="score">{{result['五十米跑']}}秒</text>
+      </view>
+      <view class="line"></view>
+      <view class="list">
+        <text class="title">50米跑分数：</text>
+        <text class="score">{{result['五十米跑得分']}}分({{result['五十米跑评价']}})</text>
+      </view>
+      <view class="line"></view>
+      <view class="list">
+        <text class="title">800米跑：</text>
+        <text class="score">{{result['千米跑']}}分</text>
+      </view>
+      <view class="line"></view>
+      <view class="list">
+        <text class="title">800米跑分数：</text>
+        <text class="score">{{result['千米跑得分']}}分({{result['千米跑评价']}})</text>
+      </view>
+      <view class="line"></view>
+    </view>
+    <view class="body">
+      <view class="line"></view>
+      <view class="list">
+        <text class="title">立定跳远：</text>
+        <text class="score">{{result['立定跳远'] / 100}}M</text>
+      </view>
+      <view class="line"></view>
+      <view class="list">
+        <text class="title">立定跳远分数：</text>
+        <text class="score">{{result['立定跳远得分']}}分({{result['立定跳远评价']}})</text>
+      </view>
+      <view class="line"></view>
+    </view>
+    <view class="body">
+      <view class="line"></view>
+      <view class="list">
+        <text class="title">坐位体前屈：</text>
+        <text class="score">{{result['坐体前屈']}}CM</text>
+      </view>
+      <view class="line"></view>
+      <view class="list">
+        <text class="title">坐位体前屈分数：</text>
+        <text class="score">{{result['坐体前屈得分']}}分({{result['坐体前屈评价']}})</text>
+      </view>
+      <view class="line"></view>
+    </view>
+    <view class="body" wx:if="{{result['性别'] == '男'}}">
+      <view class="line"></view>
+      <view class="list">
+        <text class="title">引体向上：</text>
+        <text class="score">{{result['引体向上']}}个</text>
+      </view>
+      <view class="line"></view>
+      <view class="list">
+        <text class="title">引体向上分数：</text>
+        <text class="score">{{result['引体向上得分']}}分({{result['引体向上评价']}})</text>
+      </view>
+      <view class="line"></view>
+    </view>
+    <view class="body" wx:else>
+      <view class="line"></view>
+      <view class="list">
+        <text class="title">仰卧起坐：</text>
+        <text class="score">{{result['仰卧起坐']}}个</text>
+      </view>
+      <view class="line"></view>
+      <view class="list">
+        <text class="title">仰卧起坐分数：</text>
+        <text class="score">{{result['仰卧起坐得分']}}分({{result['仰卧起坐评价']}})</text>
+      </view>
+      <view class="line"></view>
+    </view>
+    <view class="body">
+      <view class="line"></view>
+      <view class="list">
+        <text class="title">肺活量：</text>
+        <text class="score">{{result['肺活量']}}mL</text>
+      </view>
+      <view class="line"></view>
+      <view class="list">
+        <text class="title">肺活量分数：</text>
+        <text class="score">{{result['肺活量得分']}}分({{result['肺活量评价']}})</text>
+      </view>
+      <view class="line"></view>
+    </view>
+    <view class="body">
+      <view class="line"></view>
+      <view class="list">
+        <text class="title">免测：</text>
+        <text class="score">{{result['免测']}}</text>
+      </view>
+      <view class="line"></view>
+      <view class="list">
+        <text class="title">加分：</text>
+        <text class="score">{{result['加分']}}分</text>
+      </view>
+      <view class="line"></view>
+    </view>
+  </view>
+  <view wx:if="{{college == 'imau'}}">
+    <view class="body">
+      <view class="line"></view>
+      <view class="list">
+        <text class="title">身高(体重)：</text>
+        <text class="score">{{result['身高']}}CM({{result['体重']}}KG)</text>
+      </view>
+      <view class="line"></view>
+      <view class="list">
+        <text class="title">身高体重分数：</text>
+        <text class="score">{{result['身高体重比分数']}}分({{result['身高体重比结论']}})</text>
+      </view>
+      <view class="line"></view>
+    </view>
+    <view class="body" wx:if="{{result['性别'] == '男'}}">
+      <view class="line"></view>
+      <view class="list">
+        <text class="title">50米跑：</text>
+        <text class="score">{{result['五十米跑测试数值']}}秒</text>
+      </view>
+      <view class="line"></view>
+      <view class="list">
+        <text class="title">50米跑分数：</text>
+        <text class="score">{{result['五十米跑分数']}}分({{result['五十米跑结论']}})</text>
+      </view>
+      <view class="line"></view>
+      <view class="list">
+        <text class="title">1000米跑：</text>
+        <text class="score">{{result['千米跑测试数值']}}分</text>
+      </view>
+      <view class="line"></view>
+      <view class="list">
+        <text class="title">1000米跑分数：</text>
+        <text class="score">{{result['千米跑分数']}}分({{result['千米跑结论']}})</text>
+      </view>
+      <view class="line"></view>
+    </view>
+    <view class="body" wx:else>
+      <view class="line"></view>
+      <view class="list">
+        <text class="title">50米跑：</text>
+        <text class="score">{{result['五十米跑测试数值']}}秒</text>
+      </view>
+      <view class="line"></view>
+      <view class="list">
+        <text class="title">50米跑分数：</text>
+        <text class="score">{{result['五十米跑分数']}}分({{result['五十米跑结论']}})</text>
+      </view>
+      <view class="line"></view>
+      <view class="list">
+        <text class="title">800米跑：</text>
+        <text class="score">{{result['千米跑测试数值']}}分</text>
+      </view>
+      <view class="line"></view>
+      <view class="list">
+        <text class="title">800米跑分数：</text>
+        <text class="score">{{result['千米跑分数']}}分({{result['千米跑结论']}})</text>
+      </view>
+      <view class="line"></view>
+    </view>
+    <view class="body">
+      <view class="line"></view>
+      <view class="list">
+        <text class="title">立定跳远：</text>
+        <text class="score">{{result['立定跳远测试数值'] / 100}}M</text>
+      </view>
+      <view class="line"></view>
+      <view class="list">
+        <text class="title">立定跳远分数：</text>
+        <text class="score">{{result['立定跳远分数']}}分({{result['立定跳远结论']}})</text>
+      </view>
+      <view class="line"></view>
+    </view>
+    <view class="body">
+      <view class="line"></view>
+      <view class="list">
+        <text class="title">坐位体前屈：</text>
+        <text class="score">{{result['坐体前屈测试数值']}}CM</text>
+      </view>
+      <view class="line"></view>
+      <view class="list">
+        <text class="title">坐位体前屈分数：</text>
+        <text class="score">{{result['坐体前屈分数']}}分({{result['坐体前屈结论']}})</text>
+      </view>
+      <view class="line"></view>
+    </view>
+    <view class="body" wx:if="{{result['性别'] == '男'}}">
+      <view class="line"></view>
+      <view class="list">
+        <text class="title">引体向上：</text>
+        <text class="score">{{result['引体向上测试数值']}}个</text>
+      </view>
+      <view class="line"></view>
+      <view class="list">
+        <text class="title">引体向上分数：</text>
+        <text class="score">{{result['引体向上分数']}}分({{result['引体向上结论']}})</text>
+      </view>
+      <view class="line"></view>
+    </view>
+    <view class="body" wx:else>
+      <view class="line"></view>
+      <view class="list">
+        <text class="title">仰卧起坐：</text>
+        <text class="score">{{result['仰卧起坐测试数值']}}个</text>
+      </view>
+      <view class="line"></view>
+      <view class="list">
+        <text class="title">仰卧起坐分数：</text>
+        <text class="score">{{result['仰卧起坐分数']}}分({{result['仰卧起坐结论']}})</text>
+      </view>
+      <view class="line"></view>
+    </view>
+    <view class="body">
+      <view class="line"></view>
+      <view class="list">
+        <text class="title">肺活量：</text>
+        <text class="score">{{result['肺活量测试数值']}}mL</text>
+      </view>
+      <view class="line"></view>
+      <view class="list">
+        <text class="title">肺活量分数：</text>
+        <text class="score">{{result['肺活量分数']}}分({{result['肺活量结论']}})</text>
+      </view>
+      <view class="line"></view>
+    </view>
+    <view class="body">
+      <view class="line"></view>
+      <view class="list">
+        <text class="title">免测：</text>
+        <text class="score">{{result['免测']}}</text>
+      </view>
+      <view class="line"></view>
+      <view class="list">
+        <text class="title">加分：</text>
+        <text class="score">{{result['加分']}}分</text>
+      </view>
+      <view class="line"></view>
+    </view>
+  </view>
+</view>
+
+<!-- 首页底部版权信息 -->
+<view class="copyright">
+  <text>Copyright © 2018-2019 Enjoyfun Studio. All Rights Reserved</text>
+</view>

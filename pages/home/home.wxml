@@ -1,0 +1,432 @@
+<!-- 提示添加到我的小程序 -->
+<view class="tips-box" wx:if="{{showtips_box}}" style="margin-top: {{navH + 36}}px">
+  <view class="tips-arrow"></view>
+  <view class="tips-body" bindtap="canceltips_box">
+    <text>好用别忘了分享给好友哦</text>
+  </view>
+</view>
+
+<!-- 海报设置 -->
+
+<!-- 皮肤卡设置 -->
+<view class="top" style="width: 100%; height: 370rpx;" >
+  <image src="{{skin}}"></image>
+</view>
+<view class="top-bg" style="margin: {{-370+navH*2}}rpx auto 20rpx; width: 96%; height: 350rpx;">
+  <image src="{{skin}}"></image>
+</view>
+<view class="user" style="margin: -370rpx auto 20rpx; width: 96%; height: 350rpx;" bindlongpress="skinset">
+  <view class="useravater">
+    <open-data class="avatar" type="userAvatarUrl" mode="cover"></open-data>
+    <view class="vip" hidden="{{vip}}">
+      <image class="vipimg" src="/images/vip.gif"></image>
+    </view>
+    <view class="svip" hidden="{{svip}}">
+      <image class="svipimg" src="/images/svip.gif"></image>
+    </view>
+    <image class="location-img" bindtap="college" src="/images/location.png"></image>
+    <view class="location" bindtap="college">{{location}}</view>
+  </view>
+  <view wx:if="{{account == ''}}">
+    <text class="username">未绑定</text>
+  </view>
+  <view wx:else>
+    <view wx:if="{{name == ''}}">
+      <open-data class="username" type="userNickName"></open-data>
+    </view>
+    <view wx:else>
+      <text class="username">{{name}}</text>
+    </view>
+  </view>
+  <view class="signature" bindtap="signatureset">
+    <text>{{signature}}</text>
+    <image class="penedit" src="/images/penedit.png"></image>
+  </view>
+  <view class="userinfo">
+    <view class="list">
+      <view class="items">
+        <navigator url="../sub/cost/cost">
+          <block wx:if="{{balcnce != '' && balance < 10}}">
+            <text class="number" style="color:red;">{{balance}}</text>
+          </block>
+          <block wx:else>
+            <text class="number">{{balance}}</text>
+          </block>
+          <text class="name">校卡余额</text>
+        </navigator>
+      </view>
+      <view class="items" wx:if="{{college == 'imnu' || college == 'imufe'}}">
+        <block wx:if="{{progress != ''}}">
+          <text class="number">{{progress}}%</text>
+        </block>
+        <text class="name">学期进度</text>
+      </view>
+      <view class="items" wx:if="{{college == 'imau'}}">
+        <block wx:if="{{internet != ''}}">
+          <text class="number">{{internet}}</text>
+        </block>
+        <text class="name">已用流量</text>
+      </view>
+      <view class="items">
+        <navigator url="../sub/book/book">
+          <block wx:if="{{book != ''}}">
+            <text class="number">{{book}}</text>
+          </block>
+          <text class="name">待还图书</text>
+        </navigator>
+      </view>
+    </view>
+  </view>
+</view>
+
+<!-- 个性签名设置 -->
+<view class="signatureset" wx:if="{{signatureview == true}}" catchtouchmove="false">
+  <view class="signatureset-body">
+    <view class="title">设置个性签名</view>
+    <input type="text" bindinput="signatureInput" placeholder="输入内容(支持Emoji)" placeholder-style="color:#000" />
+    <view class="button">
+      <button class="cancel-button" bindtap="signaturecancel">取消</button>
+      <button class="add-button" bindtap="signatureconfirm">确定</button>
+    </view>
+  </view>
+</view>
+
+<!-- 滚动通知栏 -->
+<view class="swiper">
+  <swiper class="services-swiper" vertical="true" autoplay="true" circular="true" interval="3000">
+    <block wx:for="{{msgList}}" wx:key="text">
+      <swiper-item class="swiper-item">
+        <view class="swiper-text">{{item.content}}</view>
+      </swiper-item>
+    </block>
+  </swiper>
+</view>
+
+<!-- 日程卡 -->
+<navigator class="days" url="../sub/days/days">
+  <view class="dayslist" wx:for="{{dayslist}}" wx:key="content">
+    <view bindtap="mgrdays" data-index="{{index}}">
+      <view class="info-body" wx:if="{{item.type == 'reduct'}}">
+        <view class="content">{{item.name}}</view>
+        <view class="reduct-days">{{item.days}}</view>
+        <view class="reduct-unit">天</view>
+      </view>
+      <view class="info-body" wx:if="{{item.type == 'addup'}}">
+        <view class="content">{{item.name}}</view>
+        <view class="addup-days">{{item.days}}</view>
+        <view class="addup-unit">天</view>
+      </view>
+    </view>
+  </view>
+  <view class="daysnone" wx:if="{{dayslist == ''}}">日程空空如也，点我添加</view>
+</navigator>
+
+<!-- 内蒙古师范大学课程提醒 -->
+<view wx:if="{{college == 'imnu'}}">
+  <navigator class="schedule" url="../sub/schedule/schedule">
+    <view class="sch-top">
+      <text class="title">今日课程</text>
+      <text class="date">{{week}}</text>
+    </view>
+    <view class="line"></view>
+    <view class="today" wx:for="{{todaysch}}" wx:key="class">
+      <block wx:if="{{item[0].xqj == week}}">
+        <image class="classimg" src="/images/schedule.png"></image>
+        <view class="classmain">
+          <text class="class">{{item[0].kcm}}</text>
+          <view class="ordermain">
+            <text class="order">{{item[0].djj_xh}}节</text>
+            <text class="time" wx:if="{{item[0].xqmc == '赛罕校区' && item[0].djj_xh == '1,2'}}">(8:00-09:50)</text>
+            <text class="time" wx:if="{{item[0].xqmc == '赛罕校区' && item[0].djj_xh == '3,4'}}">(10:10-12:00)</text>
+            <text class="time" wx:if="{{item[0].xqmc == '赛罕校区' && item[0].djj_xh == '1,2,3,4'}}">(8:00-12:00)</text>
+            <text class="time" wx:if="{{item[0].xqmc == '赛罕校区' && item[0].djj_xh == '5,6'}}">(14:30-16:20)</text>
+            <text class="time" wx:if="{{item[0].xqmc == '赛罕校区' && item[0].djj_xh == '7,8'}}">(16:30-18:20)</text>
+            <text class="time" wx:if="{{item[0].xqmc == '赛罕校区' && item[0].djj_xh == '5,6,7,8'}}">(14:30-18:20)</text>
+            <text class="time" wx:if="{{item[0].xqmc == '赛罕校区' && item[0].djj_xh == '9,10'}}">(19:30-21:10)</text>
+            <text class="time" wx:if="{{item[0].xqmc == '盛乐校区' && item[0].djj_xh == '1,2'}}">(8:20-10:00)</text>
+            <text class="time" wx:if="{{item[0].xqmc == '盛乐校区' && item[0].djj_xh == '3,4'}}">(10:20-12:00)</text>
+            <text class="time" wx:if="{{item[0].xqmc == '盛乐校区' && item[0].djj_xh == '1,2,3,4'}}">(8:20-12:00)</text>
+            <text class="time" wx:if="{{item[0].xqmc == '盛乐校区' && item[0].djj_xh == '5,6'}}">(14:00-15:40)</text>
+            <text class="time" wx:if="{{item[0].xqmc == '盛乐校区' && item[0].djj_xh == '7,8'}}">(16:00-17:40)</text>
+            <text class="time" wx:if="{{item[0].xqmc == '盛乐校区' && item[0].djj_xh == '5,6,7,8'}}">(14:00-17:40)</text>
+            <text class="time" wx:if="{{item[0].xqmc == '盛乐校区' && item[0].djj_xh == '9,10'}}">(19:30-21:10）</text>
+          </view>
+        </view>
+        <view class="roommain">
+          <text class="classroom">{{item[1].jxl}}{{item[0].skddmc}}</text>
+        </view>
+      </block>
+    </view>
+    <view hidden="{{todaynone}}">
+      <view class="none">今日没课呦</view>
+    </view>
+  </navigator>
+  <navigator class="schedule" wx:if="{{tomorrowview == true}}" url="../sub/schedule/schedule">
+    <view class="sch-top">
+      <text class="title">明日课程</text>
+      <text class="date">{{afterweek}}</text>
+    </view>
+    <view class="line"></view>
+    <view class="today" wx:for="{{tomorrowsch}}" wx:key="class">
+      <block wx:if="{{item[0].xqj == afterweek}}">
+        <image class="classimg" src="/images/schedule.png"></image>
+        <view class="classmain">
+          <text class="class">{{item[0].kcm}}</text>
+          <view class="ordermain">
+            <text class="order">{{item[0].djj_xh}}节</text>
+            <text class="time" wx:if="{{item[0].xqmc == '赛罕校区' && item[0].djj_xh == '1,2'}}">(8:00-09:50)</text>
+            <text class="time" wx:if="{{item[0].xqmc == '赛罕校区' && item[0].djj_xh == '3,4'}}">(10:10-12:00)</text>
+            <text class="time" wx:if="{{item[0].xqmc == '赛罕校区' && item[0].djj_xh == '1,2,3,4'}}">(8:00-12:00)</text>
+            <text class="time" wx:if="{{item[0].xqmc == '赛罕校区' && item[0].djj_xh == '5,6'}}">(14:30-16:20)</text>
+            <text class="time" wx:if="{{item[0].xqmc == '赛罕校区' && item[0].djj_xh == '7,8'}}">(16:30-18:20)</text>
+            <text class="time" wx:if="{{item[0].xqmc == '赛罕校区' && item[0].djj_xh == '5,6,7,8'}}">(14:30-18:20)</text>
+            <text class="time" wx:if="{{item[0].xqmc == '赛罕校区' && item[0].djj_xh == '9,10'}}">(19:30-21:10)</text>
+            <text class="time" wx:if="{{item[0].xqmc == '盛乐校区' && item[0].djj_xh == '1,2'}}">(8:20-10:00)</text>
+            <text class="time" wx:if="{{item[0].xqmc == '盛乐校区' && item[0].djj_xh == '3,4'}}">(10:20-12:00)</text>
+            <text class="time" wx:if="{{item[0].xqmc == '盛乐校区' && item[0].djj_xh == '1,2,3,4'}}">(8:20-12:00)</text>
+            <text class="time" wx:if="{{item[0].xqmc == '盛乐校区' && item[0].djj_xh == '5,6'}}">(14:00-15:40)</text>
+            <text class="time" wx:if="{{item[0].xqmc == '盛乐校区' && item[0].djj_xh == '7,8'}}">(16:00-17:40)</text>
+            <text class="time" wx:if="{{item[0].xqmc == '盛乐校区' && item[0].djj_xh == '5,6,7,8'}}">(14:00-17:40)</text>
+            <text class="time" wx:if="{{item[0].xqmc == '盛乐校区' && item[0].djj_xh == '9,10'}}">(19:30-21:10）</text>
+          </view>
+        </view>
+        <view class="roommain">
+          <text class="classroom">{{item[1].jxl}}{{item[0].skddmc}}</text>
+        </view>
+      </block>
+    </view>
+    <view hidden="{{tomorrownone}}">
+      <view class="none">明日没课呦</view>
+    </view>
+  </navigator>
+</view>
+
+<!-- 内蒙古财经大学课程提醒 -->
+<view wx:if="{{college == 'imufe'}}">
+  <navigator class="schedule" url="../sub/schedule/schedule">
+    <view class="sch-top">
+      <text class="title">今日课程</text>
+      <text class="date">{{week}}</text>
+    </view>
+    <view class="line"></view>
+    <view class="today" wx:for="{{todaysch}}" wx:key="class">
+      <block wx:if="{{item[0].xqj == week}}">
+        <image class="classimg" src="/images/schedule.png"></image>
+        <view class="classmain">
+          <text class="class">{{item[0].kcm}}</text>
+          <view class="ordermain">
+            <text class="order">{{item[0].djj_xh}}节</text>
+            <text class="time" wx:if="{{item[0].djj_xh == '1,2'}}">(8:00-09:50)</text>
+            <text class="time" wx:if="{{item[0].djj_xh == '3,4'}}">(10:10-12:00)</text>
+            <text class="time" wx:if="{{item[0].djj_xh == '1,2,3,4'}}">(8:00-12:00)</text>
+            <text class="time" wx:if="{{item[0].djj_xh == '5,6'}}">(14:30-16:20)</text>
+            <text class="time" wx:if="{{item[0].djj_xh == '7,8'}}">(16:40-18:30)</text>
+            <text class="time" wx:if="{{item[0].djj_xh == '5,6,7,8'}}">(14:30-18:30)</text>
+            <text class="time" wx:if="{{item[0].djj_xh == '9,10'}}">(19:30-21:10)</text>
+          </view>
+        </view>
+        <view class="roommain">
+          <text class="classroom">{{item[1].jxl}}</text>
+        </view>
+      </block>
+    </view>
+    <view hidden="{{todaynone}}">
+      <view class="none">今日没课呦</view>
+    </view>
+  </navigator>
+  <navigator class="schedule" wx:if="{{tomorrowview == true}}" url="../sub/schedule/schedule">
+    <view class="sch-top">
+      <text class="title">明日课程</text>
+      <text class="date">{{afterweek}}</text>
+    </view>
+    <view class="line"></view>
+    <view class="today" wx:for="{{tomorrowsch}}" wx:key="class">
+      <block wx:if="{{item[0].xqj == afterweek}}">
+        <image class="classimg" src="/images/schedule.png"></image>
+        <view class="classmain">
+          <text class="class">{{item[0].kcm}}</text>
+          <view class="ordermain">
+            <text class="order">{{item[0].djj_xh}}节</text>
+            <text class="time" wx:if="{{item[0].djj_xh == '1,2'}}">(8:00-09:50)</text>
+            <text class="time" wx:if="{{item[0].djj_xh == '3,4'}}">(10:10-12:00)</text>
+            <text class="time" wx:if="{{item[0].djj_xh == '1,2,3,4'}}">(8:00-12:00)</text>
+            <text class="time" wx:if="{{item[0].djj_xh == '5,6'}}">(14:30-16:20)</text>
+            <text class="time" wx:if="{{item[0].djj_xh == '7,8'}}">(16:40-18:30)</text>
+            <text class="time" wx:if="{{item[0].djj_xh == '5,6,7,8'}}">(14:30-18:30)</text>
+            <text class="time" wx:if="{{item[0].djj_xh == '9,10'}}">(19:30-21:10)</text>
+          </view>
+        </view>
+        <view class="roommain">
+          <text class="classroom">{{item[1].jxl}}</text>
+        </view>
+      </block>
+    </view>
+    <view hidden="{{tomorrownone}}">
+      <view class="none">明日没课呦</view>
+    </view>
+  </navigator>
+</view>
+
+<!-- 内蒙古农业大学课程提醒 -->
+<view wx:if="{{college == 'imau'}}">
+  <navigator class="schedule" url="../sub/schedule/schedule">
+    <view class="sch-top">
+      <text class="title">今日课程</text>
+      <text class="date">{{week}}</text>
+    </view>
+    <view class="line"></view>
+    <view class="today" wx:for="{{todaysch}}" wx:key="class">
+      <block wx:if="{{item[0].xqj == week}}">
+        <image class="classimg" src="/images/schedule.png"></image>
+        <view class="classmain">
+          <text class="class">{{item[0].kcm}}</text>
+          <view class="ordermain">
+            <text class="order">{{item[0].djj_xh}}节</text>
+            <text class="time" wx:if="{{item[0].djj_xh == '1,2'}}">(8:00-09:50)</text>
+            <text class="time" wx:if="{{item[0].djj_xh == '3,4'}}">(10:15-12:00)</text>
+            <text class="time" wx:if="{{item[0].djj_xh == '1,2,3,4'}}">(8:00-12:00)</text>
+            <text class="time" wx:if="{{item[0].djj_xh == '5,6'}}">(14:00-15:50)</text>
+            <text class="time" wx:if="{{item[0].djj_xh == '7,8'}}">(16:10-18:00)</text>
+            <text class="time" wx:if="{{item[0].djj_xh == '5,6,7,8'}}">(14:00-18:00)</text>
+            <text class="time" wx:if="{{item[0].djj_xh == '9,10'}}">(19:00-20:50)</text>
+            <text class="time" wx:if="{{item[0].djj_xh == '9,10,11'}}">(19:00-21:50)</text>
+          </view>
+        </view>
+        <view class="roommain">
+          <text class="classroom">{{item[1].jxl}}</text>
+        </view>
+      </block>
+    </view>
+    <view hidden="{{todaynone}}">
+      <view class="none">今日没课呦</view>
+    </view>
+  </navigator>
+  <navigator class="schedule" wx:if="{{tomorrowview == true}}" url="../sub/schedule/schedule">
+    <view class="sch-top">
+      <text class="title">明日课程</text>
+      <text class="date">{{afterweek}}</text>
+    </view>
+    <view class="line"></view>
+    <view class="today" wx:for="{{tomorrowsch}}" wx:key="class">
+      <block wx:if="{{item[0].xqj == afterweek}}">
+        <image class="classimg" src="/images/schedule.png"></image>
+        <view class="classmain">
+          <text class="class">{{item[0].kcm}}</text>
+          <view class="ordermain">
+            <text class="order">{{item[0].djj_xh}}节</text>
+            <text class="time" wx:if="{{item[0].djj_xh == '1,2'}}">(8:00-09:50)</text>
+            <text class="time" wx:if="{{item[0].djj_xh == '3,4'}}">(10:15-12:00)</text>
+            <text class="time" wx:if="{{item[0].djj_xh == '1,2,3,4'}}">(8:00-12:00)</text>
+            <text class="time" wx:if="{{item[0].djj_xh == '5,6'}}">(14:00-15:50)</text>
+            <text class="time" wx:if="{{item[0].djj_xh == '7,8'}}">(16:10-18:00)</text>
+            <text class="time" wx:if="{{item[0].djj_xh == '5,6,7,8'}}">(14:00-18:00)</text>
+            <text class="time" wx:if="{{item[0].djj_xh == '9,10'}}">(19:00-20:50)</text>
+            <text class="time" wx:if="{{item[0].djj_xh == '9,10,11'}}">(19:00-21:50)</text>
+          </view>
+        </view>
+        <view class="roommain">
+          <text class="classroom">{{item[1].jxl}}</text>
+        </view>
+      </block>
+    </view>
+    <view hidden="{{tomorrownone}}">
+      <view class="none">明日没课呦</view>
+    </view>
+  </navigator>
+</view>
+
+<!-- 默认显示(未绑定) -->
+<view wx:if="{{college == ''}}">
+  <navigator class="schedule" url="../sub/schedule/schedule">
+    <view class="sch-top">
+      <text class="title">今日课程</text>
+      <text class="date">{{week}}</text>
+    </view>
+    <view class="line"></view>
+    <view hidden="{{todaynone}}">
+      <view class="none">今日没课呦</view>
+    </view>
+  </navigator>
+  <navigator class="schedule" wx:if="{{tomorrowview == true}}" url="../sub/schedule/schedule">
+    <view class="sch-top">
+      <text class="title">明日课程</text>
+      <text class="date">{{afterweek}}</text>
+    </view>
+    <view class="line"></view>
+    <view hidden="{{tomorrownone}}">
+      <view class="none">明日没课呦</view>
+    </view>
+  </navigator>
+</view>
+
+<!-- 功能卡 -->
+<view class="function">
+  <view class="list">
+    <navigator class="items" url="../sub/score/score">
+      <image class="img" src="/images/score.png"></image>
+      <text class="text">成绩查询</text>
+    </navigator>
+    <navigator class="items" url="../sub/schedule/schedule">
+      <image class="img" src="/images/schedule.png"></image>
+      <text class="text">课表查询</text>
+      <view class="unread" wx:if="{{sch_unread != 0}}">
+        <image src="/images/unread.png"></image>
+        <text>{{sch_unread}}</text>
+      </view>
+    </navigator>
+    <navigator class="items" url="../sub/cost/cost">
+      <image class="img" src="/images/card.png"></image>
+      <text class="text">一卡通查询</text>
+    </navigator>
+    <navigator class="items" url="../sub/gpa/gpa">
+      <image class="img" src="/images/gpaicon.png"></image>
+      <text class="text">绩点计算</text>
+    </navigator>
+    <navigator class="items" url="../sub/book/book">
+      <image class="img" src="/images/library.png"></image>
+      <text class="text">借阅查询</text>
+    </navigator>
+    <navigator class="items" wx:if="{{college == 'imau' || college == ''}}" url="../sub/exam/exam">
+      <image class="img" src="/images/exam.png"></image>
+      <text class="text">考试查询</text>
+    </navigator>
+    <navigator class="items" wx:if="{{college == 'imnu' || college == 'imau' || college == ''}}" url="../sub/sports/sports">
+      <image class="img" src="/images/sport.png"></image>
+      <text class="text">体测查询</text>
+    </navigator>
+    <navigator wx:if="{{college == 'imnu'}}" class="items" url="../sub/car/car">
+      <image class="img" src="/images/car.png"></image>
+      <text class="text">校车广场</text>
+      <view class="unread">
+        <image src="/images/unread.png"></image>
+        <text>{{sh_unread + sl_unread}}</text>
+      </view>
+    </navigator>
+    <view class="items" bindtap="cet">
+      <image class="img" src="/images/cet.png"></image>
+      <text class="text">等级考试查询</text>
+    </view>
+    <navigator class="items" url="../sub/days/days">
+      <image class="img" src="/images/days.png"></image>
+      <text class="text">倒数日</text>
+    </navigator>
+    <navigator class="items" url="../sub/schoolcalendar/schoolcalendar">
+      <image class="img" src="/images/schoolcalendar.png"></image>
+      <text class="text">校历查询</text>
+    </navigator>
+    <view class="items" bindtap="secondhand">
+      <image class="img" src="/images/secondhand.png"></image>
+      <text class="text">校园二手</text>
+    </view>
+  </view>
+</view>
+
+<!-- 首页广告设置 -->
+<view class="ad" wx:if="{{topad == true}}">
+  <ad class="ad-body" unit-id="adunit-423d0f3c56e0133e" binderror="aderror"></ad>
+</view>
+
+<!-- 首页底部版权信息 -->
+<view class="copyright">
+  <text>Copyright © 2018-2020 Enjoyfun Studio. All Rights Reserved</text>
+</view>

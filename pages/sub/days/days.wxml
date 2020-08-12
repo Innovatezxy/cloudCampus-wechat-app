@@ -1,0 +1,73 @@
+<navbar page-name="日程管理"></navbar>
+<view class="page">
+  <scroll-view scroll-y class="info" style='margin-top: {{navH + 66}}px'>
+    <view class="top-info">
+      <view class="top-content">我来到这个世界已经</view>
+      <view class="top-days">
+        <picker mode="date" value="{{birth}}" start="1900-01-01" end="2100-12-31" bindchange="birthPicker">{{birth}}</picker>
+      </view>
+      <view class="top-unit">天</view>
+    </view>
+    <view class="top-line"></view>
+    <view class="list" wx:for="{{list}}" wx:key="content">
+      <view bindtap="mgrdays" data-index="{{index}}">
+        <view class="info-body" wx:if="{{item.type == 'reduct'}}">
+          <view class="content">{{item.name}}</view>
+          <view class="reduct-days">{{item.days}}</view>
+          <view class="reduct-unit">天</view>
+        </view>
+        <view class="info-body" wx:if="{{item.type == 'addup'}}">
+          <view class="content">{{item.name}}</view>
+          <view class="addup-days">{{item.days}}</view>
+          <view class="addup-unit">天</view>
+        </view>
+      </view>
+    </view>
+    <view class="none" wx:if="{{list == ''}}">空空如也，快去添加吧</view>
+  </scroll-view>
+
+  <!-- 管理日程 -->
+  <view class="tips">点击对应日程进行管理</view>
+  <view class="mgr" wx:if="{{mgrview == true}}">
+    <view class="mgr-body">
+      <view class="title">管理日程</view>
+      <view class="homeset" bindtap="homeset">{{homestatus}}</view>
+      <view class="delete" bindtap="deletedays">删除</view>
+      <view class="cancel" bindtap="cancel">取消</view>
+    </view>
+  </view>
+
+  <!-- 添加日程 -->
+  <view class="add" wx:if="{{addview == true}}">
+    <view class="add-body">
+      <view class="title">添加日程</view>
+      <view class="items">
+        <view class="name">类型</view>
+        <picker class="picker" bindchange="typePicker" value="{{typeIndex}}" range="{{typepick}}">{{typepick[typeIndex]}}</picker>
+      </view>
+      <view class="line"></view>
+      <view class="items">
+        <view class="name">名称</view>
+        <input type="text" bindinput="nameInput" placeholder="未填写(支持Emoji)" placeholder-style="color:#000" />
+      </view>
+      <view class="line"></view>
+      <view class="items">
+        <view class="name">{{datetype}}</view>
+        <picker class="picker" mode="date" value="{{date}}" start="1900-01-01" end="2100-12-31" bindchange="datePicker">{{date}}</picker>
+      </view>
+      <view class="line"></view>
+      <view class="items-end">
+        <text class="names">添加到首页显示</text>
+        <switch class="switch" checked="{{homeset}}" bindchange="homesetChange" />
+      </view>
+      <view class="line"></view>
+      <view class="button">
+        <button class="cancel-button" bindtap="cancel">取消</button>
+        <button class="add-button" bindtap="confirm">确定</button>
+      </view>
+    </view>
+  </view>
+  <view class="bottom">
+    <image class="bottom-add" src="/images/add_black.png" bindtap="add">添加</image>
+  </view>
+</view>

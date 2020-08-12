@@ -1,0 +1,190 @@
+<view class='navbar-bg' style='height: {{navH + 46}}px'></view>
+<view class='navbar-title' style='top: {{navH}}px'>一卡通查询</view>
+<view class="navbar" style='top: {{navH + 4}}px'>
+  <image class="back" src="/images/barback_white.png" style="margin: auto 20rpx;" bindtap="navBack"></image>
+  <picker mode="date" value="{{choosedate}}" start="2009-09-01" end="{{today}}" bindchange="datechange">
+    <view>{{choosedate}}</view>
+    <image class="search" src="/images/search.png" style="margin: auto 20rpx;"></image>
+  </picker>
+</view>
+
+<view class="container" style='margin-top: {{navH + 46}}px' wx:if="{{college == 'imnu'}}">
+  <view class="ykt-card" style="background-image:url('https://www.enjfun.com/img/weimnu/balcard.jpg');background-size:cover">
+    <view class="ykt-content">
+      <view class="ykt-ye">
+        <text class="ykt-ye-name">余额</text>
+        <view class="ykt-ye-money">
+          <text class="ykt-ye-value">{{balance}}</text>元
+        </view>
+      </view>
+    </view>
+  </view>
+  <text class="grid-remind">近10次交易情况：</text>
+  <view class="balance-consumption" bindtap="switchBtn">
+    <text class="{{switchBtn ? 'current-btn' : ''}}" id="balance">消费</text>
+    <text class="{{switchBtn ? '' : 'current-btn'}}" id="cost">充值</text>
+  </view>
+  <view class="grid-wraper">
+    <canvas id="ykt-canvas" canvas-id="firstCanvas" bindtap="canvasTap"></canvas>
+    <view class="canvasline" style="left: {{lineLeft}}px;"></view>
+    <view class="y-text">{{switchBtn ? "消费" : "充值"}}</view>
+    <view class="x-text">最近交易</view>
+  </view>
+  <view class="tips">点击上图对应数值下滑查看详情，更多消费记录请使用搜索功能</view>
+  <view class="info" hidden="{{display}}">
+    <view class="top-title">
+      <text>交易详情</text>
+    </view>
+    <view class="tipbody" wx:if="{{info.length == 0}}">
+      <view class="tip">暂无消费记录...</view>
+    </view>
+    <view wx:else>
+      <view class="info-top">
+        <view class="time-top" wx:for="{{time}}" wx:key="costtime">
+          <image class="time" src="/images/time.png"></image>
+          <text class="time-text">{{item.date}}</text>
+        </view>
+      </view>
+      <view class="info-list">
+        <view class="list-name" wx:for="{{info}}" wx:key="costinfo">
+          <block wx:if="{{item.CPALCE == '主钱包领款类'}}">
+            <text>充值：{{item.CCOST}}元</text>
+            <view class="info-line" />
+          </block>
+          <block wx:if="{{item.CPALCE != '主钱包领款类'}}">
+            <text>消费：{{item.CCOST}}元</text>
+            <view class="info-line" />
+          </block>
+          <text>余额：{{item.ACCOST}}元</text>
+          <view class="info-line" />
+          <block wx:if="{{item.CCOST == 8 && item.CPALCE == '公交支出'}}">
+            <text>类型：校车支出</text>
+            <view class="info-botline" />
+          </block>
+          <block wx:elif="{{item.CCOST == 1 && item.CPALCE == '公交支出'}}">
+            <text>类型：小黄车支出</text>
+            <view class="info-botline" />
+          </block>
+          <block wx:elif="{{item.CPALCE == '主钱包领款类'}}">
+            <text>类型：完美校园充值</text>
+            <view class="info-botline" />
+          </block>
+          <block wx:else>
+            <text>类型：{{item.CPALCE}}</text>
+            <view class="info-botline" />
+          </block>
+          <text class="info-date">日期：{{infodate}}</text>
+          <view class="info-botline" />
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+
+<view class="container" style='margin-top: {{navH + 46}}px' wx:if="{{college == 'imufe'}}">
+  <view class="ykt-card" style="background-image:url('https://www.enjfun.com/img/weimufe/balcard.jpg');background-size:cover">
+    <view class="ykt-content">
+      <view class="ykt-ye">
+        <text class="ykt-ye-name">余额</text>
+        <view class="ykt-ye-money">
+          <text class="ykt-ye-value">{{balance}}</text>元
+        </view>
+      </view>
+    </view>
+  </view>
+  <text class="grid-remind">近10次交易情况：</text>
+  <view class="balance-consumption" bindtap="switchBtn">
+    <text class="{{switchBtn ? 'current-btn' : ''}}" id="balance">消费</text>
+    <text class="{{switchBtn ? '' : 'current-btn'}}" id="cost">充值</text>
+  </view>
+  <view class="grid-wraper">
+    <canvas id="ykt-canvas" canvas-id="firstCanvas" bindtap="canvasTap"></canvas>
+    <view class="canvasline" style="left: {{lineLeft}}px;"></view>
+    <view class="y-text">{{switchBtn ? "消费" : "充值"}}</view>
+    <view class="x-text">最近交易</view>
+  </view>
+  <view class="tips">点击上图对应数值下滑查看详情，更多消费记录请使用搜索功能</view>
+  <view class="info" hidden="{{display}}">
+    <view class="top-title">
+      <text>交易详情</text>
+    </view>
+    <view class="tipbody" wx:if="{{info.length == 0}}">
+      <view class="tip">暂无消费记录...</view>
+    </view>
+    <view wx:else>
+      <view class="info-top">
+        <view class="time-top" wx:for="{{time}}" wx:key="costtime">
+          <image class="time" src="../../../images/time.png"></image>
+          <text class="time-text">{{item.date}}</text>
+        </view>
+      </view>
+      <view class="info-list">
+        <view class="list-name" wx:for="{{info}}" wx:key="costinfo">
+          <block wx:if="{{item.CCOST >= 100}}">
+            <text>充值：{{item.CCOST}}元</text>
+            <view class="info-line" />
+          </block>
+          <block wx:if="{{item.CCOST <= 100}}">
+            <text>消费：{{item.CCOST}}元</text>
+            <view class="info-line" />
+          </block>
+          <text>余额：{{item.ACCOST}}元</text>
+          <view class="info-line" />
+          <text class="info-date">日期：{{infodate}}</text>
+          <view class="info-botline" />
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+
+<view class="container" style='margin-top: {{navH + 46}}px' wx:if="{{college == 'imau'}}">
+  <view class="ykt-card" style="background-image:url('https://www.enjfun.com/img/weimau/balcard.jpg');background-size:cover">
+    <view class="ykt-content">
+      <view class="ykt-ye">
+        <text class="ykt-ye-name">余额</text>
+        <view class="ykt-ye-money">
+          <text class="ykt-ye-value">{{balance}}</text>元
+        </view>
+      </view>
+    </view>
+  </view>
+  <text class="grid-remind">近10次交易情况：</text>
+  <view class="balance-consumption" bindtap="switchBtn">
+    <text class="{{switchBtn ? 'current-btn' : ''}}" id="balance">消费</text>
+    <text class="{{switchBtn ? '' : 'current-btn'}}" id="cost">充值</text>
+  </view>
+  <view class="grid-wraper">
+    <canvas id="ykt-canvas" canvas-id="firstCanvas" bindtap="canvasTap"></canvas>
+    <view class="canvasline" style="left: {{lineLeft}}px;"></view>
+    <view class="y-text">{{switchBtn ? "消费" : "充值"}}</view>
+    <view class="x-text">最近交易</view>
+  </view>
+  <view class="tips">点击上图对应数值下滑查看详情，更多消费记录请使用搜索功能</view>
+  <view class="info" hidden="{{display}}">
+    <view class="top-title">
+      <text>交易详情</text>
+    </view>
+    <view class="tipbody" wx:if="{{info.length == 0}}">
+      <view class="tip">暂无消费记录...</view>
+    </view>
+    <view wx:else>
+      <view class="info-top">
+        <view class="time-top" wx:for="{{time}}" wx:key="costtime">
+          <image class="time" src="../../../images/time.png"></image>
+          <text class="time-text">{{item.date}}</text>
+        </view>
+      </view>
+      <view class="info-list">
+        <view class="list-name" wx:for="{{info}}" wx:key="costinfo">
+          <text>金额：{{item.CCOST}}元</text>
+          <view class="info-line" />
+          <text>余额：{{item.ACCOST}}元</text>
+          <view class="info-line" />
+          <text class="info-date">日期：{{infodate}}</text>
+          <view class="info-botline" />
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

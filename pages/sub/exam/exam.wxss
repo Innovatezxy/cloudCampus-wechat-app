@@ -1,0 +1,131 @@
+Page{
+  width: 100%;
+  background: #f4f4f7;
+}
+/** 导航栏 **/
+.navbar-bg{
+  width: 100%;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 997;
+  background: #fff;
+}
+.navbar-title{
+  width: 100%;
+  height: 46px;
+  line-height: 46px;
+  text-align: center;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 998;
+  color: #000;
+  font-size: 37rpx;
+  font-weight: bold;
+}
+.navbar{
+  width: 20%;
+  height: 46px;
+  line-height: 46px;
+  overflow: hidden;
+  position: fixed;
+  display: block;
+  top: 0;
+  left: 0;
+  z-index: 999;
+}
+.back{
+  width: 38rpx;
+  height: 38rpx;
+}
+.sharebtn{
+  background: none;
+  border: none;
+  border-radius: 100%;
+}
+.sharebtn::after{
+  border: none;
+}
+.share{
+  width: 38rpx;
+  height: 38rpx;
+}
+
+/** 主页面 **/
+.page{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.top{
+  width: 90%;
+  display: flex;
+  flex-direction: row;
+  background: #fff;
+  padding: 30rpx 0;
+  justify-content: space-around;
+  margin: 35rpx auto 25rpx;
+  border-radius: 40rpx;
+}
+.info{
+  color: #c93951;
+  font-size: 35rpx;
+  font-weight: bolder;
+}
+.list{
+  width: 90%;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  padding: 15rpx 0;
+  margin: 25rpx auto;
+  border-radius: 40rpx;
+}
+.item{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  padding: 25rpx 0;
+  justify-content: space-between;
+}
+.item .title{
+  color: #666666;
+  font-size: 32rpx;
+  margin-left: 30rpx;
+}
+.item .value{
+  color: #000;
+  font-size: 32rpx;
+  margin-right: 30rpx;
+}
+.line{
+  width: 93%;
+  height: 3rpx;
+  background: #e9e9e9;
+  margin: 0 auto;
+}
+.switch{
+  width: 65%;
+  color: #fff; 
+  line-height: 100rpx;
+  position: fixed;
+  left: 17.5%;
+  bottom: 5%;
+  font-size: 37rpx;
+  font-weight: bold;
+  text-align: center;
+  padding: 25rpx auto;
+  border-radius: 30rpx;
+  border: 3.5rpx solid #464040;
+}
+.tip{
+  color: #a1a1a1;
+  font-size: 28rpx;
+  margin: 20rpx auto;
+}
+.tips{
+  color: #a1a1a1;
+  font-size: 25rpx;
+  margin: 0 auto 30rpx;
+}

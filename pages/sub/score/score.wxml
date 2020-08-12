@@ -1,0 +1,170 @@
+<navbar page-name="成绩"></navbar>
+<view class="page" style='height: calc(100vh - {{navH + 46}}px); margin-top: {{navH + 46}}px' wx:if="{{college == 'imnu'}}">
+  <view class="top">
+    <image class="gpa" src="/images/gpa.png" bindtap="gpa"></image>
+    <view class="switchxq" bindtap="switchBtn">
+      <text class="{{switchBtn ? 'current-btn' : ''}}" id="this">本学期</text>
+      <text class="{{switchBtn ? '' : 'current-btn'}}" id="all">全部学期</text>
+    </view>
+    <image class="refresh" src="/images/refresh.png" bindtap="refresh"></image>
+  </view>
+  <view class="main" style="background-image:url('https://www.enjfun.com/img/score_bg.png'); background-size:contain" wx:if="{{results.length != 0}}">
+    <scroll-view scroll-y="true" class="list" enable-back-to-top="true">
+      <view class="items" wx:if="{{self == true}}">
+        <view class="sub-a">
+          <text class="title">{{result.XQ}}</text>
+        </view>
+        <view class="item" wx:for="{{result.CJ}}" wx:key="cj">
+          <view bindtap="click" data-class="{{item.KCM}}" data-type="{{item.XKLX}}" data-credit="{{item.XF}}" data-score="{{item.CJ}}">
+            <view class="sub-b">
+              <text class="a-class">{{item.KCM}}</text>
+              <text class="a-type">{{item.XKLX}}</text>
+              <view class="sub-c">
+                <text class="a-credit">{{item.XF}}</text>
+              </view>
+              <view class="sub-d">
+                <block class="black" wx:if="{{item.CJ >= 60}}">
+                  <text class="a-score" style="color:black;">{{item.CJ}}</text>
+                </block>
+                <block class="red" wx:if="{{item.CJ < 60}}">
+                  <text class="a-score" style="color:red;">{{item.CJ}}</text>
+                </block>
+              </view>
+            </view>
+            <view class="line"></view>
+          </view>
+        </view>
+      </view>
+      <view class="items" wx:for="{{results}}" wx:key="res" wx:if="{{self == false}}">
+        <view class="sub-a">
+          <text class="title">{{item.XQ}}</text>
+        </view>
+        <view class="item" wx:for="{{item.CJ}}" wx:key="cj" bindtap="click" data-class="{{item.KCM}}" data-type="{{item.XKLX}}" data-credit="{{item.XF}}" data-score="{{item.CJ}}">
+          <view class="sub-b">
+            <text class="a-class">{{item.KCM}}</text>
+            <text class="a-type">{{item.XKLX}}</text>
+            <view class="sub-c">
+              <text class="a-credit">{{item.XF}}</text>
+            </view>
+            <view class="sub-d">
+              <block class="black" wx:if="{{item.CJ >= 60}}">
+                <text class="a-score" style="color:black;">{{item.CJ}}</text>
+              </block>
+              <block class="red" wx:if="{{item.CJ < 60}}">
+                <text class="a-score" style="color:red;">{{item.CJ}}</text>
+              </block>
+            </view>
+          </view>
+          <view class="line"></view>
+        </view>
+      </view>
+    </scroll-view>
+  </view>
+  <view wx:else class="empty">
+    <image class="none" src="/images/none.png"></image>
+    <text class="none-text">空空如也</text>
+  </view>
+  <view class="info" bindtap="hideview" hidden="{{display}}" catchtouchmove="ture">
+    <view class="info-items">
+      <text class="name-top">课程：{{data.class}}</text>
+      <view class="info-line"></view>
+      <text class="name">类型：{{data.type}}</text>
+      <view class="info-line"></view>
+      <text class="anme">学分：{{data.credit}}</text>
+      <view class="info-line"></view>
+      <text class="name">成绩：{{data.score}}</text>
+      <view class="info-line"></view>
+      <block class="extra" wx:if="{{data.score >= 60}}">
+        <image class="hitcall" src="/images/flower.gif"></image>
+        <text class="name">哇(*≧▽≦)过了!再接再厉哦!</text>
+      </block>
+      <block class="extra" wx:if="{{data.score < 60}}">
+        <image class="hitcall" src="/images/hitcall.gif"></image>
+        <text class="name">加油(*≧▽≦)下次一定可以的!</text>
+      </block>
+    </view>
+  </view>
+</view>
+
+<view class="page" style='height: calc(100vh - {{navH + 46}}px); margin-top: {{navH + 46}}px' wx:if="{{college == 'imufe' || college == 'imau'}}">
+  <view class="top">
+    <image class="gpa" src="/images/gpa.png" bindtap="gpa"></image>
+    <view class="switchxq" bindtap="switchBtn">
+      <text class="{{switchBtn ? 'current-btn' : ''}}" id="this">本学期</text>
+      <text class="{{switchBtn ? '' : 'current-btn'}}" id="all">全部学期</text>
+    </view>
+    <image class="refresh" src="/images/refresh.png" bindtap="refresh"></image>
+  </view>
+  <view class="main" style="background-image:url('https://www.enjfun.com/img/score_bg.png'); background-size:contain" wx:if="{{result.length != 0}}">
+    <scroll-view scroll-y="true" class="list" enable-back-to-top="true">
+      <view class="items" wx:if="{{self == true}}">
+        <view class="sub-a">
+          <text class="title">{{result.XQ}}</text>
+        </view>
+        <view class="item" wx:for="{{result.CJ}}" wx:key="cj">
+          <view bindtap="click" data-class="{{item.KCM}}" data-type="{{item.XKLX}}" data-credit="{{item.XF}}" data-score="{{item.CJ}}">
+            <view class="sub-b">
+              <text class="b-class">{{item.KCM}}</text>
+              <view class="sub-c">
+                <text class="b-credit">{{item.XF}}</text>
+              </view>
+              <view class="sub-d">
+                <block class="black" wx:if="{{item.CJ >= 60}}">
+                  <text class="b-score" style="color:black;">{{item.CJ}}</text>
+                </block>
+                <block class="red" wx:if="{{item.CJ < 60}}">
+                  <text class="b-score" style="color:red;">{{item.CJ}}</text>
+                </block>
+              </view>
+            </view>
+            <view class="line"></view>
+          </view>
+        </view>
+      </view>
+      <view class="items" wx:for="{{results}}" wx:key="res" wx:if="{{self == false}}">
+        <view class="sub-a">
+          <text class="title">{{item.XQ}}</text>
+        </view>
+        <view class="item" wx:for="{{item.CJ}}" wx:key="cj" bindtap="click" data-class="{{item.KCM}}" data-credit="{{item.XF}}" data-score="{{item.CJ}}">
+          <view class="sub-b">
+            <text class="b-class">{{item.KCM}}</text>
+            <view class="sub-c">
+              <text class="b-credit">{{item.XF}}</text>
+            </view>
+            <view class="sub-d">
+              <block class="black" wx:if="{{item.CJ >= 60}}">
+                <text class="b-score" style="color:black;">{{item.CJ}}</text>
+              </block>
+              <block class="red" wx:if="{{item.CJ < 60}}">
+                <text class="b-score" style="color:red;">{{item.CJ}}</text>
+              </block>
+            </view>
+          </view>
+          <view class="line"></view>
+        </view>
+      </view>
+    </scroll-view>
+  </view>
+  <view wx:else class="empty">
+    <image class="none" src="/images/none.png"></image>
+    <text class="none-text">空空如也</text>
+  </view>
+  <view class="info" bindtap="hideview" hidden="{{display}}" catchtouchmove="ture">
+    <view class="info-items">
+      <text class="name-top">课程：{{data.class}}</text>
+      <view class="info-line"></view>
+      <text class="name">学分：{{data.credit}}</text>
+      <view class="info-line"></view>
+      <text class="name">成绩：{{data.score}}</text>
+      <view class="info-line"></view>
+      <block class="extra" wx:if="{{data.score >= 60}}">
+        <image class="hitcall" src="/images/flower.gif"></image>
+        <text class="name">哇(*≧▽≦)过了!再接再厉哦!</text>
+      </block>
+      <block class="extra" wx:if="{{data.score < 60}}">
+        <image class="hitcall" src="/images/hitcall.gif"></image>
+        <text class="name">加油(*≧▽≦)下次一定可以的!</text>
+      </block>
+    </view>
+  </view>
+</view>

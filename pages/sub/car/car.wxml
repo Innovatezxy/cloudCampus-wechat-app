@@ -1,0 +1,182 @@
+<navbar page-name="校车查询"></navbar>
+<view class="info" style='height: calc(100vh - {{navH + 46}}px); margin-top: {{navH + 46}}px'>
+  <view class="choose" style='top: margin-top: {{navH + 46}}px'>
+    <view class="choose-list {{currentTab==0 ? 'on' : ''}}" data-current="0" bindtap="swichNav">开往赛罕</view>
+    <view class="choose-list {{currentTab==1 ? 'on' : ''}}" data-current="1" bindtap="swichNav">开往盛乐</view>
+  </view>
+  <swiper current="{{currentTab}}" class="swiper-box" duration="300" style="height:{{winHeight - navH - 46}}px; " bindchange="bindChange">
+    <swiper-item>
+      <scroll-view scroll-y class="body">
+        <view class="page">
+          <view class="top" style='margin-top: {{navH + 40}}px' bindtap="timetable">
+            <text class="notice">系统消息:</text>
+            <view class="top-item">
+              <text>首班车：07:30</text>
+              <text>末班车：18:10</text>
+            </view>
+            <view class="top-item">
+              <text>最近班次：{{slzjbc}}</text>
+              <text>下一班次：{{slxybc}}</text>
+            </view>
+            <text class="table_title">{{table_title}}</text>
+            <view class="timetable" wx:if="{{table_status == true}}">
+              <view class="area_time">
+                <view class="area">
+                  <text class="area_name">🏫赛罕校区</text>
+                  <text>🕒 06:50</text>
+                  <text>🕒 07:10</text>
+                  <text>🕒 08:00</text>
+                  <text>🕒 08:50</text>
+                  <text>🕒 11:40</text>
+                  <text>🕒 12:40</text>
+                  <text>🕒 14:40</text>
+                  <text>🕒 19:00</text>
+                </view>
+                <view class="area">
+                  <text class="area_name">🏫盛乐校区</text>
+                  <text>🕒 07:30</text>
+                  <text>🕒 10:30</text>
+                  <text>🕒 12:30</text>
+                  <text>🕒 13:50</text>
+                  <text>🕒 16:10</text>
+                  <text>🕒 16:50</text>
+                  <text>🕒 17:30</text>
+                  <text>🕒 18:10</text>
+                </view>
+              </view>
+              <text class="ride_tip">其他时段人满即发车</text>
+            </view>
+          </view>
+          <view class="newthing">实时动态</view>
+          <view class="none" wx:if="{{sllength == 0}}">暂无动态</view>
+          <view class="new">
+            <view class="details" wx:for="{{slresult}}" wx:key="slinfo">
+              <block wx:if="{{item.name == 'Innovate 阳ⁱ'}}">
+                <view class="time">
+                  <text>{{item.time}}</text>
+                </view>
+                <view class="text" wx:if="{{item.img == 'f'}}">
+                  <text class="name">管理员：</text>
+                  <view class="content" style="background:#afe56e">{{item.content}}</view>
+                </view>
+                <view class="img" wx:if="{{item.img == 't'}}">
+                  <text class="name">管理员：</text>
+                  <image src="{{item.content}}" mode="widthFix" bindtap="preview" data-url="{{item.content}}"></image>
+                </view>
+              </block>
+              <block wx:else>
+                <view class="time">
+                  <text>{{item.time}}</text>
+                </view>
+                <view class="text" wx:if="{{item.img == 'f'}}">
+                  <text class="name">{{item.name}}：</text>
+                  <view class="content">{{item.content}}</view>
+                </view>
+                <view class="img" wx:if="{{item.img == 't'}}">
+                  <text class="name">{{item.name}}：</text>
+                  <image src="{{item.content}}" mode="widthFix" bindtap="preview" data-url="{{item.content}}"></image>
+                </view>
+              </block>
+            </view>
+          </view>
+        </view>
+      </scroll-view>
+    </swiper-item>
+    <swiper-item>
+      <scroll-view scroll-y class="body">
+        <view class="page">
+          <view class="top" style='margin-top: {{navH + 40}}px' bindtap="timetable">
+            <text class="notice">系统消息:</text>
+            <view class="top-item">
+              <text>首班车：06:50</text>
+              <text>末班车：19:00</text>
+            </view>
+            <view class="top-item">
+              <text>最近班次：{{shzjbc}}</text>
+              <text>下一班次：{{shxybc}}</text>
+            </view>
+            <text class="table_title">{{table_title}}</text>
+            <view class="timetable" wx:if="{{table_status == true}}">
+              <view class="area_time">
+                <view class="area">
+                  <text class="area_name">🏫赛罕校区</text>
+                  <text>🕒 06:50</text>
+                  <text>🕒 07:10</text>
+                  <text>🕒 08:00</text>
+                  <text>🕒 08:50</text>
+                  <text>🕒 11:40</text>
+                  <text>🕒 12:40</text>
+                  <text>🕒 14:40</text>
+                  <text>🕒 19:00</text>
+                </view>
+                <view class="area">
+                  <text class="area_name">🏫盛乐校区</text>
+                  <text>🕒 07:30</text>
+                  <text>🕒 10:30</text>
+                  <text>🕒 12:30</text>
+                  <text>🕒 13:50</text>
+                  <text>🕒 16:10</text>
+                  <text>🕒 16:50</text>
+                  <text>🕒 17:30</text>
+                  <text>🕒 18:10</text>
+                </view>
+              </view>
+              <text class="ride_tip">其他时段人满即发车</text>
+            </view>
+          </view>
+          <view class="newthing">实时动态</view>
+          <view class="none" wx:if="{{shlength == 0}}">暂无动态</view>
+          <view class="new">
+            <view class="details" wx:for="{{shresult}}" wx:key="shinfo">
+              <block wx:if="{{item.name == 'Innovate 阳ⁱ'}}">
+                <view class="time">
+                  <text>{{item.time}}</text>
+                </view>
+                <view class="text" wx:if="{{item.img == 'f'}}">
+                  <text class="name">管理员：</text>
+                  <view class="content" style="background:#afe56e">{{item.content}}</view>
+                </view>
+                <view class="img" wx:if="{{item.img == 't'}}">
+                  <text class="name">管理员：</text>
+                  <image src="{{item.content}}" mode="widthFix" bindtap="preview" data-url="{{item.content}}"></image>
+                </view>
+              </block>
+              <block wx:else>
+                <view class="time">
+                  <text>{{item.time}}</text>
+                </view>
+                <view class="text" wx:if="{{item.img == 'f'}}">
+                  <text class="name">{{item.name}}：</text>
+                  <view class="content">{{item.content}}</view>
+                </view>
+                <view class="img" wx:if="{{item.img == 't'}}">
+                  <text class="name">{{item.name}}：</text>
+                  <image src="{{item.content}}" mode="widthFix" bindtap="preview" data-url="{{item.content}}"></image>
+                </view>
+              </block>
+            </view>
+          </view>
+        </view>
+      </scroll-view>
+    </swiper-item>
+  </swiper>
+  <view class="bottom-line"></view>
+  <view class="publish" bindtap="post">
+    <input type="text" maxlength="100" placeholder="询问/回复" bindinput="contentInput" confirm-type="send" adjust-position="false" bindconfirm="confirm" />
+    <image class="post_pic" src="/images/car_post_pic.png" bindtap="upload_img"></image>
+  </view>
+  <view class="authorize_bg" wx:if="{{authorize == true}}">
+    <view class="authorize">
+      <image mode="widthFix" src="https://www.enjfun.com/img/authorize_icc.jpg"></image>
+      <view class="button">
+        <button class="cancel" bindtap="cancel">取消</button>
+        <button class="confirm" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">授权</button>
+      </view>
+      <view class="tips">
+        <text>1.首次使用时，将获取您的微信昵称，授权后发表名称即您的微信昵称</text>
+        <text>2.您可以询问或回复现场车况，等候情况等信息，或者您在乘车过程中丢失物品可以在这里帮您寻找，动态将实时更新</text>
+        <text>3.请勿发送虚假，无关信息，违者将删除已发送内容</text>
+      </view>
+    </view>
+  </view>
+</view>

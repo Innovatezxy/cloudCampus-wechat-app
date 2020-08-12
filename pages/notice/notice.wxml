@@ -1,0 +1,121 @@
+<view class='navbar-bg' style='height: {{navH + 46}}px'></view>
+<view class='navbar-title' style='top: {{navH}}px'>i云校</view>
+<swiper class="home-swiper" style='margin-top: {{navH + 46}}px' indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+  <swiper-item class="swiper-item" wx:for="{{top}}" wx:key="top">
+    <image class="img" src="{{item.src}}" mode="widthFix" bindtap="top" data-url="{{item.url}}"></image>
+  </swiper-item>
+</swiper>
+<view class="notice">
+  <view class="line"></view>
+  <navigator class="list" url="../sub/article/article?bodynine=true">
+    <view class="res-items">
+      <view class="body">
+        <image class="resimg" mode="aspectFit center" src="https://www.enjfun.com/img/imaginecup/imagine_body.jpg"></image>
+      </view>
+      <view class="restext">
+        <text class="description">"We云校"荣获2019微软“创新杯”中国区域总决赛三等奖</text>
+        <view class="author">i云校</view>
+        <view class="date">2018-12-20</view>
+      </view>
+    </view>
+  </navigator>
+  <view class="line"></view>
+  <navigator class="list" url="../sub/article/article?bodyone=true">
+    <view class="res-items">
+      <view class="body">
+        <image class="resimg" mode="aspectFit center" src="https://www.enjfun.com/img/weimnu/body/bodybg_1.jpg"></image>
+      </view>
+      <view class="restext">
+        <text class="description">享趣工作室负责“i云校”的日常开发维护，这里有技术大咖，有产品设计，有产品运营……有一帮为了校园便捷生活工作的同学们，在这里你可以打开脑洞，设计独一无二的产品</text>
+        <view class="author">i云校</view>
+        <view class="date">2018-08-20</view>
+      </view>
+    </view>
+  </navigator>
+  <view class="line"></view>
+  <navigator class="list" url="../sub/article/article?bodythree=true">
+    <view class="res-items">
+      <view class="body">
+        <image class="resimg" mode="aspectFit center" src="https://www.enjfun.com/img/weimnu/body/bodybg_3.jpg"></image>
+      </view>
+      <view class="restext">
+        <text class="description">微信如今支持公众号与小程序绑定，会同时给公众号与小程序带来流量，达到双赢的目的，“i云校”小程序现正式与各大高校公众号展开合作，您只需要复制下方AppID在您的公众号后台输入后绑定，发起绑定邀请后，我们会在24小时内进行操作。</text>
+        <view class="author">i云校</view>
+        <view class="date">2018-08-23</view>
+      </view>
+    </view>
+  </navigator>
+  <view class="line"></view>
+  <navigator class="list" url="../sub/article/article?bodyfive=true">
+    <view class="res-items">
+      <view class="body">
+        <image class="resimg" mode="aspectFit center" src="https://www.enjfun.com/img/weimnu/body/loveyou_3.gif"></image>
+      </view>
+      <view class="restext">
+        <text class="description">关于广告投放的通知——动动小手让我们走的更远，爱你呦~</text>
+        <view class="author">i云校</view>
+        <view class="date">2018-10-19</view>
+      </view>
+    </view>
+  </navigator>
+  <view class="line"></view>
+  <navigator class="list" url="../sub/article/article?bodyfour=true">
+    <view class="res-items">
+      <view class="body">
+        <image class="resimg" mode="aspectFit center" src="https://www.enjfun.com/img/weimnu/body/bodybg_4.jpg"></image>
+      </view>
+      <view class="restext">
+        <text class="description">我们是谁？看这里!</text>
+        <view class="author">师大WulinToya光影</view>
+        <view class="date">2018-09-01</view>
+      </view>
+    </view>
+  </navigator>
+  <view class="line"></view>
+  <navigator class="list" url="../sub/article/article?bodysix=true">
+    <view class="res-items">
+      <view class="body">
+        <image class="resimg" mode="aspectFit center" src="https://www.enjfun.com/img/weimnu/body/bodybg_5.jpg"></image>
+      </view>
+      <view class="restext">
+        <text class="description">依旧陪伴!盛乐之声普通话测试晨读社区开课啦!</text>
+        <view class="author">内师大盛乐之声</view>
+        <view class="date">2018-09-20</view>
+      </view>
+    </view>
+  </navigator>
+  <view class="line"></view>
+  <navigator class="list" url="../sub/article/article?bodyseven=true">
+    <view class="res-items">
+      <view class="body">
+        <image class="resimg" mode="aspectFit center" src="https://www.enjfun.com/img/weimnu/body/bodybg_6.jpg"></image>
+      </view>
+      <view class="restext">
+        <text class="description">军迷社2018招新活动进行中!</text>
+        <view class="author">师大军迷社社团</view>
+        <view class="date">2018-09-20</view>
+      </view>
+    </view>
+  </navigator>
+  <view class="line"></view>
+  <navigator class="list" url="../sub/article/article?bodyeight=true">
+    <view class="res-items">
+      <view class="body">
+        <image class="resimg" mode="aspectFit center" src="https://www.enjfun.com/img/weimnu/body/bodybg_7.jpg"></image>
+      </view>
+      <view class="restext">
+        <text class="description">只是编辑偷偷上来想说的心里话</text>
+        <view class="author">内师大攻略</view>
+        <view class="date">2018-11-01</view>
+      </view>
+    </view>
+  </navigator>
+  <view class="line"></view>
+  <view class="ad" wx:if="{{noticead == true}}">
+    <ad unit-id="adunit-e567c57099bb8d02"></ad>
+  </view>
+  <view class="line" wx:if="{{noticead == true}}"></view>
+  <view class="bottom-tip">
+    <text>更多文章敬请期待</text>
+  </view>
+</view>

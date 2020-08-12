@@ -1,0 +1,259 @@
+/**ykt.wxss**/
+/** 导航栏 **/
+.navbar-bg{
+  width: 100%;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 997;
+  background: #36ab60;
+}
+.navbar-title{
+  width: 100%;
+  height: 46px;
+  line-height: 46px;
+  text-align: center;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 998;
+  color: #fff;
+  font-size: 37rpx;
+  font-weight: bold;
+}
+.navbar{
+  width: 100%;
+  height: 46px;
+  line-height: 46px;
+  overflow: hidden;
+  position: fixed;
+  display: block;
+  top: 0;
+  left: 0;
+  z-index: 999;
+}
+.back{
+  width: 38rpx;
+  height: 38rpx;
+}
+picker{
+  display: inline-block;
+  position: relative;
+  z-index: 999;
+}
+.search{
+  width: 38rpx;
+  height: 38rpx;
+}
+
+.container {
+    width: 100%;
+    background-color: #f4f4f7;
+    display: flex;
+    flex-direction: column;
+}
+
+/* 今日余额 */
+.ykt-card {
+    display: flex;
+    flex-direction: column;
+    width: 680rpx;
+    height: 350rpx;
+    margin: 25rpx auto;
+    border-radius: 15rpx;
+    box-shadow: 0 0 5rpx 5rpx rgba(150, 150, 150, 0.233);
+}
+.ykt-content {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.ykt-ye {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding-right: 50rpx;
+    color: #fff;
+}
+.ykt-ye-name {
+    font-size: 11pt;
+    font-weight: bold;
+    line-height: 50rpx;
+    padding-top: 45rpx;
+    padding-left: 370rpx;
+}
+.ykt-ye-money {
+    padding-top: 30rpx;
+    padding-left: 360rpx;
+    font-size: 10pt;
+}
+.ykt-ye-value {
+    font-size: 36pt;
+    font-weight: bold;
+    line-height: 80rpx;
+    padding-right: 25rpx;
+}
+
+/* canvas */
+
+.grid-remind {
+  font-size: 30rpx;
+  padding-left: 40rpx;
+  color: #999;
+  margin-bottom: 15rpx;
+}
+
+/* 余额、消费切换按钮 */
+.balance-consumption {
+    display: flex;
+    margin: 0 45rpx 10rpx;
+    border-radius: 5px;
+    box-shadow: 0 0 10rpx #ddd;
+    overflow: hidden;
+}
+.balance-consumption text {
+    flex: 1;
+    flex-shrink: 0;
+    line-height: 150%;
+    font-size: 10pt;
+    padding: 12rpx 0;
+    font-weight: bold;
+    text-align: center;
+    background: #fff;
+}
+.balance-consumption .current-btn {
+    color: #fff;
+    background: #36ab60;
+}
+
+/* 网格 */
+.grid-wraper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    margin-top: 50rpx;
+    width: 100%;
+    height: 300px;
+}
+#ykt-canvas {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+}
+
+/* 详情竖线 */
+.canvasline {
+    position: absolute;
+    z-index: 999;
+    top: 15px;
+    height: 265px;
+    width: 3px;
+    background: #ce0000;
+}
+
+/* 横纵坐标的含义 */
+.y-text {
+    position: absolute;
+    left: 15rpx;
+    top: -40rpx;
+    padding: 0 10rpx;
+    font-size: 24rpx;
+    color: #999;
+}
+.x-text{
+    position: absolute;
+    right: 10rpx;
+    bottom: -10rpx;
+    padding: 0 5rpx;
+    font-size: 24rpx;
+    color: #999;
+}
+.tips{
+    margin: 25rpx auto;
+    font-size: 24rpx;
+    color: #36ab60;
+}
+
+/*详情弹窗*/
+.info{
+  width: 650rpx;
+  height: auto;
+  background: #fff;
+  margin: 15rpx auto;
+  border-radius: 20rpx;
+  box-shadow: 0 0 5rpx 5rpx rgba(150, 150, 150, 0.233);
+}
+.top-title{
+  width: 100%;
+  margin: 30rpx 0 auto;
+  text-align: center;
+}
+.top-title text{
+  color: #999;
+  font-size: 20pt;
+  line-height: 30rpx;
+}
+.info-top{
+  display: inline-flex;
+  flex-direction: column;
+  margin-top: -100rpx;
+}
+.time-top{
+  display: inline-flex;
+  margin: 12.5vw 30rpx;
+  padding-left: 37rpx;
+}
+.time{
+  width: 40rpx;
+  height: 40rpx;
+  margin: 0 5rpx;
+  position: absolute;
+}
+.time-text{
+  font-size: 32rpx;
+  color: deepskyblue;
+  padding-left: 70rpx;
+}
+.info-list{
+  display: inline-flex;
+  flex-direction: column;
+}
+.list-name{
+  margin: 25rpx 0;
+}
+.info-list text{
+  font-size: 32rpx;
+}
+.info-line{
+  width: 220rpx;
+  padding: 2rpx 0;
+  background: rgba(0, 0, 0, 0.041) 
+}
+.info-botline{
+  width: 300rpx;
+  padding: 2rpx 0;
+  background: rgba(0, 0, 0, 0.041) 
+}
+.line-c{
+  background: rgb(123, 202, 152);
+  width: 7rpx;
+  height: 300rpx;
+  position: fixed;
+  left: 22%;
+}
+.tipbody{
+  width: 100%;
+  text-align: center;
+}
+.tip{
+  color: crimson;
+  font-size: 32rpx;
+  margin: 50rpx auto;
+}

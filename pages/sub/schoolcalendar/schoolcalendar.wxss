@@ -1,0 +1,35 @@
+Page{
+  width: 100%;
+  background: #fff;
+}
+.page{
+  width: 100%;
+  text-align: center;
+}
+.image{
+  width: 100%;
+}
+.bottom{
+  width: 130rpx;
+  height: 100rpx;
+  margin: 0 auto;
+  background: #fff;
+  border-radius: 50rpx;
+  box-shadow: 0 0 5rpx 5rpx rgba(150, 150, 150, 0.233);
+  position: fixed;
+  bottom: 20rpx;
+  left: 42%;
+}
+.share{
+  width: 60rpx;
+  height: 60rpx;
+  margin: 20rpx auto;
+}
+.sharebtn{
+  background: none;
+  border: none;
+  border-radius: 100%;
+}
+.sharebtn::after{
+  border: none;
+}

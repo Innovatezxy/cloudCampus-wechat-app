@@ -1,0 +1,344 @@
+Page{
+  width: 100vw;
+  background: #fff;
+}
+.page{
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+}
+/*通知页幻灯片文章1*/
+.topone{
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+}
+.topone text{
+  text-indent: 25rpx;
+  font-size: 30rpx;
+  overflow: hidden;
+  margin: 20rpx auto;
+  text-align: left;
+}
+.toppic{
+  width: 700rpx;
+  height: 1300rpx;
+  margin: 20rpx auto;
+}
+.qq{
+  color: deepskyblue;
+  font-size: 31rpx;
+  margin: 20rpx auto;
+}
+/*通知页子文章1*/
+.bodyone{
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+}
+.bodyone text{
+  text-indent: 25rpx;
+  font-size: 30rpx;
+  overflow: hidden;
+  margin: 20rpx auto;
+  text-align: left;
+}
+.bodytitle{
+  color: darkturquoise;
+  font-size: 40rpx;
+  font-weight: 600;
+  margin: 30rpx auto;
+}
+/*通知页子文章2*/
+.bodytwo{
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+}
+.bodytwo text{
+  text-indent: 25rpx;
+  font-size: 30rpx;
+  overflow: hidden;
+  margin: 20rpx 0;
+  text-align: left;
+}
+.email{
+  color: deepskyblue;
+  font-size: 31rpx;
+  margin: 20rpx auto;
+}
+.bodytitle{
+  color: darkturquoise;
+  font-size: 40rpx;
+  font-weight: 600;
+  margin: 30rpx auto;
+}
+.bodytwo image{
+  width: 700rpx;
+  height: 350rpx;
+  margin: 15rpx auto;
+}
+/*通知页子文章3*/
+.bodythree{
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+}
+.bodythree text{
+  text-indent: 25rpx;
+  font-size: 30rpx;
+  overflow: hidden;
+  margin: 20rpx 0;
+  text-align: left;
+}
+.appid{
+  color: deepskyblue;
+  font-size: 31rpx;
+  margin: 20rpx auto;
+}
+.email{
+  color: deepskyblue;
+  font-size: 31rpx;
+  margin: 20rpx auto;
+}
+.bodytitle{
+  color: darkturquoise;
+  font-size: 40rpx;
+  font-weight: 600;
+  margin: 30rpx auto;
+}
+/*通知页子文章4*/
+.bodyfour{
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+}
+.bodyfour image{
+  width: 100vw;
+}
+.gzh{
+  color: deepskyblue;
+  font-size: 31rpx;
+  margin: 20rpx auto;
+}
+/*通知页子文章5*/
+.bodyfive{
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+}
+.bodyfive text{
+  text-indent: 25rpx;
+  font-size: 30rpx;
+  overflow: hidden;
+  margin: 20rpx 0;
+  text-align: left;
+}
+.bodyfive image{
+  margin: 15rpx auto;
+}
+/*通知页子文章6*/
+.bodysix{
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+}
+.bodysix image{
+  width: 100vw;
+}
+.gzh{
+  color: deepskyblue;
+  font-size: 31rpx;
+  margin: 20rpx auto;
+}
+/*通知页子文章7*/
+.bodyseven{
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+}
+.bodyseven image{
+  width: 100vw;
+}
+.gzh{
+  color: deepskyblue;
+  font-size: 31rpx;
+  margin: 20rpx auto;
+}
+/*通知页子文章8*/
+.bodyeight{
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+}
+.bodyeight image{
+  width: 100vw;
+}
+/*通知页子文章9*/
+.bodynine{
+  width: 95vw;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+}
+.bodynine text{
+  text-indent: 25rpx;
+  font-size: 30rpx;
+  overflow: hidden;
+  margin: 20rpx auto;
+  text-align: left;
+}
+.bodynine image{
+  width: 95vw;
+  margin: 10rpx auto;
+  border-radius: 15rpx;
+}
+.bodytitle{
+  width: 93%;
+  margin: 30rpx auto;
+  text-align: center;
+}
+.bodytitle text{
+  color: darkturquoise;
+  font-size: 32rpx;
+  font-weight: 600;
+}
+/*使用帮助*/
+.help{
+  width: 95vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  margin: 20rpx auto;
+}
+.question{
+  color: dodgerblue;
+  margin: 10rpx;
+  margin-top: 25rpx;
+  font-size: 30rpx;
+  overflow: hidden;
+}
+.answer{
+  color: #808080;
+  margin: 10rpx;
+  font-size: 30rpx;
+  overflow: hidden;
+}
+/*打赏*/
+.money{
+  width: 90vw;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  margin: 120rpx auto;
+  border-radius: 20rpx;
+}
+.tip{
+  color: #808080;
+  font-size: 30rpx;
+  margin: 35rpx auto;
+}
+.moneycode{
+  width: 600rpx;
+  height: 600rpx;
+  margin: 20rpx auto;
+  border-radius: 20rpx;
+}
+/*关于我们*/
+.about{
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+}
+.abouttext{
+  width: 95vw;
+  margin: 10rpx auto;
+  display: flex;
+  flex-direction: column;
+}
+.logo-img{
+  width: 180rpx;
+  height: 180rpx;
+  margin: 20rpx auto;
+}
+.abouttitle{
+  color: #e43f3f;
+  font-size: 32rpx;
+  margin: 5rpx auto;
+  margin-bottom: 30rpx;
+}
+.about text{
+  text-indent: 25rpx;
+  font-size: 30rpx;
+  overflow: hidden;
+  margin: 20rpx auto;
+  text-align: left;
+}
+.codetip{
+  color: #808080;
+  font-size: 30rpx;
+  margin: 20rpx auto;
+  margin-top: 20rpx;
+}
+.mecode{
+  width: 400rpx;
+  height: 600rpx;
+  margin: 10rpx auto;
+}
+.enjfuncode{
+  width: 400rpx;
+  height: 400rpx;
+  margin: 10rpx auto;
+}
+.weimnucode{
+  width: 400rpx;
+  height: 400rpx;
+  margin: 10rpx auto;
+}
+.enjfun{
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  text-align: center;
+  margin: 20rpx;
+}
+.enjfun text{
+  font-size: 22rpx;
+  color: #a1a1a1;
+}
+/*用户协议*/
+.user_agreement{
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+}
+.user_agreement text{
+  width: 95vw;
+  margin: 10rpx auto;
+  display: flex;
+  flex-direction: column;
+}
+.user_agreement .topic{
+  color: #000;
+  font-size: 38rpx;
+  font-weight: bold;
+  margin: 20rpx auto;
+}
+.user_agreement .title{
+  color: #000;
+  font-size: 32rpx;
+  margin: 15rpx auto;
+}
+.user_agreement .content{
+  color: #4b4b4b;
+  font-size: 28rpx;
+  overflow: hidden;
+  text-align: left;
+}

@@ -1,0 +1,205 @@
+Page{
+  height: 100vh;
+  background: #ebebeb;
+}
+.page{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.top{
+  width: 93%;
+  height: 90rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 20rpx auto 0;
+}
+.gpa{
+  width: 65rpx;
+  height: 65rpx;
+  margin: auto 0;
+}
+.refresh{
+  width: 65rpx;
+  height: 65rpx;
+  margin: auto 0;
+}
+.switchxq {
+  width: 60%;
+  height: 70rpx;
+  display: flex;
+  margin: auto 0;
+  border-radius: 5px;
+  box-shadow: 0 0 10rpx #ddd;
+  overflow: hidden;
+}
+.switchxq text {
+  flex: 1;
+  flex-shrink: 0;
+  line-height: 150%;
+  font-size: 10pt;
+  padding: 15rpx 0;
+  font-weight: bold;
+  text-align: center;
+  background: #fff;
+}
+.switchxq .current-btn {
+  color: #fff;
+  background: #000;
+}
+.main{
+  width: 93%;
+  height: 88%;
+  margin: 20rpx auto 30rpx;
+}
+.list{
+  width: 100%;
+  height: 95%;
+  display: flex;
+  flex-direction: column;
+  margin: 15rpx 0;
+  align-items: center;
+  overflow-y: hidden;
+  border-radius: 20rpx;
+}
+.items{
+  width: 100%;
+  display: flex;
+  flex-flow: column;
+  white-space: nowrap;
+}
+.item{
+  padding: 0 15rpx;
+}
+.sub-a{
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  text-align: center;
+  margin: 15rpx 0;
+}
+.sub-b{
+  width: 95%;
+  display: flex;
+  flex-direction: row;
+}
+.right{
+  background: #fff;
+}
+.sub-c{
+  display: flex;
+  text-align: center;
+}
+.sub-d{ 
+  display: flex;
+  text-align: center;
+}
+.items .title{
+  color: #000;
+  font-size: 40rpx;
+  font-weight: bolder;
+  margin: auto;
+}
+.items text{
+  color: black;
+  font-size: 32rpx;
+}
+.items .a-class{
+  width: 50%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-left: 15rpx;
+}
+.items .a-type{
+  width: 18%;
+  margin-left: 10rpx;
+}
+.items .a-credit{
+  width: 16%;
+  position: absolute;
+  left: 66%;
+}
+.items .a-score{
+  width: 16%;
+  position: absolute;
+  right: 10rpx;
+}
+.items .b-class{
+  width: 60%;
+  margin-left: 40rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.items .b-credit{
+  width: 20%;
+  position: absolute;
+  left: 60%;
+}
+.items .b-score{
+  width: 20%;
+  position: absolute;
+  right: 10rpx;
+}
+.line{
+  background: #979797;
+  height: 2rpx;
+  width: 93%;
+  margin: 25rpx auto;
+}
+/*遮罩弹窗*/
+.info{
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.495);
+  position: absolute;
+  display: flex;
+  justify-content: flex-start;
+  text-align: center;
+}
+.info-items{
+  width: 600rpx;
+  height: 520rpx;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  border-radius: 30rpx;
+  margin: 46% auto;
+}
+.name-top{
+  margin-top: 30rpx;
+}
+.name{
+  margin: 5rpx 0;
+}
+.info-items text{
+  font-size: 32rpx;
+}
+.info-line{
+  width: 600rpx;
+  padding: 2rpx 0;
+  background: rgba(0, 0, 0, 0.041) 
+}
+.hitcall{
+  width: 180rpx;
+  height: 185rpx;
+  margin: 5rpx auto;
+}
+/*空空如也*/
+.empty{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  margin-top: 450rpx;
+}
+.none{
+  width: 150rpx;
+  height: 150rpx;
+  margin: 30rpx auto;
+}
+.none-text{
+  font-size: 32rpx;
+  color: #000;
+  margin: 0 auto;
+}
